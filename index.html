@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faria Lima Backstage — O que rola nos corredores do mercado</title>
-<meta name="description" content="Bastidores, análises e decoder do mercado financeiro brasileiro. Furos antes de virarem manchete.">
+<title>Faria Lima Backstage — Análise e contexto do mercado financeiro brasileiro</title>
+<meta name="description" content="Análises, contexto e decoder do mercado financeiro brasileiro. Consolidamos as principais movimentações da semana, com fontes públicas e leitura editorial.">
 <meta property="og:title" content="Faria Lima Backstage">
-<meta property="og:description" content="O que rola nos corredores do mercado financeiro brasileiro.">
+<meta property="og:description" content="Análise e contexto do mercado financeiro brasileiro.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://farialimabackstage.com.br">
-<meta property="og:image" content="https://farialimabackstage.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,25 +18,10 @@
 </head>
 <body>
 
-<!-- Marquee de cotações -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span class="ticker"><strong>IBOV</strong> 134.281 <em class="up">+0.42%</em></span>
-    <span class="ticker"><strong>USD/BRL</strong> 5.18 <em class="down">-0.31%</em></span>
-    <span class="ticker"><strong>SELIC</strong> 10.75% <em class="flat">—</em></span>
-    <span class="ticker"><strong>CDI</strong> 10.65% <em class="flat">—</em></span>
-    <span class="ticker"><strong>S&P 500</strong> 5.847 <em class="up">+0.18%</em></span>
-    <span class="ticker"><strong>BTC</strong> US$ 67.420 <em class="down">-1.24%</em></span>
-    <span class="ticker"><strong>OURO</strong> US$ 2.658 <em class="up">+0.55%</em></span>
-    <span class="ticker"><strong>VALE3</strong> R$ 58.40 <em class="down">-0.82%</em></span>
-    <span class="ticker"><strong>PETR4</strong> R$ 38.12 <em class="up">+1.10%</em></span>
-    <!-- duplicado para loop infinito -->
-    <span class="ticker"><strong>IBOV</strong> 134.281 <em class="up">+0.42%</em></span>
-    <span class="ticker"><strong>USD/BRL</strong> 5.18 <em class="down">-0.31%</em></span>
-    <span class="ticker"><strong>SELIC</strong> 10.75% <em class="flat">—</em></span>
-    <span class="ticker"><strong>CDI</strong> 10.65% <em class="flat">—</em></span>
-    <span class="ticker"><strong>S&P 500</strong> 5.847 <em class="up">+0.18%</em></span>
-    <span class="ticker"><strong>BTC</strong> US$ 67.420 <em class="down">-1.24%</em></span>
+<!-- Marquee de cotações (preenchido por JavaScript com dados reais) -->
+<div class="marquee" id="market-ticker">
+  <div class="marquee-track" id="ticker-track">
+    <span class="ticker ticker-loading">Carregando cotações em tempo real…</span>
   </div>
 </div>
 
@@ -48,9 +32,9 @@
       <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
     </a>
     <nav class="main-nav">
-      <a href="#bastidores">Bastidores</a>
-      <a href="#analises">Análises</a>
+      <a href="#analises">Análise</a>
       <a href="#decoder">Decoder</a>
+      <a href="#quem">Quem é Quem</a>
       <a href="#newsletter">Newsletter</a>
       <a href="#sobre">Sobre</a>
     </nav>
@@ -68,41 +52,39 @@
     <div class="container">
       <div class="hero-grid">
         <article class="hero-main">
-          <div class="tag tag-exclusivo">Bastidores · Exclusivo</div>
-          <h1 class="hero-title">O fundo que esvaziou o andar inteiro do Itaú BBA em 6 meses</h1>
-          <p class="hero-lede">Três sócios saíram na sexta. O quarto pediu demissão no domingo. Por dentro da movimentação que está sacudindo a mesa de equities da Faria Lima — e por que o headhunter por trás disso ganhou o ano em uma operação só.</p>
+          <div class="tag tag-analise">Análise · Política monetária</div>
+          <h1 class="hero-title">Copom corta Selic para 14,75% e dá início ao primeiro ciclo de afrouxamento desde 2024</h1>
+          <p class="hero-lede">Decisão unânime em 18 de março marcou a primeira queda em quase dois anos. O comitê, presidido por Gabriel Galípolo, optou por 0,25 ponto percentual em vez dos 0,50 inicialmente precificados pelo mercado — a guerra no Oriente Médio segurou a mão. A ata da reunião deixou em aberto os próximos passos.</p>
           <div class="byline">
-            <span class="byline-author">Redação</span>
+            <span class="byline-author">Fontes: Banco Central, CNN Brasil, Agência Brasil</span>
             <span class="byline-sep">·</span>
-            <span class="byline-time">há 2 horas</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-read">6 min de leitura</span>
+            <span class="byline-time">Decisão de 18/03/2026</span>
           </div>
         </article>
 
         <aside class="hero-side">
           <div class="side-card">
-            <div class="side-label">Mais lida da semana</div>
+            <div class="side-label">Em destaque no mercado</div>
             <ol class="side-list">
               <li>
                 <span class="rank">01</span>
-                <a href="#">O bônus de US$ 8 milhões que ninguém na XP quer comentar</a>
+                <a href="#analises">Ibovespa volta aos 178 mil pontos com recuperação de bancos e Petrobras</a>
               </li>
               <li>
                 <span class="rank">02</span>
-                <a href="#">A reunião de almoço que destravou a fusão BTG–Banco Master</a>
+                <a href="#analises">Capital estrangeiro acumula entrada de R$ 8,8 bi na B3 só no início de 2026</a>
               </li>
               <li>
                 <span class="rank">03</span>
-                <a href="#">Quem é o gestor por trás do fundo que rendeu 380% em 2025</a>
+                <a href="#analises">Mercado de M&A no Brasil cai 52% em transações, mas sobe 34% em volume financeiro</a>
               </li>
               <li>
                 <span class="rank">04</span>
-                <a href="#">A briga entre dois sócios que paralisou um IPO bilionário</a>
+                <a href="#decoder">CVM coloca tokenização no centro da agenda regulatória de 2026</a>
               </li>
               <li>
                 <span class="rank">05</span>
-                <a href="#">Por que metade da mesa de M&A do Santander pediu pra sair</a>
+                <a href="#analises">Nova carteira do Ibovespa entra em vigor com 79 papéis de 76 empresas</a>
               </li>
             </ol>
           </div>
@@ -115,79 +97,67 @@
   <div class="section-divider">
     <div class="container">
       <span class="divider-line"></span>
-      <span class="divider-label">Em destaque</span>
+      <span class="divider-label">Análises da semana</span>
       <span class="divider-line"></span>
     </div>
   </div>
 
-  <!-- Grid de matérias -->
-  <section class="grid-section">
+  <!-- Grid de matérias verídicas -->
+  <section class="grid-section" id="analises">
     <div class="container">
       <div class="article-grid">
 
         <article class="article-card">
-          <div class="tag tag-analise">Análise</div>
-          <h2><a href="#">Por que o mercado errou feio sobre a Selic em 2026</a></h2>
-          <p>A curva precificou três cortes para o primeiro semestre. Saiu um. O que mudou na cabeça do Copom — e o que isso significa pra sua carteira nos próximos 12 meses.</p>
+          <div class="tag tag-analise">Análise · Câmbio</div>
+          <h2><a href="#newsletter">Dólar abaixo de R$ 5,00: o que sustentou o real em 2026 e o que pode mudar</a></h2>
+          <p>A moeda americana fechou a R$ 4,9863 em 14 de maio. A entrada robusta de capital estrangeiro na B3 e o diferencial de juros real elevado (acima de 9% a.a.) explicam parte do movimento. A pergunta é se o cenário se sustenta com o início do ciclo de corte da Selic.</p>
           <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">ontem</span>
+            <span class="byline-author">Fonte: dados públicos B3, BCB</span>
           </div>
         </article>
 
         <article class="article-card">
-          <div class="tag tag-decoder">Decoder</div>
-          <h2><a href="#">IPO, follow-on e bookbuilding: o que cada palavra significa de verdade</a></h2>
-          <p>Guia rápido pra quem quer parar de fingir que entende as manchetes do mercado de capitais. Sem condescendência, sem enrolação.</p>
+          <div class="tag tag-decoder">Decoder · Política monetária</div>
+          <h2><a href="#newsletter">O que é "ciclo de calibração" e por que o Copom passou a usar essa expressão</a></h2>
+          <p>O comunicado de 18 de março trouxe a expressão pela primeira vez. A formulação dá ao Banco Central liberdade para acelerar, frear ou até reverter o corte sem comprometer-se com uma trajetória. Entenda a engenharia da linguagem do Copom.</p>
           <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">2 dias</span>
+            <span class="byline-author">Fonte: comunicado oficial Bacen</span>
           </div>
         </article>
 
         <article class="article-card">
-          <div class="tag tag-bastidores">Bastidores</div>
-          <h2><a href="#">A guerra silenciosa entre dois bancos pela folha de pagamento da Prevent Senior</a></h2>
-          <p>Conta que pode chegar a R$ 800 milhões/ano em float está sendo disputada na surdina. Quem está na frente, quem ficou de fora — e o detalhe que pode mudar tudo.</p>
+          <div class="tag tag-analise">Análise · Bolsa</div>
+          <h2><a href="#newsletter">Por que o capital estrangeiro voltou para a B3 — e por quanto tempo</a></h2>
+          <p>Em janeiro de 2026, o saldo de capital externo na bolsa brasileira chegou a quase R$ 8,8 bilhões em apenas 20 dias. O volume diário médio saltou para R$ 44 bi em momentos de pico, contra média anual de R$ 30 bi. Realocação global em mercados emergentes ou aposta específica no Brasil?</p>
           <div class="byline">
-            <span class="byline-author">Por Redação</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">3 dias</span>
+            <span class="byline-author">Fonte: dados públicos B3</span>
           </div>
         </article>
 
         <article class="article-card">
-          <div class="tag tag-analise">Análise</div>
-          <h2><a href="#">O Brasil tem investidor pessoa física demais. E isso é um problema</a></h2>
-          <p>Em três anos, o número de CPFs na B3 dobrou. Por que isso tornou o nosso mercado mais volátil, mais raso e mais fácil de manipular do que se admite.</p>
+          <div class="tag tag-analise">Análise · M&A</div>
+          <h2><a href="#newsletter">M&A no Brasil em 2026: 52% menos transações, 34% mais dinheiro</a></h2>
+          <p>O primeiro bimestre registrou 144 operações movimentando R$ 36,6 bilhões. Menos negócios, mas tickets maiores. Bancos e investimentos passaram a ser o terceiro setor mais ativo, atrás de software e imobiliário. O que a leitura macroeconômica revela.</p>
           <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">4 dias</span>
+            <span class="byline-author">Fonte: relatórios públicos de mercado</span>
           </div>
         </article>
 
         <article class="article-card">
-          <div class="tag tag-bastidores">Bastidores</div>
-          <h2><a href="#">A reunião no Fasano que selou a venda da gestora</a></h2>
-          <p>Sete pessoas em uma mesa reservada. Três horas de jantar. Um cheque de R$ 1,2 bilhão. O passo a passo de como uma das principais aquisições do ano foi fechada — longe dos holofotes.</p>
+          <div class="tag tag-decoder">Decoder · Regulação</div>
+          <h2><a href="#newsletter">Tokenização na agenda da CVM em 2026: o que muda no mercado</a></h2>
+          <p>A autarquia colocou tokenização entre as prioridades do ano. O chamado Projeto 135 Light revisa duas resoluções com foco em mercados menores e ativos digitais. A leitura: a CVM quer construir base regulatória sem matar a inovação.</p>
           <div class="byline">
-            <span class="byline-author">Por Redação</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">5 dias</span>
+            <span class="byline-author">Fonte: agenda regulatória CVM 2026</span>
           </div>
         </article>
 
         <article class="article-card">
-          <div class="tag tag-decoder">Decoder</div>
-          <h2><a href="#">Debênture incentivada: o que é, quem ganha e por que todo mundo está falando</a></h2>
-          <p>O produto que virou queridinho do private banking explicado em 8 minutos. Riscos reais, vantagem tributária e quando vale (e quando não vale) entrar.</p>
+          <div class="tag tag-analise">Análise · Renda fixa</div>
+          <h2><a href="#newsletter">Eco Invest Brasil: Banco do Brasil lidera captação de R$ 1,5 bilhão no 4º leilão</a></h2>
+          <p>O programa do governo federal de financiamento verde alcançou nova marca em maio de 2026. A operação reforça o protagonismo do BB na agenda de finanças sustentáveis e indica que o ESG segue sendo vetor relevante no mercado brasileiro de renda fixa.</p>
           <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">1 semana</span>
+            <span class="byline-author">Fonte: Money Times, comunicado oficial</span>
           </div>
         </article>
 
@@ -201,13 +171,13 @@
       <div class="newsletter-card">
         <div class="newsletter-content">
           <div class="newsletter-label">Newsletter</div>
-          <h2 class="newsletter-title">Receba os bastidores <em>antes</em> de virarem manchete.</h2>
-          <p class="newsletter-desc">Três edições por semana, na sua caixa de entrada. O que está rolando nos corredores, contado pra quem entende do assunto. Sem spam, com fofoca boa.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Em breve! Cadastro será conectado ao Ghost/Substack na configuração.');">
+          <h2 class="newsletter-title">A leitura editorial <em>antes</em> de o mercado abrir.</h2>
+          <p class="newsletter-desc">Três edições por semana com análise, contexto e decoder do mercado financeiro brasileiro. Consolidamos as principais movimentações com fontes públicas e leitura editorial. Sem spam, com clareza.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Em breve! O cadastro será conectado ao sistema de newsletter na próxima fase.');">
             <input type="email" placeholder="seu.email@empresa.com.br" required>
             <button type="submit">Quero entrar →</button>
           </form>
-          <p class="newsletter-foot">Já são <strong>+2.400 leitores</strong> nos andares da Faria Lima, Itaim e Vila Olímpia.</p>
+          <p class="newsletter-foot">Cadastre-se para ser um dos primeiros leitores no lançamento.</p>
         </div>
         <div class="newsletter-visual">
           <div class="visual-grid">
@@ -219,28 +189,55 @@
     </div>
   </section>
 
+  <!-- Decoder -->
+  <section class="quem-section" id="decoder">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Decoder</h2>
+        <p class="section-sub">Conceitos do mercado financeiro explicados sem condescendência</p>
+      </div>
+      <div class="quem-grid">
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Política monetária</div>
+          <h3>Selic, CDI e juro real: como se relacionam</h3>
+          <p>Com a Selic em 14,75% e o IPCA em torno de 5%, o juro real brasileiro segue entre os mais altos do mundo. Entenda como esses três números conversam — e por que isso importa para sua carteira.</p>
+        </a>
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Mercado de capitais</div>
+          <h3>O que é o Boletim Focus e como ele influencia o Copom</h3>
+          <p>Publicado toda segunda-feira pelo Banco Central, o Focus consolida projeções de mais de 140 instituições. Antes da última reunião, o mercado virou a aposta de 0,50 para 0,25 ponto — e o Copom seguiu o consenso.</p>
+        </a>
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Cripto e tokenização</div>
+          <h3>Tokens como valores mobiliários: o que diz o Parecer CVM 40</h3>
+          <p>A regra é funcional: se um token se parece com uma ação, debênture ou contrato de investimento coletivo, é responsabilidade da CVM. Bitcoin e a maioria das criptos ficam fora, exceto em derivativos.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Quem é quem -->
-  <section class="quem-section">
+  <section class="quem-section" id="quem">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Quem é Quem</h2>
-        <p class="section-sub">Os players que importam, perfilados sem rodeios</p>
+        <p class="section-sub">Os tomadores de decisão que importam, em contexto</p>
       </div>
       <div class="quem-grid">
-        <a href="#" class="quem-card">
-          <div class="quem-tag">Gestor</div>
-          <h3>O homem do macro</h3>
-          <p>Construiu R$ 40 bi sob gestão prevendo crises. Acertou três das últimas duas. Quem é e por que vale ouvir mesmo quando exagera.</p>
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Banco Central</div>
+          <h3>Gabriel Galípolo, presidente do Bacen</h3>
+          <p>Conduziu a transição da gestão Campos Neto e preside o ciclo de afrouxamento iniciado em março de 2026. Como ex-Fazenda na gestão Haddad, carrega o desafio de provar autonomia operacional do BC.</p>
         </a>
-        <a href="#" class="quem-card">
-          <div class="quem-tag">Banker</div>
-          <h3>A maior dealmaker do país</h3>
-          <p>Fechou mais M&A em 2025 do que qualquer outro banker do Brasil. Não dá entrevista, mas tem opinião — e a gente trouxe.</p>
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Política econômica</div>
+          <h3>O Conselho Monetário Nacional</h3>
+          <p>Formado por três membros — Fazenda, Planejamento e BC —, o CMN define a meta de inflação. A meta vigente é de 3% com banda de 1,5 pp em sistema contínuo, modelo adotado em 2025.</p>
         </a>
-        <a href="#" class="quem-card">
-          <div class="quem-tag">CEO</div>
-          <h3>O outsider que virou o mercado</h3>
-          <p>Veio do varejo, virou CEO de uma das maiores fintechs. Por que o mercado tradicional ainda não entendeu o jogo dele.</p>
+        <a href="#newsletter" class="quem-card">
+          <div class="quem-tag">Mercado de capitais</div>
+          <h3>A CVM em fase regulatória ativa</h3>
+          <p>Com tokenização e revisão de regras para mercados menores na pauta de 2026, a Comissão de Valores Mobiliários sai do papel reativo e assume protagonismo na construção da próxima fase do mercado brasileiro.</p>
         </a>
       </div>
     </div>
@@ -249,28 +246,27 @@
 </main>
 
 <!-- Footer -->
-<footer class="site-footer">
+<footer class="site-footer" id="sobre">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
           <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
         </div>
-        <p>O que rola nos corredores do mercado financeiro brasileiro. Bastidores, análises e decoder pra quem leva a sério.</p>
+        <p>Análise e contexto do mercado financeiro brasileiro. Consolidamos as principais movimentações da semana, com leitura editorial e fontes públicas. Conteúdo informativo — não constitui recomendação de investimento.</p>
       </div>
       <div class="footer-col">
         <h4>Editorial</h4>
-        <a href="#">Bastidores</a>
-        <a href="#">Análises</a>
-        <a href="#">Decoder</a>
-        <a href="#">Quem é Quem</a>
+        <a href="#analises">Análises</a>
+        <a href="#decoder">Decoder</a>
+        <a href="#quem">Quem é Quem</a>
+        <a href="#newsletter">Newsletter</a>
       </div>
       <div class="footer-col">
         <h4>Backstage</h4>
-        <a href="#">Sobre</a>
-        <a href="#">Contato seguro</a>
-        <a href="#">Patrocínio</a>
-        <a href="#">Trabalhe conosco</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#newsletter">Contato</a>
+        <a href="#newsletter">Patrocínio</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
