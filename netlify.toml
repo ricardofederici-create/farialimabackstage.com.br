@@ -1,0 +1,57 @@
+# Netlify Configuration — Faria Lima Backstage
+# Documentação: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "."
+
+# Força HTTPS sempre
+[[redirects]]
+  from = "http://farialimabackstage.com.br/*"
+  to = "https://farialimabackstage.com.br/:splat"
+  status = 301
+  force = true
+
+# Redireciona www para o domínio raiz
+[[redirects]]
+  from = "https://www.farialimabackstage.com.br/*"
+  to = "https://farialimabackstage.com.br/:splat"
+  status = 301
+  force = true
+
+# Headers de segurança e performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# Cache agressivo para assets estáticos
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML sem cache (para atualizações rápidas)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Página 404 customizada (futuro)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
