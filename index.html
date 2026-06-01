@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faria Lima Backstage — Análise e contexto do mercado financeiro brasileiro</title>
-<meta name="description" content="Análises, contexto e decoder do mercado financeiro brasileiro. Consolidamos as principais movimentações da semana, com fontes públicas e leitura editorial.">
+<meta name="description" content="Análises, contexto e decoder do mercado financeiro brasileiro. Leitura editorial com fontes públicas, sem condescendência.">
 <meta property="og:title" content="Faria Lima Backstage">
 <meta property="og:description" content="Análise e contexto do mercado financeiro brasileiro.">
 <meta property="og:type" content="website">
@@ -18,25 +18,23 @@
 </head>
 <body>
 
-<!-- Marquee de cotações (preenchido por JavaScript com dados reais) -->
 <div class="marquee" id="market-ticker">
   <div class="marquee-track" id="ticker-track">
     <span class="ticker ticker-loading">Carregando cotações em tempo real…</span>
   </div>
 </div>
 
-<!-- Header -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
       <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
     </a>
     <nav class="main-nav">
-      <a href="#analises">Análise</a>
-      <a href="#decoder">Decoder</a>
-      <a href="#quem">Quem é Quem</a>
+      <a href="/analises/">Análises</a>
+      <a href="/decoder/">Decoder</a>
+      <a href="/quem-e-quem/">Quem é Quem</a>
       <a href="#newsletter">Newsletter</a>
-      <a href="#sobre">Sobre</a>
+      <a href="/sobre/">Sobre</a>
     </nav>
     <a href="#newsletter" class="btn-assinar">Assinar</a>
     <button class="menu-toggle" aria-label="Menu">
@@ -52,13 +50,15 @@
     <div class="container">
       <div class="hero-grid">
         <article class="hero-main">
-          <div class="tag tag-analise">Análise · Política monetária</div>
-          <h1 class="hero-title">Copom corta Selic para 14,75% e dá início ao primeiro ciclo de afrouxamento desde 2024</h1>
-          <p class="hero-lede">Decisão unânime em 18 de março marcou a primeira queda em quase dois anos. O comitê, presidido por Gabriel Galípolo, optou por 0,25 ponto percentual em vez dos 0,50 inicialmente precificados pelo mercado — a guerra no Oriente Médio segurou a mão. A ata da reunião deixou em aberto os próximos passos.</p>
+          <div class="tag tag-analise">Análise · Mercado de capitais</div>
+          <h1 class="hero-title"><a href="/analises/ubs-esquizofrenia-brasil.html" style="color:inherit">A esquizofrenia do UBS sobre o Brasil em três semanas</a></h1>
+          <p class="hero-lede">Poucas semanas atrás, um relatório do UBS apontava resiliência dos mercados emergentes diante de crises globais. Em seguida, o próprio UBS BB cortou a recomendação da B3 para "neutra". Quem precisa decifrar o quebra-cabeça do mercado está olhando pra um banco que recomendou e desrecomendou o mesmo país no espaço de poucas semanas.</p>
           <div class="byline">
-            <span class="byline-author">Fontes: Banco Central, CNN Brasil, Agência Brasil</span>
+            <span class="byline-author">Por Editor</span>
             <span class="byline-sep">·</span>
-            <span class="byline-time">Decisão de 18/03/2026</span>
+            <span class="byline-time">Atualizado em 02/06/2026</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-read">5 min de leitura</span>
           </div>
         </article>
 
@@ -68,23 +68,23 @@
             <ol class="side-list">
               <li>
                 <span class="rank">01</span>
-                <a href="#analises">Ibovespa volta aos 178 mil pontos com recuperação de bancos e Petrobras</a>
+                <a href="/analises/paraguai-evasao-empresas.html">O Brasil exporta empresas. Paraguai exporta vergonha alheia.</a>
               </li>
               <li>
                 <span class="rank">02</span>
-                <a href="#analises">Capital estrangeiro acumula entrada de R$ 8,8 bi na B3 só no início de 2026</a>
+                <a href="/decoder/lci-lca-cdb-aritmetica.html">LCI, LCA ou CDB: a aritmética do líquido que ninguém faz</a>
               </li>
               <li>
                 <span class="rank">03</span>
-                <a href="#analises">Mercado de M&A no Brasil cai 52% em transações, mas sobe 34% em volume financeiro</a>
+                <a href="/analises/demissoes-faria-lima-ia.html">A temporada de cortes na Faria Lima: quando "uso de IA" entra no PowerPoint</a>
               </li>
               <li>
                 <span class="rank">04</span>
-                <a href="#decoder">CVM coloca tokenização no centro da agenda regulatória de 2026</a>
+                <a href="/analises/ciclo-selic-cortes-2026.html">Copom corta Selic para 14,5%: o ciclo que o BC chama de "calibração"</a>
               </li>
               <li>
                 <span class="rank">05</span>
-                <a href="#analises">Nova carteira do Ibovespa entra em vigor com 79 papéis de 76 empresas</a>
+                <a href="/quem-e-quem/gabriel-galipolo-bacen.html">Gabriel Galípolo no Bacen: o presidente do ciclo de cortes</a>
               </li>
             </ol>
           </div>
@@ -102,62 +102,74 @@
     </div>
   </div>
 
-  <!-- Grid de matérias verídicas -->
-  <section class="grid-section" id="analises">
+  <!-- Grid de matérias -->
+  <section class="grid-section">
     <div class="container">
       <div class="article-grid">
 
         <article class="article-card">
-          <div class="tag tag-analise">Análise · Câmbio</div>
-          <h2><a href="#newsletter">Dólar abaixo de R$ 5,00: o que sustentou o real em 2026 e o que pode mudar</a></h2>
-          <p>A moeda americana fechou a R$ 4,9863 em 14 de maio. A entrada robusta de capital estrangeiro na B3 e o diferencial de juros real elevado (acima de 9% a.a.) explicam parte do movimento. A pergunta é se o cenário se sustenta com o início do ciclo de corte da Selic.</p>
+          <div class="tag tag-analise">Análise · Custo Brasil</div>
+          <h2><a href="/analises/paraguai-evasao-empresas.html">O Brasil exporta empresas. Paraguai exporta vergonha alheia.</a></h2>
+          <p>Mais de 232 empresas brasileiras já produzem no Paraguai sob a Lei de Maquila. Cerca de 25 mil empregos foram transferidos. A migração silenciosa do mapa industrial do Mercosul tem um endereço — e um motivo bem documentado.</p>
           <div class="byline">
-            <span class="byline-author">Fonte: dados públicos B3, BCB</span>
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">2 dias</span>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="tag tag-decoder">Decoder · Renda fixa</div>
+          <h2><a href="/decoder/lci-lca-cdb-aritmetica.html">LCI, LCA ou CDB: a aritmética do líquido que ninguém faz</a></h2>
+          <p>Com Selic em 14,5% e CDI no patamar, três produtos isentos voltaram a brilhar nas prateleiras dos bancos. Mas a vantagem fiscal vira armadilha se a conta não for feita até o fim. Guia comparativo para quem leva a matemática a sério.</p>
+          <div class="byline">
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">3 dias</span>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="tag tag-analise">Análise · Mercado de trabalho</div>
+          <h2><a href="/analises/demissoes-faria-lima-ia.html">A temporada de cortes na Faria Lima: quando "uso de IA" entra no PowerPoint</a></h2>
+          <p>Stone demitiu cerca de 370 pessoas em março, com foco em tecnologia. A justificativa oficial citou redução de custos e uso de inteligência artificial. O cenário se repete em outras companhias do setor — e a narrativa começa a soar familiar demais.</p>
+          <div class="byline">
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">4 dias</span>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="tag tag-analise">Análise · Política monetária</div>
+          <h2><a href="/analises/ciclo-selic-cortes-2026.html">Copom corta Selic para 14,5%: o ciclo que o BC chama de "calibração"</a></h2>
+          <p>A segunda redução consecutiva no ciclo de afrouxamento aconteceu em abril, por unanimidade. O Focus precifica 12,25% até dezembro. Mas a guerra no Oriente Médio e a inflação acima do teto mantêm o BC em modo "calibração" — palavra que carrega mais peso do que parece.</p>
+          <div class="byline">
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">1 semana</span>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="tag tag-bastidores">Quem é Quem · Banco Central</div>
+          <h2><a href="/quem-e-quem/gabriel-galipolo-bacen.html">Gabriel Galípolo, presidente do Bacen</a></h2>
+          <p>Conduziu a transição da gestão Campos Neto e preside o ciclo de afrouxamento iniciado em março de 2026. Ex-secretário-executivo da Fazenda, carrega o desafio de provar a autonomia operacional do BC em ano eleitoral. Trajetória, posicionamento e leitura do mandato.</p>
+          <div class="byline">
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">1 semana</span>
           </div>
         </article>
 
         <article class="article-card">
           <div class="tag tag-decoder">Decoder · Política monetária</div>
-          <h2><a href="#newsletter">O que é "ciclo de calibração" e por que o Copom passou a usar essa expressão</a></h2>
-          <p>O comunicado de 18 de março trouxe a expressão pela primeira vez. A formulação dá ao Banco Central liberdade para acelerar, frear ou até reverter o corte sem comprometer-se com uma trajetória. Entenda a engenharia da linguagem do Copom.</p>
+          <h2><a href="/decoder/lci-lca-cdb-aritmetica.html">O que é o Boletim Focus e por que o IPCA subiu pela 11ª semana</a></h2>
+          <p>A mediana do mercado para o IPCA de 2026 subiu de 4,92% para 5,04% — acima do teto da meta. Entenda como o Focus é construído, por que o Copom o usa como bússola e o que a 11ª alta consecutiva significa para o ciclo de cortes.</p>
           <div class="byline">
-            <span class="byline-author">Fonte: comunicado oficial Bacen</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Bolsa</div>
-          <h2><a href="#newsletter">Por que o capital estrangeiro voltou para a B3 — e por quanto tempo</a></h2>
-          <p>Em janeiro de 2026, o saldo de capital externo na bolsa brasileira chegou a quase R$ 8,8 bilhões em apenas 20 dias. O volume diário médio saltou para R$ 44 bi em momentos de pico, contra média anual de R$ 30 bi. Realocação global em mercados emergentes ou aposta específica no Brasil?</p>
-          <div class="byline">
-            <span class="byline-author">Fonte: dados públicos B3</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · M&A</div>
-          <h2><a href="#newsletter">M&A no Brasil em 2026: 52% menos transações, 34% mais dinheiro</a></h2>
-          <p>O primeiro bimestre registrou 144 operações movimentando R$ 36,6 bilhões. Menos negócios, mas tickets maiores. Bancos e investimentos passaram a ser o terceiro setor mais ativo, atrás de software e imobiliário. O que a leitura macroeconômica revela.</p>
-          <div class="byline">
-            <span class="byline-author">Fonte: relatórios públicos de mercado</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-decoder">Decoder · Regulação</div>
-          <h2><a href="#newsletter">Tokenização na agenda da CVM em 2026: o que muda no mercado</a></h2>
-          <p>A autarquia colocou tokenização entre as prioridades do ano. O chamado Projeto 135 Light revisa duas resoluções com foco em mercados menores e ativos digitais. A leitura: a CVM quer construir base regulatória sem matar a inovação.</p>
-          <div class="byline">
-            <span class="byline-author">Fonte: agenda regulatória CVM 2026</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Renda fixa</div>
-          <h2><a href="#newsletter">Eco Invest Brasil: Banco do Brasil lidera captação de R$ 1,5 bilhão no 4º leilão</a></h2>
-          <p>O programa do governo federal de financiamento verde alcançou nova marca em maio de 2026. A operação reforça o protagonismo do BB na agenda de finanças sustentáveis e indica que o ESG segue sendo vetor relevante no mercado brasileiro de renda fixa.</p>
-          <div class="byline">
-            <span class="byline-author">Fonte: Money Times, comunicado oficial</span>
+            <span class="byline-author">Por Editor</span>
+            <span class="byline-sep">·</span>
+            <span class="byline-time">2 semanas</span>
           </div>
         </article>
 
@@ -172,8 +184,8 @@
         <div class="newsletter-content">
           <div class="newsletter-label">Newsletter</div>
           <h2 class="newsletter-title">A leitura editorial <em>antes</em> de o mercado abrir.</h2>
-          <p class="newsletter-desc">Três edições por semana com análise, contexto e decoder do mercado financeiro brasileiro. Consolidamos as principais movimentações com fontes públicas e leitura editorial. Sem spam, com clareza.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Em breve! O cadastro será conectado ao sistema de newsletter na próxima fase.');">
+          <p class="newsletter-desc">Três edições por semana com análise, contexto e decoder do mercado financeiro brasileiro. Sem spam, com clareza.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Em breve! Cadastro será conectado ao Beehiiv nos próximos dias.');">
             <input type="email" placeholder="seu.email@empresa.com.br" required>
             <button type="submit">Quero entrar →</button>
           </form>
@@ -189,55 +201,28 @@
     </div>
   </section>
 
-  <!-- Decoder -->
-  <section class="quem-section" id="decoder">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Decoder</h2>
-        <p class="section-sub">Conceitos do mercado financeiro explicados sem condescendência</p>
-      </div>
-      <div class="quem-grid">
-        <a href="#newsletter" class="quem-card">
-          <div class="quem-tag">Política monetária</div>
-          <h3>Selic, CDI e juro real: como se relacionam</h3>
-          <p>Com a Selic em 14,75% e o IPCA em torno de 5%, o juro real brasileiro segue entre os mais altos do mundo. Entenda como esses três números conversam — e por que isso importa para sua carteira.</p>
-        </a>
-        <a href="#newsletter" class="quem-card">
-          <div class="quem-tag">Mercado de capitais</div>
-          <h3>O que é o Boletim Focus e como ele influencia o Copom</h3>
-          <p>Publicado toda segunda-feira pelo Banco Central, o Focus consolida projeções de mais de 140 instituições. Antes da última reunião, o mercado virou a aposta de 0,50 para 0,25 ponto — e o Copom seguiu o consenso.</p>
-        </a>
-        <a href="#newsletter" class="quem-card">
-          <div class="quem-tag">Cripto e tokenização</div>
-          <h3>Tokens como valores mobiliários: o que diz o Parecer CVM 40</h3>
-          <p>A regra é funcional: se um token se parece com uma ação, debênture ou contrato de investimento coletivo, é responsabilidade da CVM. Bitcoin e a maioria das criptos ficam fora, exceto em derivativos.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quem é quem -->
-  <section class="quem-section" id="quem">
+  <!-- Quem é Quem -->
+  <section class="quem-section">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Quem é Quem</h2>
         <p class="section-sub">Os tomadores de decisão que importam, em contexto</p>
       </div>
       <div class="quem-grid">
-        <a href="#newsletter" class="quem-card">
+        <a href="/quem-e-quem/gabriel-galipolo-bacen.html" class="quem-card">
           <div class="quem-tag">Banco Central</div>
           <h3>Gabriel Galípolo, presidente do Bacen</h3>
-          <p>Conduziu a transição da gestão Campos Neto e preside o ciclo de afrouxamento iniciado em março de 2026. Como ex-Fazenda na gestão Haddad, carrega o desafio de provar autonomia operacional do BC.</p>
+          <p>Conduziu a transição da gestão Campos Neto e preside o ciclo de afrouxamento iniciado em março de 2026. Ex-Fazenda, carrega o desafio de provar autonomia operacional do BC.</p>
         </a>
-        <a href="#newsletter" class="quem-card">
+        <a href="/quem-e-quem/cmn-conselho-monetario.html" class="quem-card">
           <div class="quem-tag">Política econômica</div>
           <h3>O Conselho Monetário Nacional</h3>
-          <p>Formado por três membros — Fazenda, Planejamento e BC —, o CMN define a meta de inflação. A meta vigente é de 3% com banda de 1,5 pp em sistema contínuo, modelo adotado em 2025.</p>
+          <p>Formado por três membros — Fazenda, Planejamento e BC —, o CMN define a meta de inflação. A meta vigente é de 3% com banda de 1,5 pp em sistema contínuo.</p>
         </a>
-        <a href="#newsletter" class="quem-card">
+        <a href="/quem-e-quem/cvm-agenda-regulatoria.html" class="quem-card">
           <div class="quem-tag">Mercado de capitais</div>
           <h3>A CVM em fase regulatória ativa</h3>
-          <p>Com tokenização e revisão de regras para mercados menores na pauta de 2026, a Comissão de Valores Mobiliários sai do papel reativo e assume protagonismo na construção da próxima fase do mercado brasileiro.</p>
+          <p>Com tokenização e revisão de regras para mercados menores na pauta de 2026, a Comissão de Valores Mobiliários sai do papel reativo e assume protagonismo.</p>
         </a>
       </div>
     </div>
@@ -245,35 +230,31 @@
 
 </main>
 
-<!-- Footer -->
-<footer class="site-footer" id="sobre">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
           <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
         </div>
-        <p>Análise e contexto do mercado financeiro brasileiro. Consolidamos as principais movimentações da semana, com leitura editorial e fontes públicas. Conteúdo informativo — não constitui recomendação de investimento.</p>
+        <p>Análise e contexto do mercado financeiro brasileiro. Conteúdo informativo — não constitui recomendação de investimento.</p>
       </div>
       <div class="footer-col">
         <h4>Editorial</h4>
-        <a href="#analises">Análises</a>
-        <a href="#decoder">Decoder</a>
-        <a href="#quem">Quem é Quem</a>
+        <a href="/analises/">Análises</a>
+        <a href="/decoder/">Decoder</a>
+        <a href="/quem-e-quem/">Quem é Quem</a>
         <a href="#newsletter">Newsletter</a>
       </div>
       <div class="footer-col">
         <h4>Backstage</h4>
-        <a href="#sobre">Sobre</a>
-        <a href="#newsletter">Contato</a>
-        <a href="#newsletter">Patrocínio</a>
+        <a href="/sobre/">Sobre</a>
+        <a href="/sobre/#contato">Contato</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
-        <a href="#">Política Editorial</a>
-        <a href="#">Correções</a>
+        <a href="/sobre/privacidade.html">Privacidade</a>
+        <a href="/sobre/termos.html">Termos</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -283,6 +264,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
