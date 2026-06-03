@@ -913,23 +913,6 @@ h1, h2, h3 {
   font-weight: 400;
 }
 
-/* Nota editorial: estilo Brazil Journal — marginalia em itálico, sem caixa */
-.article-body div[style*="background: #f5f3ed"] {
-  background: transparent !important;
-  border-left: 3px solid #FAC775 !important;
-  padding: 4px 20px !important;
-  margin: 1.5rem 0 !important;
-  font-style: italic;
-  color: #555;
-  font-size: 15px !important;
-  line-height: 1.6 !important;
-}
-
-.article-body div[style*="background: #f5f3ed"] strong {
-  font-style: normal;
-  color: #0a0a0a;
-}
-
 
 /* Ajuste para títulos longos de matéria — escala automática */
 .article-hero-title {
