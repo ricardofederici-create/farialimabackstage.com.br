@@ -586,7 +586,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
   color: #d9d9d9;
 }
-.article-body p { margin-bottom: 22px; }
+.article-body p { margin-bottom: 28px; }
 .article-body h2 {
   font-family: var(--font-display);
   font-size: 28px;
@@ -855,8 +855,9 @@ h1, h2, h3 {
 /* Corpo do texto mais generoso, igual BJ */
 .article-body p {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #1a1a1a;
+  margin-bottom: 28px !important;
 }
 
 /* Lede da matéria em sans (estilo BJ usa sans no lede) */
@@ -873,16 +874,18 @@ h1, h2, h3 {
 .article-body h2 {
   font-size: 26px;
   font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 56px !important;
+  margin-bottom: 20px !important;
   color: #0a0a0a;
+  line-height: 1.25;
 }
 
 .article-body h3 {
   font-size: 20px;
   font-weight: 600;
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 40px !important;
+  margin-bottom: 16px !important;
+  line-height: 1.3;
 }
 
 /* Blockquote estilo Brazil Journal — sem caixa, só itálico com borda lateral discreta */
@@ -890,11 +893,11 @@ h1, h2, h3 {
   font-family: var(--font-sans);
   font-style: italic;
   font-size: 22px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #0a0a0a;
   border-left: 3px solid #FAC775;
-  padding-left: 20px;
-  margin: 2rem 0;
+  padding-left: 24px;
+  margin: 40px 0 !important;
   font-weight: 400;
 }
 
@@ -932,4 +935,23 @@ h1, h2, h3 {
 /* Sidebar e cards — ajuste fino */
 .side-list li a, .article-card h2 a {
   line-height: 1.25;
+}
+
+
+/* Espaçamento extra entre seções */
+.article-body h2 + p {
+  margin-top: 0 !important;
+}
+.article-body p + h2 {
+  margin-top: 64px !important;
+}
+
+/* Lede da matéria com mais respiro */
+.article-hero-lede {
+  margin-bottom: 36px !important;
+}
+
+/* Article body com padding superior maior */
+.article-body {
+  padding-top: 56px !important;
 }
