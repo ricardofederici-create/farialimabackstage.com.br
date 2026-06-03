@@ -14,9 +14,9 @@
   --yellow-dark: #D89B3D;
   --coral: #F0997B;
   --green: #5DCAA5;
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-mono: 'Inter', system-ui, -apple-system, sans-serif;
   --container: 1280px;
 }
 
@@ -832,4 +832,121 @@ img { max-width: 100%; display: block; }
   }
   .related-grid { grid-template-columns: 1fr; }
   .article-body { font-size: 17px; }
+}
+
+
+/* === AJUSTES PARA ESTILO BRAZIL JOURNAL === */
+
+/* Títulos em peso forte como o Brazil Journal */
+.hero-title,
+.article-hero-title,
+h1, h2, h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* Logo em condensada bold */
+.logo-main, .logo-accent {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+
+/* Corpo do texto mais generoso, igual BJ */
+.article-body p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+/* Lede da matéria em sans (estilo BJ usa sans no lede) */
+.article-hero-lede, .hero-lede {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #555;
+}
+
+/* Subtítulos H2 mais discretos, peso forte, espaçamento generoso */
+.article-body h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+.article-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Blockquote estilo Brazil Journal — sem caixa, só itálico com borda lateral discreta */
+.article-body blockquote {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #0a0a0a;
+  border-left: 3px solid #FAC775;
+  padding-left: 20px;
+  margin: 2rem 0;
+  font-weight: 400;
+}
+
+/* Tags em uppercase sans, sem mono */
+.tag {
+  font-family: var(--font-sans) !important;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* Byline mais clean */
+.byline, .article-meta {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+/* Nota editorial: estilo Brazil Journal — marginalia em itálico, sem caixa */
+.article-body div[style*="background: #f5f3ed"] {
+  background: transparent !important;
+  border-left: 3px solid #FAC775 !important;
+  padding: 4px 20px !important;
+  margin: 1.5rem 0 !important;
+  font-style: italic;
+  color: #555;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+.article-body div[style*="background: #f5f3ed"] strong {
+  font-style: normal;
+  color: #0a0a0a;
+}
+
+
+/* Ajuste para títulos longos de matéria — escala automática */
+.article-hero-title {
+  font-size: clamp(28px, 4vw, 42px) !important;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 920px;
+}
+
+/* Hero da homepage (manchete principal) — menor pra título longo */
+.hero-title {
+  font-size: clamp(28px, 3.8vw, 44px) !important;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+/* Sidebar e cards — ajuste fino */
+.side-list li a, .article-card h2 a {
+  line-height: 1.25;
 }
