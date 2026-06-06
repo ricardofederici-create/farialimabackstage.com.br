@@ -14,7 +14,7 @@
   --yellow-dark: #D89B3D;
   --coral: #F0997B;
   --green: #5DCAA5;
-  --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Inter', system-ui, -apple-system, sans-serif;
   --container: 1280px;
@@ -841,15 +841,16 @@ img { max-width: 100%; display: block; }
 .hero-title,
 .article-hero-title,
 h1, h2, h3 {
-  font-weight: 700 !important;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
 }
 
 /* Logo em condensada bold */
 .logo-main, .logo-accent {
-  font-weight: 700 !important;
-  letter-spacing: -0.01em;
+  font-weight: 400 !important;
+  letter-spacing: -0.005em;
+  font-family: 'DM Serif Display', Georgia, serif;
 }
 
 /* Corpo do texto mais generoso, igual BJ */
@@ -872,20 +873,22 @@ h1, h2, h3 {
 
 /* Subtítulos H2 mais discretos, peso forte, espaçamento generoso */
 .article-body h2 {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 400;
   margin-top: 56px !important;
   margin-bottom: 20px !important;
   color: #0a0a0a;
   line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .article-body h3 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 400;
   margin-top: 40px !important;
   margin-bottom: 16px !important;
   line-height: 1.3;
+  letter-spacing: -0.005em;
 }
 
 /* Blockquote estilo Brazil Journal — sem caixa, só itálico com borda lateral discreta */
