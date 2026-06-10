@@ -1,25 +1,38 @@
-FARIA LIMA BACKSTAGE — ATUALIZAÇÃO 10/jun/2026 (v5)
+FARIA LIMA BACKSTAGE — ATUALIZACAO 10/jun/2026 (v6)
 ====================================================
+CORRECAO ESTRUTURAL DO PLACAR DO CALLMAP
 
-O QUE MUDOU NESTA VERSÃO (só o CallMap):
-- ÁGORA Top 10: saiu de "s/ dado" -> retorno REAL calculado.
-  Carteira de junho (BPAC11, ISAE4, AXIA6, ITUB4, ALOS3, PETR4,
-  CSMG3, VALE3, VBBR3, GGBR4), equal-weight, fechamentos Yahoo.
-  Resultado parcial 01/06->10/06: -0,79% vs Ibov -2,02% = +1,23pp.
-- BRADESCO BBI: "s/ dado" -> "n/a · só top picks" (o BBI não
-  publica carteira com pesos; é limitação da fonte, não omissão).
-- XP Top 10: "s/ dado" -> "pend. âncora". Tenho TODOS os
-  movimentos mês a mês, mas a XP não publica a composição com
-  pesos. Para calcular o retorno, preciso de UM mês-âncora: a
-  lista dos 10 nomes que você vê logado. Cole essa lista e a XP
-  fecha igual à Ágora.
+O PROBLEMA CORRIGIDO:
+O placar anterior comparava as casas em JANELAS DIFERENTES e com
+retornos AUTORREPORTADOS (BTG "+647,7% desde 2009" ao lado de
+Agora "jun parcial"). Incomparavel. Agora TODAS estao no MESMO FRAME.
+
+NOVO PLACAR (recalculado, frame unico jun/2026, 01/06->10/06,
+fechamentos B3 via Yahoo, contra Ibovespa -2,21%):
+  - Agora Top 10 ... -0,98%  (+1,23pp)  SUPEROU
+  - Safra Top 10 ... -2,30%  (-0,09pp)  em linha  [pesos REAIS]
+  - Itau Top 5 ..... -5,69%  (-3,49pp)  abaixo
+  - BTG 10SIM ...... pendente (lista fechada no SD Select)
+  - XP Top 10 ...... pendente (composicao nao publica)
+  - Bradesco BBI ... n/a (so top picks)
+
+REGRA DE PESO: peso real onde a casa publica (Safra); proporcao
+de 100% dividida pelo n. de ativos onde nao publica (Agora 10%/un,
+Itau 20%/un).
+
+TAMBEM CORRIGIDO:
+  - Textos de metodologia (topo + disclaimer) que diziam "nao
+    recalculamos precos" -> agora dizem que recalculamos.
+  - Resumo do placar e leitura final reescritos com os numeros novos.
+  - Removida referencia orfa a "Genial" (casa que nao esta no mapa).
+  - Log de atualizacoes atualizado.
 
 DEPLOY (rotina de sempre):
 1. Descompacte ESTE zip POR CIMA da pasta local do GitHub Desktop.
-2. NÃO há nada para deletar manualmente nesta rodada (nenhuma
-   página foi removida; só o callmap/index.html mudou).
-3. Confira no GitHub Desktop que callmap/index.html aparece como
-   modificado. Commit -> Push. Netlify republica em ~30s.
+2. Nada para deletar manualmente (so callmap/index.html mudou).
+3. Confira que callmap/index.html aparece modificado no GitHub
+   Desktop. Commit -> Push. Netlify republica em ~30s.
 
-LEMBRETE: conta Netlify estava em ~75% dos créditos do ciclo
-(26/mai-25/jun). Esta é uma atualização única (1 deploy), ok.
+PENDENCIA REAL PARA FECHAR 100%: as carteiras completas de BTG e XP.
+BTG tranca os 10 nomes no SD Select/BTG Content; XP nao publica a
+composicao. Com as listas, fecham igual as outras tres.
