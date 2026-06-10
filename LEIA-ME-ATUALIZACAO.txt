@@ -1,50 +1,53 @@
-FARIA LIMA BACKSTAGE — Atualização 10/06/2026 (v2 — aprofundamento)
-====================================================================
-Rotina normal: descompacte este ZIP POR CIMA da pasta local do
-GitHub Desktop (substituir tudo) → Commit → Push → Netlify ~30s.
+FARIA LIMA BACKSTAGE — Atualização 10/06/2026 (v3 — backtest + Capag SP)
+=========================================================================
+DEPLOY ÚNICO (economiza crédito Netlify): descompacte este ZIP POR CIMA
+da pasta local do GitHub Desktop → Commit → Push. Republica em ~30s.
 
-O QUE MUDOU NESTA VERSÃO (sobre a publicação anterior):
+>>> IMPORTANTE: confirme que o GitHub Desktop lista callmap/index.html e
+    analises/saude-fiscal-estados-capag.html como ALTERADOS antes do
+    commit. Se não listar, o conteúdo novo não entra. (Foi o que travou
+    o deploy anterior — o CallMap no ar ainda era a versão vazia.)
 
-1. MATÉRIA "O risco que mudou de dono" (crédito) — REESCRITA, mais
-   densa, agora com 3 artes gráficas embutidas (SVG, tema dark):
-   - Figura 1: as duas curvas sobrepostas (RJs x FIDCs)
-   - Figura 2: salto da PF em FIDCs (160 mil → 330 mil)
-   - Figura 3: 89% das debêntures sem garantia real
-   + seção nova "O mecanismo: como o risco trocou de dono".
+O QUE MUDOU NESTA VERSÃO:
 
-2. MATÉRIA "O mapa fiscal dos estados" (Capag) — REESCRITA, agora
-   com o MAPA DE NOTAS REAL de cada estado (PR, BA, ES, MS, MT, CE
-   em A; GO em B+; SP, MG, RJ em C; RS em D), gráfico de concentração
-   da dívida (4 estados = 56,6%) e tabela A-D com exemplos reais.
+1. CALLMAP — agora é o BACKTEST DE 3 MESES que combinamos (abr–jun/2026),
+   com os três pilares:
+   - Pilar 1 (Convicção): quem segurou a mão, quem girou a carteira
+     (Ágora 8/10, Terra 5/10, Planner 4/10).
+   - Pilar 2 (Fluxo): entradas e saídas mês a mês, abril→maio→junho.
+   - Pilar 3 (Performance): o que cada carteira ENTREGOU vs benchmark,
+     com retorno divulgado pelas próprias casas (Itaú Top 5, Safra Top 10,
+     Genial ESG/Micro/Dividendos/Ibovespa 10+). Destaque: a Genial
+     Ibovespa 10+ está 8,7pp ABAIXO do índice que promete superar.
+   - Todos os links agora vão para a fonte DATADA (ADVFN abr/mai/jun,
+     Genial, Safra, Money Times) — verificados um a um. O link da XP
+     que dava 404 foi removido.
+   - NÃO inventamos preço: performance é a divulgada pelas casas; onde
+     a casa não divulga, fica "—".
 
-3. CALLMAP — REFEITO para não abrir vazio:
-   - Agora mostra a 1ª LEITURA DE MOVIMENTO (maio → junho/2026):
-     entradas e saídas reais por casa (BTG, Ágora, Terra, Planner).
-   - Links de Fonte agora vão para a fonte DATADA que mostra a
-     carteira (ADVFN maio/jun, íon Itaú) — não mais a home das casas.
-   - Ranking de consenso de junho ativado (VALE3 e ITUB4 lideram).
-   - XP, Bradesco BBI e internacionais entram na rodada de julho,
-     quando o ranking de PERFORMANCE começa a ser apurado.
+2. MATÉRIA DOS ESTADOS (Capag) — nova seção "O caso São Paulo: por que
+   o estado mais rico é nota C?", com:
+   - O fato de SP ter sido nota B em 2021-2023 (piora recente, não
+     fragilidade crônica).
+   - A mecânica: um único indicador ruim (poupança corrente >95% ou
+     caixa negativo) derruba a nota inteira.
+   - Gráfico decompondo os 3 indicadores: endividamento confortável,
+     poupança e liquidez apertadas.
+   - A conclusão: SP é C por gastar quase tudo com custeio, não por
+     dever demais. O C de SP e o C do Rio escondem realidades opostas.
 
-ARQUIVOS NOVOS/ALTERADOS NESTE PACOTE:
-   analises/credito-rj-books-proprietarios.html   (reescrita)
-   analises/saude-fiscal-estados-capag.html       (reescrita)
-   analises/spacex-ipo-engenharia-oferta.html     (mantida)
-   callmap/index.html                             (refeito)
-   callmap/metodologia.html                       (mantida)
-   index.html, analises/index.html, sitemap.xml   (menu/listagem)
-   + menu CallMap em todas as páginas
+3. Matérias de crédito e SpaceX: mantidas (já com arte gráfica).
 
-AÇÃO MANUAL (só uma vez): deletar da pasta local, se ainda existirem,
-os 3 arquivos antigos que saíram de circulação:
+AÇÃO MANUAL (uma vez): deletar da pasta local, se existirem:
    analises/seneca-investidor-brasileiro-duas-frases.html
    analises/private-bankers-exodo-bancos.html
    analises/fiis-11-por-cento-yield-risco.html
-(O "descompactar por cima" não deleta; o GitHub Desktop mostra o
-delete como mudança e você commita junto.)
 
-NÃO APAGAR (estão no ar, a home aponta pra elas, e este ZIP as
-preserva pois já estão na sua pasta):
+NÃO APAGAR (no ar, a home aponta pra elas):
    analises/patria-superfundos-fiis-consolidacao.html
    analises/raio-xp-compra-brasil-fluxo-gringo.html
    analises/ferramentas-sistema-financeiro-brasileiro-fapesp.html
+
+PRÓXIMA RODADA (julho): incorporar XP e Bradesco BBI ao backtest; se
+você subir um CSV de cotações históricas, recalculamos o retorno de
+cada call ativo a ativo (hoje a performance é a que as casas divulgam).
