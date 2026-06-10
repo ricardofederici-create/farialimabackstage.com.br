@@ -1,38 +1,36 @@
-FARIA LIMA BACKSTAGE — ATUALIZACAO 10/jun/2026 (v6)
+FARIA LIMA BACKSTAGE — ATUALIZACAO 10/jun/2026 (v8)
 ====================================================
-CORRECAO ESTRUTURAL DO PLACAR DO CALLMAP
+CALLMAP COMPLETO: OS 3 PILARES QUE FALTAVAM + AJUSTES
 
-O PROBLEMA CORRIGIDO:
-O placar anterior comparava as casas em JANELAS DIFERENTES e com
-retornos AUTORREPORTADOS (BTG "+647,7% desde 2009" ao lado de
-Agora "jun parcial"). Incomparavel. Agora TODAS estao no MESMO FRAME.
+O QUE ENTROU NESTA VERSAO:
 
-NOVO PLACAR (recalculado, frame unico jun/2026, 01/06->10/06,
-fechamentos B3 via Yahoo, contra Ibovespa -2,21%):
-  - Agora Top 10 ... -0,98%  (+1,23pp)  SUPEROU
-  - Safra Top 10 ... -2,30%  (-0,09pp)  em linha  [pesos REAIS]
-  - Itau Top 5 ..... -5,69%  (-3,49pp)  abaixo
-  - BTG 10SIM ...... pendente (lista fechada no SD Select)
-  - XP Top 10 ...... pendente (composicao nao publica)
-  - Bradesco BBI ... n/a (so top picks)
+1. SINALIZADOR DE CONFLITO (ajustado) — pilar de accountability
+   que estava incompleto. Agora cruza a relacao Bradesco BBI <->
+   Agora (mesmo grupo, ambos rastreados). Links apontam para a
+   busca de FATOS RELEVANTES da CVM (onde o fato se prova), nao
+   para home institucional. Nota conservadora: so entra fato
+   publico com link, nunca suposicao, nunca causalidade.
 
-REGRA DE PESO: peso real onde a casa publica (Safra); proporcao
-de 100% dividida pelo n. de ativos onde nao publica (Agora 10%/un,
-Itau 20%/un).
+2. TABELA INTERNACIONAL (nova) — J.P. Morgan e Goldman Sachs por
+   RATING + PRECO-ALVO (nao carteira de pesos, que eles nao
+   publicam). Todos os alvos COM DATA:
+     - JPM: Brasil Overweight (dez/25); PETR4 R$64; PRIO3 R$70
+     - Goldman: PETR4 R$52,40; Vale ADR US$18
+   Nota: preco-alvo muda e diverge entre casas -> por isso a data.
 
-TAMBEM CORRIGIDO:
-  - Textos de metodologia (topo + disclaimer) que diziam "nao
-    recalculamos precos" -> agora dizem que recalculamos.
-  - Resumo do placar e leitura final reescritos com os numeros novos.
-  - Removida referencia orfa a "Genial" (casa que nao esta no mapa).
-  - Log de atualizacoes atualizado.
+3. VEREDITO EDITORIAL (ja existia, mantido) — separa FATO (tabelas)
+   de OPINIAO (so nesta secao, rotulada, com link p/ analise).
+
+ESTRUTURA FINAL = 8 secoes: marco zero, veredito editorial,
+conviccao, fluxo, conflito, internacionais, consenso, leitura.
 
 DEPLOY (rotina de sempre):
 1. Descompacte ESTE zip POR CIMA da pasta local do GitHub Desktop.
-2. Nada para deletar manualmente (so callmap/index.html mudou).
+2. Nada para deletar (so callmap/index.html mudou).
 3. Confira que callmap/index.html aparece modificado no GitHub
    Desktop. Commit -> Push. Netlify republica em ~30s.
 
-PENDENCIA REAL PARA FECHAR 100%: as carteiras completas de BTG e XP.
-BTG tranca os 10 nomes no SD Select/BTG Content; XP nao publica a
-composicao. Com as listas, fecham igual as outras tres.
+PENDENCIAS p/ proximas rodadas: listas completas de BTG e XP
+(para o retorno desde o marco zero); preencher conflito caso a
+caso conforme fatos relevantes aparecam; links de analise do
+veredito editorial (hoje "em breve").
