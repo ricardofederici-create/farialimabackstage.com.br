@@ -1,0 +1,36 @@
+==========================================================
+  ESTE E O ZIP CORRETO — CallMap v8 (10/jun/2026)
+==========================================================
+
+COMO TER CERTEZA QUE SUBIU A VERSAO CERTA:
+
+Depois do deploy, abra farialimabackstage.com.br/callmap e role
+ate o FIM da pagina. Voce DEVE ver, nesta ordem:
+
+  [x] Topo diz "Observatorio · MARCO ZERO · 10/06/2026"
+      (NAO pode dizer "Backtest 2026")
+  [x] Placar diz "A largada — onde cada casa comeca"
+      com coluna "Retorno desde 10/06" = "0,00% · base"
+      (NAO pode mostrar "-0,98%", "-5,69%" etc)
+  [x] Secao "Veredito editorial · opiniao, separada dos fatos"
+  [x] Secao "Sinalizador de conflito · disclosure CVM 20"
+  [x] Secao "As internacionais · preco-alvo & rating"
+      com J.P. Morgan e Goldman Sachs
+
+Se NAO ver essas secoes, o deploy NAO pegou. Causa provavel:
+ou subiu ZIP antigo, ou callmap/index.html nao entrou como
+modificado no GitHub Desktop antes do commit.
+
+----------------------------------------------------------
+PASSO A PASSO DO DEPLOY (a rotina de sempre):
+
+1. Descompacte ESTE zip POR CIMA da pasta local do GitHub Desktop.
+2. ABRA O GITHUB DESKTOP e CONFIRME que aparece
+   "callmap/index.html" na lista de arquivos MODIFICADOS.
+   >>> Se NAO aparecer ali, o deploy nao vai levar a mudanca.
+       Esse e o ponto exato onde ja travou antes. <<<
+3. Commit -> Push.
+4. Espere ~30s. Netlify republica. Confira pela lista acima.
+
+Nada para deletar manualmente nesta versao.
+==========================================================
