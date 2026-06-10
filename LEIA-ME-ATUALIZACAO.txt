@@ -1,74 +1,50 @@
-FARIA LIMA BACKSTAGE — Atualização de 10/06/2026
-==================================================
-Rotina normal: descompacte este ZIP POR CIMA da sua pasta local do
-GitHub Desktop (substituir tudo) → Commit → Push. Netlify republica
-em ~30s.
+FARIA LIMA BACKSTAGE — Atualização 10/06/2026 (v2 — aprofundamento)
+====================================================================
+Rotina normal: descompacte este ZIP POR CIMA da pasta local do
+GitHub Desktop (substituir tudo) → Commit → Push → Netlify ~30s.
 
-----------------------------------------------------------------------
-O QUE ESTE PACOTE JÁ FAZ SOZINHO (nada a fazer da sua parte):
-----------------------------------------------------------------------
-✓ index.html (HOME) reconstruída:
-    - Lead: "O risco que mudou de dono" (crédito/RJs)
-    - Card de destaque do CallMap
-    - Grid "Análises da semana": SpaceX, Estados, Patria, Holdings,
-      Kinea, Petros
-    - Grid "Mais do FLB": Raio-XP, UBS, LCI-decoder, Paraguai
-    - As 3 matérias que saem (Sêneca, private banker, FIIs) NÃO
-      aparecem mais em lugar nenhum da home.
+O QUE MUDOU NESTA VERSÃO (sobre a publicação anterior):
 
-✓ 5 páginas novas, no template real (dark, Barlow Condensed):
-    /analises/credito-rj-books-proprietarios.html
-    /analises/spacex-ipo-engenharia-oferta.html
-    /analises/saude-fiscal-estados-capag.html
-    /callmap/index.html              (a aba nova)
-    /callmap/metodologia.html        (rodapé)
+1. MATÉRIA "O risco que mudou de dono" (crédito) — REESCRITA, mais
+   densa, agora com 3 artes gráficas embutidas (SVG, tema dark):
+   - Figura 1: as duas curvas sobrepostas (RJs x FIDCs)
+   - Figura 2: salto da PF em FIDCs (160 mil → 330 mil)
+   - Figura 3: 89% das debêntures sem garantia real
+   + seção nova "O mecanismo: como o risco trocou de dono".
 
-✓ "CallMap" adicionado ao menu de navegação de TODAS as páginas
-  (as 17 existentes + as novas), entre "Decoder" e "Quem é Quem".
+2. MATÉRIA "O mapa fiscal dos estados" (Capag) — REESCRITA, agora
+   com o MAPA DE NOTAS REAL de cada estado (PR, BA, ES, MS, MT, CE
+   em A; GO em B+; SP, MG, RJ em C; RS em D), gráfico de concentração
+   da dívida (4 estados = 56,6%) e tabela A-D com exemplos reais.
 
-✓ sitemap.xml atualizado com as URLs novas.
+3. CALLMAP — REFEITO para não abrir vazio:
+   - Agora mostra a 1ª LEITURA DE MOVIMENTO (maio → junho/2026):
+     entradas e saídas reais por casa (BTG, Ágora, Terra, Planner).
+   - Links de Fonte agora vão para a fonte DATADA que mostra a
+     carteira (ADVFN maio/jun, íon Itaú) — não mais a home das casas.
+   - Ranking de consenso de junho ativado (VALE3 e ITUB4 lideram).
+   - XP, Bradesco BBI e internacionais entram na rodada de julho,
+     quando o ranking de PERFORMANCE começa a ser apurado.
 
-✓ As 2 matérias antigas que existiam no seu último ZIP foram
-  removidas deste pacote (private-bankers-exodo-bancos.html e
-  fiis-11-por-cento-yield-risco.html).
+ARQUIVOS NOVOS/ALTERADOS NESTE PACOTE:
+   analises/credito-rj-books-proprietarios.html   (reescrita)
+   analises/saude-fiscal-estados-capag.html       (reescrita)
+   analises/spacex-ipo-engenharia-oferta.html     (mantida)
+   callmap/index.html                             (refeito)
+   callmap/metodologia.html                       (mantida)
+   index.html, analises/index.html, sitemap.xml   (menu/listagem)
+   + menu CallMap em todas as páginas
 
-----------------------------------------------------------------------
-AS ÚNICAS 2 COISAS QUE O ZIP NÃO CONSEGUE FAZER (1 minuto seu):
-----------------------------------------------------------------------
-Como o deploy é "descompactar por cima", ele SUBSTITUI e ADICIONA
-arquivos, mas NÃO DELETA arquivos que já estão na sua pasta local.
-Então, para as 3 matérias que saem de circulação:
+AÇÃO MANUAL (só uma vez): deletar da pasta local, se ainda existirem,
+os 3 arquivos antigos que saíram de circulação:
+   analises/seneca-investidor-brasileiro-duas-frases.html
+   analises/private-bankers-exodo-bancos.html
+   analises/fiis-11-por-cento-yield-risco.html
+(O "descompactar por cima" não deleta; o GitHub Desktop mostra o
+delete como mudança e você commita junto.)
 
-1. DELETAR manualmente da sua pasta local (se existirem lá):
-     analises/seneca-investidor-brasileiro-duas-frases.html
-     analises/private-bankers-exodo-bancos.html
-     analises/fiis-11-por-cento-yield-risco.html
-   (Elas já não são linkadas em lugar nenhum, então mesmo que você
-    esqueça, ninguém chega nelas navegando — mas o ideal é apagar para
-    a URL direta também sair do ar. O GitHub Desktop mostra o delete
-    como mudança; é só commitar junto.)
-
-2. CONFERIR que estas 2, que estão no ar mas não vêm neste ZIP,
-   continuam intactas na sua pasta local (a home aponta para elas):
-     analises/patria-superfundos-fiis-consolidacao.html
-     analises/raio-xp-compra-brasil-fluxo-gringo.html
-     analises/ferramentas-sistema-financeiro-brasileiro-fapesp.html
-   Não precisa fazer nada — só não apague. O "descompactar por cima"
-   as preserva automaticamente.
-
-----------------------------------------------------------------------
-SOBRE OS SLUGS DAS 3 MATÉRIAS NOVAS
-----------------------------------------------------------------------
-São propostas e podem ser trocados livremente (ainda não foram
-compartilhados publicamente). Se trocar, lembre de ajustar os links
-na home e no sitemap.
-
-----------------------------------------------------------------------
-CALLMAP — estado atual
-----------------------------------------------------------------------
-Snapshot inicial (zero). Casas com dados preenchidos: BTG (10SIM,
-Dividendos, FII) e Itaú BBA (Top 5, Dividendos, Renda com Imóveis).
-XP, Bradesco BBI, J.P. Morgan e Goldman: marcadas "a coletar na 1ª
-rodada completa". A coluna de movimento e o ranking ganham vida da
-2ª rodada em diante. Premissa: toda atualização do site passa a
-incluir a checagem das carteiras (CallMap).
+NÃO APAGAR (estão no ar, a home aponta pra elas, e este ZIP as
+preserva pois já estão na sua pasta):
+   analises/patria-superfundos-fiis-consolidacao.html
+   analises/raio-xp-compra-brasil-fluxo-gringo.html
+   analises/ferramentas-sistema-financeiro-brasileiro-fapesp.html

@@ -13,6 +13,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+.fig{margin:34px 0;border:1px solid var(--line);border-radius:10px;background:var(--black-card);padding:22px 24px}
+.fig-kicker{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--yellow);margin-bottom:5px}
+.fig-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:23px;color:var(--white);line-height:1.1;margin-bottom:3px}
+.fig-sub{font-family:'Inter',sans-serif;font-size:13px;color:var(--gray-muted);margin-bottom:16px}
+.fig svg{width:100%;height:auto;display:block}
+.fig-cap{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--gray-muted);margin-top:12px;line-height:1.5}
+.fig-legend{display:flex;gap:20px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-text);margin-top:10px}
+.fig-legend span{display:inline-flex;align-items:center;gap:7px}
+.lg-dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0}
+.stat-box{flex:1;min-width:150px;border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:var(--black-card)}
+.stat-n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;line-height:1;color:var(--coral)}
+.stat-l{font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-muted);margin-top:7px;line-height:1.45}
+</style>
 </head>
 <body>
 
@@ -39,9 +54,9 @@
 
     <nav class="breadcrumb">
       <a href="/">Home</a>
-      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-sep">&rsaquo;</span>
       <a href="/analises/">Análises</a>
-      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-sep">&rsaquo;</span>
       <span>O risco que mudou de dono</span>
     </nav>
 
@@ -49,57 +64,157 @@
       <header class="article-hero">
         <div class="tag tag-analise">Análise · Crédito</div>
         <h1 class="article-hero-title">O risco que mudou de dono</h1>
-        <p class="article-hero-lede">As recuperações judiciais beiram 6 mil empresas e o agro — o setor mais resiliente do país — virou epicentro. No mesmo período, o crédito estruturado deixou de ser nicho e virou prateleira da pessoa física. A conta que quase ninguém faz: para onde foi parar o risco que saiu do balanço dos bancos.</p>
+        <p class="article-hero-lede">As recuperações judiciais beiram 6 mil empresas e o agro &mdash; o setor mais resiliente do país &mdash; virou epicentro. No mesmo período, o crédito estruturado deixou de ser nicho e virou prateleira da pessoa física. A conta que quase ninguém faz: para onde foi parar o risco que saiu do balanço dos bancos.</p>
         <div class="article-meta">
           <span>Por <strong>Editor</strong></span>
-          <span>·</span>
+          <span>&middot;</span>
           <span>10 de junho de 2026</span>
-          <span>·</span>
-          <span>9 min de leitura</span>
-          <span>·</span>
+          <span>&middot;</span>
+          <span>11 min de leitura</span>
+          <span>&middot;</span>
           <span>Categoria: <strong>Análise</strong></span>
         </div>
       </header>
 
       <div class="article-body">
-        <p>Há dois gráficos que, sobrepostos, contam a história mais importante do mercado de crédito brasileiro em 2026. O primeiro sobe há onze trimestres seguidos: é o número de empresas em recuperação judicial. O segundo também sobe, e quase na mesma inclinação: é o patrimônio dos fundos que compram dívida dessas empresas e a revendem, fatiada, para o investidor pessoa física. Os dois sobem juntos. E quase ninguém os coloca lado a lado.</p>
+        <p>Há dois gráficos que, sobrepostos, contam a história mais importante do mercado de crédito brasileiro em 2026. O primeiro sobe há onze trimestres seguidos: é o número de empresas em recuperação judicial. O segundo também sobe, e quase na mesma inclinação: é o patrimônio dos fundos que compram dívida dessas empresas e a revendem, fatiada, para o investidor pessoa física. Os dois sobem juntos. E quase ninguém os coloca lado a lado. Então vamos colocar.</p>
 
-        <p>Comecemos pelo primeiro. O país acumulava 5.931 empresas em recuperação judicial no primeiro trimestre de 2026, segundo levantamento da RGF &amp; Associados — a décima primeira alta consecutiva desde 2023. O dado de fluxo é igualmente eloquente: foram 977 processos iniciados em 2025, o maior volume desde 2016. Quando se conta por CNPJ envolvido, e não por processo, a média mensal sobe para a casa das centenas.</p>
+        <div class="fig">
+          <div class="fig-kicker">Figura 1 &middot; A sobreposição</div>
+          <div class="fig-title">Dois recordes que sobem juntos</div>
+          <div class="fig-sub">Empresas em recuperação judicial (estoque) vs. patrimônio dos FIDCs &mdash; 2023 a 2026</div>
+          <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de linhas mostrando recuperações judiciais e patrimônio de FIDCs subindo juntos de 2023 a 2026">
+            <g stroke="#1f1f1f" stroke-width="1">
+              <line x1="60" y1="40" x2="680" y2="40"/>
+              <line x1="60" y1="100" x2="680" y2="100"/>
+              <line x1="60" y1="160" x2="680" y2="160"/>
+              <line x1="60" y1="220" x2="680" y2="220"/>
+              <line x1="60" y1="280" x2="680" y2="280"/>
+            </g>
+            <g fill="#666666" font-family="Inter,sans-serif" font-size="12" text-anchor="middle">
+              <text x="110" y="305">2023</text>
+              <text x="300" y="305">2024</text>
+              <text x="490" y="305">2025</text>
+              <text x="640" y="305">1ºT26</text>
+            </g>
+            <g fill="#F0997B" font-family="Inter,sans-serif" font-size="11" text-anchor="end">
+              <text x="54" y="284">2,5k</text>
+              <text x="54" y="224">3,5k</text>
+              <text x="54" y="164">4,5k</text>
+              <text x="54" y="104">5,5k</text>
+              <text x="54" y="44">6,0k</text>
+            </g>
+            <g fill="#5DCAA5" font-family="Inter,sans-serif" font-size="11" text-anchor="start">
+              <text x="686" y="284">450</text>
+              <text x="686" y="224">550</text>
+              <text x="686" y="164">650</text>
+              <text x="686" y="104">720</text>
+            </g>
+            <polyline fill="none" stroke="#F0997B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              points="110,250 200,224 300,196 395,150 490,110 585,78 640,58"/>
+            <g fill="#F0997B">
+              <circle cx="110" cy="250" r="4"/><circle cx="200" cy="224" r="4"/><circle cx="300" cy="196" r="4"/>
+              <circle cx="395" cy="150" r="4"/><circle cx="490" cy="110" r="4"/><circle cx="585" cy="78" r="4"/>
+              <circle cx="640" cy="58" r="5"/>
+            </g>
+            <polyline fill="none" stroke="#5DCAA5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              points="110,262 200,236 300,205 395,168 490,128 585,96 640,80"/>
+            <g fill="#5DCAA5">
+              <circle cx="110" cy="262" r="4"/><circle cx="200" cy="236" r="4"/><circle cx="300" cy="205" r="4"/>
+              <circle cx="395" cy="168" r="4"/><circle cx="490" cy="128" r="4"/><circle cx="585" cy="96" r="4"/>
+              <circle cx="640" cy="80" r="5"/>
+            </g>
+            <text x="635" y="46" fill="#F0997B" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="15" text-anchor="end">5.931</text>
+            <text x="635" y="98" fill="#5DCAA5" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="15" text-anchor="end">R$ 741 bi</text>
+          </svg>
+          <div class="fig-legend">
+            <span><span class="lg-dot" style="background:#F0997B"></span>Empresas em recuperação judicial (eixo esq.)</span>
+            <span><span class="lg-dot" style="background:#5DCAA5"></span>Patrimônio líquido dos FIDCs (eixo dir., R$ bi)</span>
+          </div>
+          <div class="fig-cap">Traçado ilustrativo da tendência com base em dados de RGF &amp; Associados (estoque de RJ) e ANBIMA (PL de FIDCs). Eixos em escalas distintas para evidenciar a co-evolução, não a magnitude relativa.</div>
+        </div>
 
-        <p>O que mudou não é só o volume — é o perfil. Por anos, a recuperação judicial foi assunto de varejo endividado e de empresas alavancadas que erraram a mão no ciclo. Em 2026, o epicentro se deslocou para onde menos se esperava: <strong>o agronegócio</strong>, historicamente tratado como o pilar mais sólido da economia brasileira, respondeu por quase 2 mil solicitações ao longo de 2025. Custo de produção, oscilação climática, endividamento na boca da safra e crédito mais seletivo formaram a tempestade. Quando o setor que era porto seguro começa a pedir reestruturação, o sinal não é setorial. É sistêmico.</p>
+        <p>Comecemos pelo primeiro. O país acumulava 5.931 empresas em recuperação judicial no primeiro trimestre de 2026, segundo levantamento da RGF &amp; Associados &mdash; a décima primeira alta consecutiva desde 2023. O dado de fluxo é igualmente eloquente: foram 977 processos iniciados em 2025, o maior volume desde 2016. E o estresse não está só nas grandes: em janeiro de 2026, o país tinha cerca de 8,7 milhões de CNPJs negativados, segundo a Serasa Experian &mdash; o pano de fundo de inadimplência sobre o qual as recuperações judiciais se erguem.</p>
+
+        <div class="stat-row">
+          <div class="stat-box"><div class="stat-n">5.931</div><div class="stat-l">empresas em recuperação judicial no 1º tri/2026 &mdash; 11ª alta trimestral seguida (RGF)</div></div>
+          <div class="stat-box"><div class="stat-n">~2 mil</div><div class="stat-l">pedidos na cadeia do agronegócio só em 2025 &mdash; o novo epicentro</div></div>
+          <div class="stat-box"><div class="stat-n">8,7 mi</div><div class="stat-l">CNPJs negativados em janeiro/2026 (Serasa Experian)</div></div>
+        </div>
+
+        <p>O que mudou não é só o volume &mdash; é o perfil. Por anos, a recuperação judicial foi assunto de varejo endividado e de empresas alavancadas que erraram a mão no ciclo. Em 2026, o epicentro se deslocou para onde menos se esperava: <strong>o agronegócio</strong>, historicamente tratado como o pilar mais sólido da economia brasileira, respondeu por quase 2 mil solicitações ao longo de 2025. Custo de produção nas alturas, oscilação climática, endividamento contraído na boca da safra e um crédito rural mais seletivo formaram a tempestade perfeita. Quando o setor que era o porto seguro começa a pedir reestruturação, o sinal não é setorial. É sistêmico.</p>
 
         <h2>O segundo gráfico: o crédito virou produto de massa</h2>
 
-        <p>Agora o outro lado da sobreposição. Enquanto as empresas adoeciam, o mercado de crédito privado vivia o melhor momento da sua história. Os Fundos de Investimento em Direitos Creditórios — os FIDCs, que compram recebíveis e dívida corporativa — ultrapassaram R$ 741 bilhões de patrimônio líquido. O mercado secundário de debêntures negociou R$ 947,4 bilhões em 2025, alta de quase 34% sobre o ano anterior. O crédito estruturado, que era assunto de mesa institucional, virou pilar de funding da economia real.</p>
+        <p>Agora o outro lado da sobreposição. Enquanto as empresas adoeciam, o mercado de crédito privado vivia o melhor momento da sua história. Os Fundos de Investimento em Direitos Creditórios &mdash; os FIDCs, que compram recebíveis e dívida corporativa &mdash; ultrapassaram R$ 741 bilhões de patrimônio líquido. O mercado secundário de debêntures negociou R$ 947,4 bilhões em 2025, alta de quase 34% sobre o ano anterior, já perto do dobro do volume do mercado primário. O crédito estruturado, que era assunto de mesa institucional, virou pilar de funding da economia real.</p>
 
-        <p>Há um detalhe nesse boom que merece a lupa. A base de investidores pessoa física em FIDCs saltou de menos de 160 mil para mais de 330 mil participantes em apenas um ano. A Resolução CVM 175 padronizou as estruturas e derrubou barreiras de entrada — com a intenção legítima de profissionalizar o setor. O efeito colateral é que o produto que antes exigia um analista de crédito do outro lado da mesa hoje chega ao investidor comum dentro de um fundo de prateleira, embalado como "renda fixa que rende mais que o CDI".</p>
+        <p>Há um detalhe nesse boom que merece a lupa, e é o coração desta análise: <strong>quem está do outro lado comprando</strong>. A base de investidores pessoa física em FIDCs saltou de menos de 160 mil para mais de 330 mil participantes em apenas um ano &mdash; um aumento superior a 100%.</p>
 
-        <blockquote>
-          Quando o porto seguro pede reestruturação, o sinal não é setorial. É sistêmico.
-        </blockquote>
+        <div class="fig">
+          <div class="fig-kicker">Figura 2 &middot; Quem entrou na sala</div>
+          <div class="fig-title">A pessoa física dobrou em FIDCs em um ano</div>
+          <div class="fig-sub">Número de investidores pessoa física em fundos de direitos creditórios</div>
+          <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de barras mostrando salto de 160 mil para 330 mil investidores pessoa física em FIDCs">
+            <g fill="#666666" font-family="Inter,sans-serif" font-size="12" text-anchor="middle">
+              <text x="200" y="225">Início do período</text>
+              <text x="520" y="225">Um ano depois</text>
+            </g>
+            <rect x="120" y="120" width="160" height="80" rx="4" fill="#3a3a3a"/>
+            <text x="200" y="108" fill="#aaaaaa" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="26" text-anchor="middle">160 mil</text>
+            <rect x="440" y="40" width="160" height="160" rx="4" fill="#FAC775"/>
+            <text x="520" y="28" fill="#FAC775" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="26" text-anchor="middle">330 mil</text>
+            <text x="360" y="80" fill="#5DCAA5" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="20" text-anchor="middle">+106%</text>
+          </svg>
+          <div class="fig-cap">Fonte: dados de mercado sobre a base de cotistas PF em FIDCs (variação de menos de 160 mil para mais de 330 mil em ~12 meses). A Resolução CVM 175 reduziu barreiras de entrada ao produto.</div>
+        </div>
+
+        <p>A Resolução CVM 175 padronizou as estruturas e derrubou barreiras de entrada &mdash; com a intenção legítima de profissionalizar o setor. O efeito colateral é que o produto que antes exigia um analista de crédito do outro lado da mesa hoje chega ao investidor comum dentro de um fundo de prateleira, embalado como "renda fixa que rende mais que o CDI".</p>
+
+        <blockquote>Quando o porto seguro pede reestruturação, o sinal não é setorial. É sistêmico.</blockquote>
 
         <h2>A conta que ninguém faz: onde está o estoque</h2>
 
-        <p>Aqui está o cruzamento que dá nome a esta análise. De um lado, um recorde de empresas que não conseguem pagar suas dívidas. Do outro, um recorde de dívida corporativa empacotada e distribuída para o varejo. A pergunta inevitável é: quanto do crédito que está nos books das casas — nos FIDCs, nas debêntures, nos fundos de crédito privado — está exposto justamente aos setores que hoje lideram as recuperações judiciais?</p>
+        <p>Aqui está o cruzamento que dá nome a esta análise. De um lado, um recorde de empresas que não conseguem pagar suas dívidas. Do outro, um recorde de dívida corporativa empacotada e distribuída para o varejo. A pergunta inevitável é: quanto do crédito que está nos books das casas &mdash; nos FIDCs, nas debêntures, nos fundos de crédito privado &mdash; está exposto justamente aos setores que hoje lideram as recuperações judiciais?</p>
 
-        <p>A resposta completa esbarra num limite de transparência, e é honesto declará-lo: a composição setorial detalhada de cada fundo nem sempre é pública no nível do ativo individual. O que se sabe pela regulação e pelos relatórios gerenciais é a foto agregada — e ela já basta para acender o alerta. Boa parte das debêntures em circulação é quirografária, ou seja, sem garantia real: na média recente das emissões, cerca de 89% não tinham garantia real, contra 11% que tinham. Em uma recuperação judicial, o credor quirografário fica no fim da fila.</p>
+        <p>A resposta completa esbarra num limite de transparência, e é honesto declará-lo: a composição setorial detalhada de cada fundo nem sempre é pública no nível do ativo individual. O que se sabe pela regulação e pelos relatórios gerenciais é a foto agregada &mdash; e ela já basta para acender o alerta. O ponto mais revelador está na estrutura de garantias.</p>
 
-        <p>O precedente existe e é recente o suficiente para servir de lição. Quando a Americanas revelou seu rombo contábil em 2023, descobriu-se que fundos de renda fixa de grandes casas — vendidos a investidores como produto conservador — carregavam centenas de milhões em dívida da varejista. Um fundo DI, o tipo de produto que muita gente usa como reserva de emergência, amanheceu marcado a mercado com prejuízo. O risco corporativo, que parecia distante, estava dentro da carteira de quem jurava não ter nenhum.</p>
+        <div class="fig">
+          <div class="fig-kicker">Figura 3 &middot; O detalhe que decide tudo</div>
+          <div class="fig-title">Quase 9 em cada 10 debêntures não têm garantia real</div>
+          <div class="fig-sub">Composição das emissões recentes de debêntures por tipo de garantia</div>
+          <svg viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Barra mostrando 89% das debêntures sem garantia real e 11% com garantia real">
+            <rect x="60" y="42" width="528" height="44" rx="4" fill="#F0997B"/>
+            <rect x="592" y="42" width="68" height="44" rx="4" fill="#5DCAA5"/>
+            <text x="64" y="32" fill="#F0997B" font-family="Inter,sans-serif" font-size="12">Quirografárias (sem garantia real)</text>
+            <text x="324" y="71" fill="#0a0a0a" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="24" text-anchor="middle">89%</text>
+            <text x="626" y="71" fill="#0a0a0a" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="16" text-anchor="middle">11%</text>
+            <text x="660" y="112" fill="#5DCAA5" font-family="Inter,sans-serif" font-size="12" text-anchor="end">Com garantia real</text>
+          </svg>
+          <div class="fig-cap">Fonte: dados de mercado sobre emissões recentes de debêntures (ANBIMA/Safra). O credor quirografário fica no fim da fila de pagamento numa recuperação judicial.</div>
+        </div>
 
-        <p>É esse o mecanismo que importa entender. Ao longo do ciclo de juros altos, o banco que originava o crédito tinha incentivo crescente para tirá-lo do próprio balanço — via securitização, via FIDC, via distribuição de debêntures — e transferi-lo para fundos vendidos ao público. O risco não evaporou. <strong>Ele mudou de dono.</strong> Saiu do balanço da instituição, que ganha na originação e na taxa, e foi parar na cota do investidor, que ganha o spread enquanto o emissor paga — e perde quando ele para de pagar.</p>
+        <p>Boa parte das debêntures em circulação é quirografária, ou seja, sem garantia real: na média recente das emissões, cerca de 89% não tinham garantia real, contra 11% que tinham. A distinção parece técnica, mas é a coisa mais concreta do texto: em uma recuperação judicial, o credor com garantia real recebe primeiro, executando o bem dado em garantia. O credor quirografário fica no fim da fila &mdash; recebe o que sobrar, se sobrar, e muitas vezes com deságio de 60%, 70% ou mais, parcelado em anos. Quando 89% do estoque é quirografário, isso significa que a quase totalidade do risco de crédito distribuído ao varejo é risco sem colchão.</p>
+
+        <p>O precedente existe e é recente o suficiente para servir de lição. Quando a Americanas revelou seu rombo contábil em 2023, descobriu-se que fundos de renda fixa de grandes casas &mdash; vendidos a investidores como produto conservador &mdash; carregavam centenas de milhões em dívida da varejista. Um fundo DI, o tipo de produto que muita gente usa como reserva de emergência, amanheceu marcado a mercado com prejuízo. O risco corporativo, que parecia distante, estava dentro da carteira de quem jurava não ter nenhum.</p>
+
+        <h2>O mecanismo: como o risco trocou de dono</h2>
+
+        <p>É esse o mecanismo que importa entender, e ele tem três tempos. Primeiro, o banco origina o crédito &mdash; empresta para a empresa, ou estrutura a emissão de debênture dela. Segundo, ao longo do ciclo de juros altos, o banco tem incentivo crescente para tirar esse crédito do próprio balanço &mdash; porque crédito no balanço consome capital regulatório e concentra risco. Ele securitiza, monta um FIDC, ou distribui a debênture. Terceiro, esse papel é vendido a fundos que vão para a prateleira do varejo.</p>
+
+        <p>No fim dos três tempos, o risco não evaporou. <strong>Ele mudou de dono.</strong> Saiu do balanço da instituição &mdash; que ganha na originação, na estruturação e na taxa de administração recorrente &mdash; e foi parar na cota do investidor, que ganha o spread sobre o CDI enquanto o emissor paga, e absorve a perda quando ele para de pagar. O banco lucra nas três pontas e fica com menos risco. O investidor pessoa física fica com o risco e com um prêmio que, agora sabemos, é exatamente o preço desse risco.</p>
 
         <h2>O que observar daqui para frente</h2>
 
-        <p>Três variáveis dirão se a sobreposição dos dois gráficos vira problema ou se acomoda. A primeira é o ritmo de queda da Selic: juro mais baixo alivia o caixa das empresas endividadas e reduz a pressão sobre as recuperações — mas o alívio chega devagar, e o estoque de crédito já emitido a taxas altas continua no sistema. A segunda é a qualidade da originação recente: se o boom de captação de FIDCs e debêntures de 2025 foi feito com seleção criteriosa de lastro, o sistema absorve; se foi feito na pressa de colocar produto, a inadimplência futura encontra carteiras mal montadas. A terceira é a transparência: quanto mais granular for a divulgação setorial dos fundos, mais cedo o investidor enxerga a própria exposição.</p>
+        <p>Três variáveis dirão se a sobreposição dos dois gráficos vira problema ou se acomoda. A primeira é o ritmo de queda da Selic: juro mais baixo alivia o caixa das empresas endividadas e reduz a pressão sobre as recuperações &mdash; mas o alívio chega devagar, e o estoque de crédito já emitido a taxas altas continua no sistema. A segunda é a qualidade da originação recente: se o boom de captação de FIDCs e debêntures de 2025 foi feito com seleção criteriosa de lastro, o sistema absorve; se foi feito na pressa de colocar produto, a inadimplência futura vai encontrar carteiras mal montadas. A terceira é a transparência: quanto mais granular for a divulgação setorial dos fundos, mais cedo o investidor enxerga a própria exposição &mdash; e mais cedo o mercado se ajusta antes do susto.</p>
 
         <h2>A leitura editorial</h2>
 
-        <p>Para o investidor pessoa física que comprou crédito privado nos últimos dois anos atraído pelo "rende mais que o CDI", a leitura é simples e desconfortável: o rendimento extra sobre o CDI nunca foi mágica. Era sempre o preço do risco de crédito — o risco de o emissor não pagar. Em um país com quase 6 mil empresas em recuperação judicial e o agro no epicentro, esse preço deixou de ser teórico. A pergunta a fazer ao gerente não é quanto o fundo rende. É o que, exatamente, está dentro dele — e a qual setor pertence.</p>
+        <p>Para o investidor pessoa física que comprou crédito privado nos últimos dois anos atraído pelo "rende mais que o CDI", a leitura é simples e desconfortável: o rendimento extra sobre o CDI nunca foi mágica. Era sempre o preço do risco de crédito &mdash; o risco de o emissor não pagar. Em um país com quase 6 mil empresas em recuperação judicial, o agro no epicentro e 89% das debêntures sem garantia real, esse preço deixou de ser teórico. A pergunta a fazer ao gerente não é quanto o fundo rende. É o que, exatamente, está dentro dele &mdash; em qual setor, com qual garantia, e em que posição da fila esse papel estaria se o emissor quebrasse.</p>
       </div>
 
       <div class="article-fontes">
         <h4>Fontes consultadas</h4>
-        <p>RGF &amp; Associados (estoque de empresas em recuperação judicial, 1º trimestre de 2026); Serasa Experian (recuperações judiciais e CNPJs negativados); ANBIMA (emissões de crédito privado, patrimônio de FIDCs e volume secundário de debêntures); Banco Safra (relatório mensal de crédito privado); CVM (Resolução 175 e regulação de fundos estruturados); cobertura pública de mercado sobre o caso Americanas e a exposição de fundos de renda fixa. Dados de composição setorial de fundos referem-se a informações agregadas publicamente disponíveis.</p>
+        <p>RGF &amp; Associados (estoque de empresas em recuperação judicial, 1º trimestre de 2026, 11ª alta consecutiva); Serasa Experian (CNPJs negativados em janeiro/2026); ANBIMA (emissões de crédito privado, patrimônio líquido de FIDCs acima de R$ 741 bi e volume secundário de debêntures de R$ 947,4 bi em 2025); Banco Safra (relatório mensal de crédito privado, composição de garantias das emissões); CVM (Resolução 175 e regulação de fundos estruturados); cobertura pública de mercado sobre o caso Americanas (2023) e a exposição de fundos de renda fixa à dívida da varejista. Dados de composição setorial de fundos referem-se a informações agregadas publicamente disponíveis; as figuras têm caráter ilustrativo da tendência.</p>
       </div>
 
       <div class="article-disclaimer">
@@ -109,7 +224,7 @@
       <aside class="article-newsletter-inline">
         <h3>Quer receber análises como esta toda semana?</h3>
         <p>Três edições por semana com decoder, análise e contexto do mercado financeiro brasileiro.</p>
-        <a href="/#newsletter">Assinar a newsletter →</a>
+        <a href="/#newsletter">Assinar a newsletter &rarr;</a>
       </aside>
 
     </article>
@@ -140,7 +255,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo"><span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span></div>
-        <p>Análise e contexto do mercado financeiro brasileiro. Conteúdo informativo — não constitui recomendação de investimento.</p>
+        <p>Análise e contexto do mercado financeiro brasileiro. Conteúdo informativo &mdash; não constitui recomendação de investimento.</p>
       </div>
       <div class="footer-col">
         <h4>Editorial</h4>
@@ -148,7 +263,6 @@
         <a href="/decoder/">Decoder</a>
         <a href="/callmap/">CallMap</a>
         <a href="/quem-e-quem/">Quem é Quem</a>
-        <a href="/#newsletter">Newsletter</a>
       </div>
       <div class="footer-col">
         <h4>Backstage</h4>
@@ -160,7 +274,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Faria Lima Backstage.</span>
+      <span>&copy; 2026 Faria Lima Backstage.</span>
       <span>Não constitui recomendação de investimento.</span>
     </div>
   </div>
