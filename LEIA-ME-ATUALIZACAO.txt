@@ -1,53 +1,48 @@
-FARIA LIMA BACKSTAGE — Atualização 10/06/2026 (v3 — backtest + Capag SP)
-=========================================================================
-DEPLOY ÚNICO (economiza crédito Netlify): descompacte este ZIP POR CIMA
-da pasta local do GitHub Desktop → Commit → Push. Republica em ~30s.
+FARIA LIMA BACKSTAGE — Atualização 10/06/2026 (v4 — CallMap casas grandes)
+============================================================================
+DEPLOY ÚNICO: descompacte este ZIP POR CIMA da pasta local do GitHub
+Desktop → Commit → Push. Republica em ~30s.
 
->>> IMPORTANTE: confirme que o GitHub Desktop lista callmap/index.html e
-    analises/saude-fiscal-estados-capag.html como ALTERADOS antes do
-    commit. Se não listar, o conteúdo novo não entra. (Foi o que travou
-    o deploy anterior — o CallMap no ar ainda era a versão vazia.)
+>>> CONFIRA no GitHub Desktop que callmap/index.html aparece como
+    ALTERADO antes do commit. (O CallMap no ar ainda é a versão antiga;
+    se este arquivo não entrar no commit, continua a versão errada.)
 
-O QUE MUDOU NESTA VERSÃO:
+O QUE MUDOU:
 
-1. CALLMAP — agora é o BACKTEST DE 3 MESES que combinamos (abr–jun/2026),
-   com os três pilares:
-   - Pilar 1 (Convicção): quem segurou a mão, quem girou a carteira
-     (Ágora 8/10, Terra 5/10, Planner 4/10).
-   - Pilar 2 (Fluxo): entradas e saídas mês a mês, abril→maio→junho.
-   - Pilar 3 (Performance): o que cada carteira ENTREGOU vs benchmark,
-     com retorno divulgado pelas próprias casas (Itaú Top 5, Safra Top 10,
-     Genial ESG/Micro/Dividendos/Ibovespa 10+). Destaque: a Genial
-     Ibovespa 10+ está 8,7pp ABAIXO do índice que promete superar.
-   - Todos os links agora vão para a fonte DATADA (ADVFN abr/mai/jun,
-     Genial, Safra, Money Times) — verificados um a um. O link da XP
-     que dava 404 foi removido.
-   - NÃO inventamos preço: performance é a divulgada pelas casas; onde
-     a casa não divulga, fica "—".
+1. CALLMAP — refeito com as CASAS GRANDES, como você pediu. Fora Terra
+   e Planner. Agora rastreia: BTG, Itaú BBA, XP, Bradesco BBI e Ágora.
+   - PLACAR (performance vs benchmark): BTG +647,7% desde 2009 (3x o
+     Ibov), Itaú Top 5 +56,5% em 2025 (+22,5pp), Safra +45,48% 12m
+     (bateu o índice em 99 de 171 meses). Onde a casa não divulga
+     retorno consolidado (XP, Ágora, Bradesco), marcado "s/ dado" —
+     sem inventar.
+   - CONVICÇÃO: Itaú Top 5 (baixíssimo giro, 5 nomes), Ágora (8/10),
+     BTG (moderado), XP (moderado-alto).
+   - FLUXO mês a mês de 2026, direto da fonte de cada casa:
+     BTG (Seu Dinheiro), Itaú (Money Times), XP (própria página),
+     Ágora (ADVFN). Cada troca datada e linkada.
+   - Insight de abertura: as 3 grandes batem o Ibov no longo prazo
+     mas perderam dele em fev/abril — bater no acumulado e perder no
+     mês é a regra.
 
-2. MATÉRIA DOS ESTADOS (Capag) — nova seção "O caso São Paulo: por que
-   o estado mais rico é nota C?", com:
-   - O fato de SP ter sido nota B em 2021-2023 (piora recente, não
-     fragilidade crônica).
-   - A mecânica: um único indicador ruim (poupança corrente >95% ou
-     caixa negativo) derruba a nota inteira.
-   - Gráfico decompondo os 3 indicadores: endividamento confortável,
-     poupança e liquidez apertadas.
-   - A conclusão: SP é C por gastar quase tudo com custeio, não por
-     dever demais. O C de SP e o C do Rio escondem realidades opostas.
+2. MATÉRIA DOS ESTADOS — mantém o aprofundamento de São Paulo
+   (por que o estado mais rico é nota C: era B até 2023, o vilão é
+   poupança/liquidez, não dívida).
 
-3. Matérias de crédito e SpaceX: mantidas (já com arte gráfica).
+3. Matérias de crédito e SpaceX: mantidas com arte gráfica.
+
+NOTA sobre dados: a performance é a que cada casa divulga do próprio
+retorno. XP, Ágora e Bradesco publicam composição/preferências mas não
+um % consolidado de carteira por mês — por isso ficam "s/ dado" no
+placar até a próxima rodada. Se você subir um CSV de cotações, eu
+calculo o retorno de cada uma ativo a ativo.
 
 AÇÃO MANUAL (uma vez): deletar da pasta local, se existirem:
    analises/seneca-investidor-brasileiro-duas-frases.html
    analises/private-bankers-exodo-bancos.html
    analises/fiis-11-por-cento-yield-risco.html
 
-NÃO APAGAR (no ar, a home aponta pra elas):
+NÃO APAGAR (no ar, a home aponta):
    analises/patria-superfundos-fiis-consolidacao.html
    analises/raio-xp-compra-brasil-fluxo-gringo.html
    analises/ferramentas-sistema-financeiro-brasileiro-fapesp.html
-
-PRÓXIMA RODADA (julho): incorporar XP e Bradesco BBI ao backtest; se
-você subir um CSV de cotações históricas, recalculamos o retorno de
-cada call ativo a ativo (hoje a performance é a que as casas divulgam).

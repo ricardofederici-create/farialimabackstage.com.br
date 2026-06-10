@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CallMap — o observatório de calls do Faria Lima Backstage</title>
-<meta name="description" content="Backtest de 3 meses das carteiras recomendadas: entradas, saídas, tempo de convicção e o que cada casa entregou vs benchmark. Dados públicos e datados. Conteúdo informativo, não constitui recomendação.">
+<meta name="description" content="Backtest das carteiras das grandes casas — BTG, Itaú BBA, XP, Bradesco BBI, Ágora — em 2026: entradas, saídas, convicção e o que cada uma entregou vs benchmark. Dados públicos e datados.">
 <meta property="og:title" content="CallMap — o observatório de calls do Faria Lima Backstage">
-<meta property="og:description" content="Quem recomendou o quê, o que entrou e saiu, e o que cada carteira entregou. Backtest com dados datados.">
+<meta property="og:description" content="As carteiras das grandes casas em 2026: o que entrou, o que saiu e o que entregaram. Backtest datado.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 .cm-hero{padding:44px 0 8px}
 .cm-eyebrow{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
 .cm-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(44px,7vw,72px);line-height:.95;letter-spacing:-1px;margin-bottom:18px}
-.cm-lede{font-family:'Inter',sans-serif;font-size:19px;color:var(--gray-text);max-width:810px;line-height:1.6}
+.cm-lede{font-family:'Inter',sans-serif;font-size:19px;color:var(--gray-text);max-width:820px;line-height:1.6}
 .cm-meta{display:flex;gap:24px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13px;color:var(--gray-muted);margin-top:24px;align-items:center}
 .cm-meta .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:7px}
 .cm-meta a{color:var(--yellow)}
@@ -35,7 +35,7 @@
 .cm-secttitle{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.5px;margin-bottom:4px;color:var(--white)}
 .cm-sectsub{font-family:'Inter',sans-serif;font-size:15px;color:var(--gray-muted);margin-bottom:20px;max-width:820px}
 .cm-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--black-card)}
-.cm-table{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:13.5px;min-width:700px}
+.cm-table{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:13.5px;min-width:720px}
 .cm-table th{background:#000;text-align:left;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--gray-muted);font-weight:600;padding:12px 14px;border-bottom:1px solid var(--line)}
 .cm-table td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--gray-text)}
 .cm-table tr:last-child td{border-bottom:none}
@@ -55,10 +55,6 @@
 .cm-log{font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-muted);margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
 .cm-log b{color:var(--white)}
 .conv-bar{display:inline-block;height:9px;border-radius:5px;background:linear-gradient(90deg,#5DCAA5,#FAC775);vertical-align:middle}
-.bigstat{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 0}
-.bigstat-box{flex:1;min-width:150px;border:1px solid var(--line);border-radius:8px;padding:15px 17px;background:var(--black-card)}
-.bigstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1;color:var(--yellow)}
-.bigstat-l{font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-muted);margin-top:6px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -85,12 +81,12 @@
   <div class="container">
 
     <div class="cm-hero">
-      <div class="cm-eyebrow">Observatório · Backtest abril–junho/2026 · Atualizado em 10/06/2026</div>
+      <div class="cm-eyebrow">Observatório · Backtest 2026 · Atualizado em 10/06/2026</div>
       <h1 class="cm-title">CallMap</h1>
-      <p class="cm-lede">O mapa público de quem recomendou o quê no mercado brasileiro. Reconstruímos três meses de carteiras recomendadas — abril, maio e junho de 2026 — para medir o que ninguém mostra: quanto tempo cada casa sustentou cada call, o que entrou e saiu, e o que a carteira de fato entregou contra o índice. Tudo com fonte pública e datada.</p>
+      <p class="cm-lede">O mapa público de quem recomendou o quê no mercado brasileiro &mdash; e o que isso rendeu. Acompanhamos as carteiras das grandes casas: BTG, Itaú BBA, XP, Bradesco BBI e Ágora. Para cada uma, reconstruímos o ano de 2026 mês a mês: o que entrou, o que saiu, por quanto tempo a casa sustentou cada call e o que a carteira entregou contra o índice. Tudo com fonte pública e datada.</p>
       <div class="cm-meta">
-        <span><span class="dot"></span>Backtest de 3 meses · abr–jun/2026</span>
-        <span>9 carteiras rastreadas</span>
+        <span><span class="dot"></span>5 grandes casas rastreadas</span>
+        <span>Série de 2026, mês a mês</span>
         <span><a href="/callmap/metodologia.html">Como calculamos →</a></span>
       </div>
     </div>
@@ -98,96 +94,39 @@
     <div class="cm-why">
       <div class="cm-card bad">
         <div class="h">O ranking de sempre</div>
-        <p>Quase todo ranking de carteira mede só a composição atual. O ativo que afundou e foi descartado some da conta — e a casa parece melhor do que foi. É o erro de sobrevivência.</p>
+        <p>Quase todo ranking mede só a composição atual. O ativo que afundou e foi descartado some da conta &mdash; e a casa parece melhor do que foi. É o erro de sobrevivência.</p>
       </div>
       <div class="cm-card good">
         <div class="h">O que o CallMap faz</div>
-        <p>Reconstruímos o fluxo real: o que cada casa <b style="color:#fff">tinha em abril</b>, o que trocou em maio e junho, e o que essas escolhas entregaram. A casa não esconde o corpo.</p>
+        <p>Reconstruímos o fluxo real das casas que de fato movem o mercado: o que cada uma trocou a cada mês de 2026, e o que essas escolhas entregaram. A casa não esconde o corpo.</p>
       </div>
     </div>
 
     <div class="cm-method">
-      <b>Como este backtest foi feito.</b> Levantamos a composição divulgada de cada carteira em abril, maio e junho de 2026, a partir de fontes públicas e datadas. Comparando mês a mês, extraímos o que entrou, o que saiu e o que permaneceu — isto é o tempo de convicção. Para a performance, usamos o retorno que <b>cada casa divulga publicamente</b> de suas próprias carteiras, sempre contra o benchmark que a própria casa adota (Ibovespa, IDIV, SMLL ou ISE).
-      <span class="cm-formula">convicção = nº de ativos mantidos no trimestre · giro = nº de trocas · desempenho = retorno divulgado pela casa vs. seu benchmark</span>
-      Não estimamos preços por conta própria: onde a casa não divulga retorno, marcamos como não disponível em vez de inventar número. Metodologia completa e limites <a href="/callmap/metodologia.html" style="color:var(--yellow)">nesta página</a>.
+      <b>O recorte: só as casas que importam.</b> O CallMap acompanha as casas grandes, cujas recomendações movem fluxo e que o investidor de fato segue &mdash; <b>BTG, Itaú BBA, XP, Bradesco BBI</b> e <b>Ágora</b>. Levantamos a composição divulgada de cada carteira mês a mês em 2026, direto da fonte de cada casa, e extraímos o que entrou, o que saiu e o que permaneceu. Para a performance, usamos o retorno que <b>cada casa divulga</b>, contra o benchmark que ela mesma adota.
+      <span class="cm-formula">convicção = tempo que o ativo fica na carteira · giro = nº de trocas · desempenho = retorno divulgado pela casa vs. seu benchmark</span>
+      Não estimamos preços por conta própria: onde a casa não divulga retorno, marcamos como não disponível. Metodologia completa <a href="/callmap/metodologia.html" style="color:var(--yellow)">nesta página</a>.
     </div>
 
-    <!-- PILAR 1: CONVICÇÃO -->
-    <div class="cm-sectlabel">Pilar 1 · Tempo de convicção</div>
-    <div class="cm-secttitle">Quem segura a mão e quem gira a carteira</div>
-    <div class="cm-sectsub">Quantos ativos cada casa manteve ao longo do trimestre (de abril a junho) e quantos trocou. Giro alto não é defeito por si só — mas, cruzado com desempenho fraco, é o sinal mais revelador que um observatório de calls oferece.</div>
-    <div class="cm-tablewrap">
-      <table class="cm-table">
-        <thead><tr><th>Casa / carteira</th><th>Manteve no trimestre</th><th>Convicção</th><th>Trocou</th><th>Fonte datada</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="cm-casa">Ágora · Top 10</td>
-            <td><span class="cm-up">8 de 10</span></td>
-            <td><span class="conv-bar" style="width:128px"></span></td>
-            <td>2 trocas <span class="cm-muted">(saiu CYRE3, SUZB3)</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">abr→jun →</a></td>
-          </tr>
-          <tr>
-            <td class="cm-casa">Terra · Top 10</td>
-            <td><span class="cm-flat">5 de 10</span></td>
-            <td><span class="conv-bar" style="width:80px"></span></td>
-            <td>5 trocas <span class="cm-muted">(rodou metade)</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">abr→jun →</a></td>
-          </tr>
-          <tr>
-            <td class="cm-casa">Planner · mensal</td>
-            <td><span class="cm-down">4 de 10</span></td>
-            <td><span class="conv-bar" style="width:64px"></span></td>
-            <td>6 trocas <span class="cm-muted">(maior giro do grupo)</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">abr→jun →</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="cm-note"><span>↻</span><div>A <b style="color:#fff">Ágora</b> foi a casa de maior convicção do trimestre: segurou 8 dos 10 nomes. A <b style="color:#fff">Planner</b>, no extremo oposto, trocou 6 de 10 — alta rotatividade que a próxima rodada vai cruzar com o retorno entregue.</div></div>
-
-    <!-- PILAR 2: MOVIMENTO -->
-    <div class="cm-sectlabel">Pilar 2 · Entradas e saídas</div>
-    <div class="cm-secttitle">O fluxo, mês a mês</div>
-    <div class="cm-sectsub">O que cada casa comprou e vendeu nas duas viradas do trimestre. Verbos factuais apenas; o juízo é do leitor.</div>
-    <div class="cm-tablewrap">
-      <table class="cm-table">
-        <thead><tr><th>Casa</th><th>Virada abril → maio</th><th>Virada maio → junho</th><th>Fonte</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="cm-casa">Ágora<br>Top 10</td>
-            <td><span class="cm-pill p-in">+ISAE4</span> <span class="cm-pill p-out">−CYRE3</span></td>
-            <td><span class="cm-pill p-in">+GGBR4</span> <span class="cm-pill p-out">−SUZB3</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/05/carteiras-recomendadas-de-acoes-para-maio-de-2026-e-ranking-2" target="_blank" rel="noopener">mai</a> · <a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">jun</a></td>
-          </tr>
-          <tr>
-            <td class="cm-casa">Terra<br>Top 10</td>
-            <td><span class="cm-pill p-in">+CXSE3</span> <span class="cm-pill p-in">+MOTV3</span> <span class="cm-pill p-out">−RENT3</span> <span class="cm-pill p-out">−SBSP3</span></td>
-            <td><span class="cm-pill p-in">+ASAI3</span> <span class="cm-pill p-in">+EMBR3</span> <span class="cm-pill p-in">+GGBR4</span> <span class="cm-pill p-out">−AXIA3</span> <span class="cm-pill p-out">−HYPE3</span> <span class="cm-pill p-out">−VBBR3</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/05/carteiras-recomendadas-de-acoes-para-maio-de-2026-e-ranking-2" target="_blank" rel="noopener">mai</a> · <a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">jun</a></td>
-          </tr>
-          <tr>
-            <td class="cm-casa">Planner<br>mensal</td>
-            <td><span class="cm-pill p-in">+FLRY3</span> <span class="cm-pill p-in">+LREN3</span> <span class="cm-pill p-in">+PRIO3</span> <span class="cm-pill p-out">−DIRR3</span> <span class="cm-pill p-out">−RECV3</span> <span class="cm-pill p-out">−TOTS3</span></td>
-            <td><span class="cm-pill p-in">+BBSE3</span> <span class="cm-pill p-in">+EGIE3</span> <span class="cm-pill p-in">+MOTV3</span> <span class="cm-pill p-in">+SAPR11</span> <span class="cm-pill p-in">+TOTS3</span> <span class="cm-pill p-in">+WEGE3</span> <span class="cm-pill p-out">−CPFE3</span> <span class="cm-pill p-out">−LREN3</span> <span class="cm-pill p-out">−PRIO3</span> <span class="cm-pill p-out">−PSSA3</span> <span class="cm-pill p-out">−SBSP3</span> <span class="cm-pill p-out">−WIZC3</span></td>
-            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/05/carteiras-recomendadas-de-acoes-para-maio-de-2026-e-ranking-2" target="_blank" rel="noopener">mai</a> · <a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">jun</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="cm-note"><span>◎</span><div>Curiosidade que só o fluxo revela: a Planner <b style="color:#fff">tirou TOTS3 em maio e recomprou em junho</b>, e fez o mesmo ciclo com LREN3 e PRIO3 ao contrário. Entra-e-sai no intervalo de um mês é o tipo de baixa convicção que a foto estática nunca mostra.</div></div>
-
-    <!-- PILAR 3: PERFORMANCE -->
-    <div class="cm-sectlabel">Pilar 3 · O placar — o que cada carteira entregou</div>
+    <!-- PILAR 1: O QUE CADA CASA ENTREGOU -->
+    <div class="cm-sectlabel">O placar · o que cada casa entregou</div>
     <div class="cm-secttitle">Performance vs. benchmark, divulgada pelas casas</div>
-    <div class="cm-sectsub">Aqui está o que faltava: o retorno que cada carteira de fato entregou, contra o índice de referência da própria casa. Todos os números são publicados pelas próprias instituições — citáveis e datados. Onde a casa não divulga, não inventamos.</div>
+    <div class="cm-sectsub">O retorno que cada carteira de fato entregou, contra o índice de referência da própria casa. Todos os números são publicados pelas próprias instituições &mdash; citáveis e datados.</div>
     <div class="cm-tablewrap">
       <table class="cm-table">
-        <thead><tr><th>Casa / carteira</th><th>No mês</th><th>No ano (2026)</th><th>vs. benchmark</th><th>Veredito</th><th>Fonte</th></tr></thead>
+        <thead><tr><th>Casa / carteira</th><th>No mês</th><th>Janela longa</th><th>vs. benchmark</th><th>Veredito</th><th>Fonte</th></tr></thead>
         <tbody>
+          <tr>
+            <td class="cm-casa">BTG · 10SIM</td>
+            <td class="cm-mono"><span class="cm-down">+2,8%</span> <span class="cm-muted">(fev, abaixo do Ibov +4,1%)</span></td>
+            <td class="cm-mono"><span class="cm-up">+647,7%</span> <span class="cm-muted">(desde out/2009)</span></td>
+            <td class="cm-mono">3&times; o Ibov (+206,9%) em 16 anos</td>
+            <td><span class="cm-up">Acima</span></td>
+            <td><a class="cm-link" href="https://content.btgpactual.com/research/" target="_blank" rel="noopener">BTG Research →</a></td>
+          </tr>
           <tr>
             <td class="cm-casa">Itaú BBA · Top 5</td>
-            <td class="cm-mono"><span class="cm-up">+2,7%</span> <span class="cm-muted">(dez/25)</span></td>
+            <td class="cm-mono"><span class="cm-up">+2,7%</span> <span class="cm-muted">(dez/25, +1,4pp)</span></td>
             <td class="cm-mono"><span class="cm-up">+56,5%</span> <span class="cm-muted">(2025)</span></td>
             <td class="cm-mono">+22,5 p.p. acima do Ibov (2025)</td>
             <td><span class="cm-up">Acima</span></td>
@@ -195,78 +134,139 @@
           </tr>
           <tr>
             <td class="cm-casa">Safra · Top 10</td>
-            <td class="cm-mono"><span class="cm-down">−0,34%</span> <span class="cm-muted">(abr)</span></td>
+            <td class="cm-mono"><span class="cm-down">−2,83%</span> <span class="cm-muted">(abr, vs Ibov −0,70%)</span></td>
             <td class="cm-mono"><span class="cm-up">+45,48%</span> <span class="cm-muted">(12m)</span></td>
-            <td class="cm-mono">+6,8 p.p. acima do Ibov (12m)</td>
+            <td class="cm-mono">+6,8 p.p. acima do Ibov; bateu o índice em 99 de 171 meses</td>
             <td><span class="cm-up">Acima</span></td>
-            <td><a class="cm-link" href="https://oespecialista.safra.com.br/carteira-top-10-rentabilidade-execucao-automatica-maio-2026/" target="_blank" rel="noopener">Safra →</a></td>
+            <td><a class="cm-link" href="https://oespecialista.safra.com.br/safra-top-10-acoes-abril-2026/" target="_blank" rel="noopener">Safra →</a></td>
           </tr>
           <tr>
-            <td class="cm-casa">Genial · ESG 5+</td>
+            <td class="cm-casa">XP · Top 10</td>
+            <td class="cm-mono cm-muted">não divulga % consolidado por mês</td>
+            <td class="cm-mono cm-muted">objetivo: superar Ibov no longo prazo</td>
             <td class="cm-mono cm-muted">—</td>
-            <td class="cm-mono"><span class="cm-up">+16,58%</span></td>
-            <td class="cm-mono">+7,1 p.p. acima do ISE</td>
-            <td><span class="cm-up">Acima</span></td>
-            <td><a class="cm-link" href="https://analisa.genialinvestimentos.com.br/carteiras-recomendadas/renda-variavel/carteira-recomendada-de-acoes-maio-de-2026/" target="_blank" rel="noopener">Genial →</a></td>
+            <td><span class="cm-muted">s/ dado</span></td>
+            <td><a class="cm-link" href="https://conteudos.xpi.com.br/acoes/carteiras/top-acoes-xp-junho-2026/" target="_blank" rel="noopener">XP →</a></td>
           </tr>
           <tr>
-            <td class="cm-casa">Genial · Micro Caps 5+</td>
-            <td class="cm-mono"><span class="cm-up">+5,85%</span> <span class="cm-muted">(mai)</span></td>
-            <td class="cm-mono"><span class="cm-down">−0,79%</span></td>
-            <td class="cm-mono">+9,5 p.p. acima do SMLL no mês</td>
-            <td><span class="cm-up">Acima</span></td>
-            <td><a class="cm-link" href="https://analisa.genialinvestimentos.com.br/carteiras-recomendadas/renda-variavel/carteira-recomendada-de-acoes-junho-de-2026/" target="_blank" rel="noopener">Genial →</a></td>
+            <td class="cm-casa">Ágora · Top 10</td>
+            <td class="cm-mono cm-muted">divulga por ativo, não consolidado</td>
+            <td class="cm-mono cm-muted">—</td>
+            <td class="cm-mono cm-muted">—</td>
+            <td><span class="cm-muted">s/ dado</span></td>
+            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">ADVFN →</a></td>
           </tr>
           <tr>
-            <td class="cm-casa">Genial · Dividendos 5+</td>
-            <td class="cm-mono"><span class="cm-down">−7,46%</span> <span class="cm-muted">(mai)</span></td>
-            <td class="cm-mono"><span class="cm-up">+12,46%</span> <span class="cm-muted">(até abr)</span></td>
-            <td class="cm-mono">misto vs. IDIV</td>
-            <td><span class="cm-flat">Misto</span></td>
-            <td><a class="cm-link" href="https://analisa.genialinvestimentos.com.br/carteiras-recomendadas/renda-variavel/carteira-recomendada-de-acoes-abril-de-2026/" target="_blank" rel="noopener">Genial →</a></td>
-          </tr>
-          <tr>
-            <td class="cm-casa">Genial · Ibovespa 10+</td>
-            <td class="cm-mono"><span class="cm-down">−7,86%</span> <span class="cm-muted">(mai)</span></td>
-            <td class="cm-mono"><span class="cm-down">−0,85%</span></td>
-            <td class="cm-mono"><span class="cm-down">8,7 p.p. ABAIXO do Ibov no ano</span></td>
-            <td><span class="cm-down">Abaixo</span></td>
-            <td><a class="cm-link" href="https://analisa.genialinvestimentos.com.br/carteiras-recomendadas/renda-variavel/carteira-recomendada-de-acoes-junho-de-2026/" target="_blank" rel="noopener">Genial →</a></td>
+            <td class="cm-casa">Bradesco BBI</td>
+            <td class="cm-mono cm-muted">top picks, sem % de carteira</td>
+            <td class="cm-mono cm-muted">projeta Ibov 192 mil pts p/ fim de 2026</td>
+            <td class="cm-mono cm-muted">—</td>
+            <td><span class="cm-muted">s/ dado</span></td>
+            <td><a class="cm-link" href="https://www.infomoney.com.br/mercados/ibovespa-pode-chegar-a-192-mil-pontos-em-2026-projeta-bradesco-bbi-veja-acoes-preferidas/" target="_blank" rel="noopener">InfoMoney →</a></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="cm-note"><span>★</span><div>O caso mais instrutivo do backtest: a <b style="color:#fff">Genial Ibovespa 10+</b>, cujo objetivo declarado é superar o Ibovespa, está <b style="color:#fff">8,7 pontos abaixo do próprio índice no ano</b> — fez pior do que simplesmente comprar o índice. É exatamente o tipo de cobrança que um observatório de calls existe para fazer. Do outro lado, Itaú Top 5 e Safra Top 10 batem seus benchmarks com folga em janelas longas.</div></div>
+    <div class="cm-note"><span>★</span><div>Entre as grandes, <b style="color:#fff">BTG, Itaú e Safra batem seus benchmarks com folga em janelas longas</b> &mdash; o BTG triplica o Ibovespa em 16 anos. Mas repare na coluna do mês: as três ficaram <b style="color:#fff">abaixo do índice em fevereiro e abril</b>. Bater o Ibovespa no longo prazo e perder dele no mês a mês é a regra, não a exceção &mdash; e é por isso que giro e convicção importam tanto quanto o retorno acumulado.</div></div>
 
-    <!-- RANKING DE CONSENSO -->
-    <div class="cm-sectlabel">Bônus · Consenso do trimestre</div>
-    <div class="cm-secttitle">As ações que o mercado mais indicou</div>
-    <div class="cm-sectsub">Somando as indicações de todas as casas rastreadas, mês a mês — quem aparece no topo do consenso ao longo de abril, maio e junho.</div>
+    <!-- PILAR 2: CONVICÇÃO -->
+    <div class="cm-sectlabel">Tempo de convicção</div>
+    <div class="cm-secttitle">Quem segura a mão e quem gira a carteira</div>
+    <div class="cm-sectsub">Quantas trocas cada casa fez em 2026. Giro alto não é defeito por si só &mdash; mas, cruzado com desempenho, é o sinal mais revelador que um observatório de calls oferece.</div>
     <div class="cm-tablewrap">
       <table class="cm-table">
-        <thead><tr><th>Ativo</th><th>Abril</th><th>Maio</th><th>Junho</th><th>Leitura</th></tr></thead>
+        <thead><tr><th>Casa</th><th>Ritmo de troca</th><th>Convicção</th><th>Perfil</th></tr></thead>
         <tbody>
-          <tr><td class="cm-casa">VALE3</td><td>5 indic.</td><td>2 indic.</td><td><span class="cm-up">4 indic.</span></td><td class="cm-muted">favorita transversal o trimestre todo</td></tr>
-          <tr><td class="cm-casa">ITUB4</td><td>4 indic.</td><td>2 indic.</td><td><span class="cm-up">4 indic.</span></td><td class="cm-muted">banco de consenso defensivo</td></tr>
-          <tr><td class="cm-casa">PETR4</td><td><span class="cm-up">5 indic.</span></td><td>2 indic.</td><td>3 indic.</td><td class="cm-muted">perdeu força com volatilidade do Brent</td></tr>
-          <tr><td class="cm-casa">BBDC4 · AXIA3</td><td>4 indic.</td><td>—</td><td>2 indic.</td><td class="cm-muted">bancos e energia, presença constante</td></tr>
+          <tr><td class="cm-casa">Itaú BBA · Top 5</td><td><span class="cm-up">baixíssimo giro</span></td><td><span class="conv-bar" style="width:140px"></span></td><td class="cm-muted">carteira concentrada de 5 nomes, 1 troca por mês no máximo</td></tr>
+          <tr><td class="cm-casa">Ágora · Top 10</td><td><span class="cm-up">baixo giro</span></td><td><span class="conv-bar" style="width:128px"></span></td><td class="cm-muted">segurou 8 de 10 nomes no trimestre abr–jun</td></tr>
+          <tr><td class="cm-casa">BTG · 10SIM</td><td><span class="cm-flat">giro moderado</span></td><td><span class="conv-bar" style="width:96px"></span></td><td class="cm-muted">1–2 trocas táticas por mês, estratégia estável</td></tr>
+          <tr><td class="cm-casa">XP · Top 10</td><td><span class="cm-flat">giro moderado-alto</span></td><td><span class="conv-bar" style="width:80px"></span></td><td class="cm-muted">2–3 trocas por mês, ajuste fino constante de pesos</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="cm-log" style="border-top:none;padding-top:8px">Fonte: rankings de consenso ADVFN, <a href="https://br.advfn.com/jornal/2026/04/carteiras-recomendadas-de-acoes-para-abril-de-2026-e-ranking-2" target="_blank" rel="noopener" style="color:var(--yellow)">abril</a>, <a href="https://br.advfn.com/jornal/2026/05/carteiras-recomendadas-de-acoes-para-maio-de-2026-e-ranking-2" target="_blank" rel="noopener" style="color:var(--yellow)">maio</a> e <a href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener" style="color:var(--yellow)">junho</a>/2026.</div>
+    <div class="cm-note"><span>↻</span><div>O <b style="color:#fff">Itaú Top 5</b> é o oposto da Genial: pouquíssimo giro, carteira concentrada &mdash; e é justamente uma das que mais batem o benchmark no longo prazo. Concentração com baixo giro tem sido a marca das casas vencedoras.</div></div>
+
+    <!-- PILAR 3: O FLUXO -->
+    <div class="cm-sectlabel">O fluxo · entradas e saídas em 2026</div>
+    <div class="cm-secttitle">O que cada grande casa trocou, mês a mês</div>
+    <div class="cm-sectsub">As mudanças reais de composição ao longo de 2026, direto da fonte de cada casa. Verbos factuais; o juízo é do leitor.</div>
+    <div class="cm-tablewrap">
+      <table class="cm-table">
+        <thead><tr><th>Casa</th><th>Movimentos datados em 2026</th><th>Fonte</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="cm-casa">BTG<br>10SIM</td>
+            <td>
+              <div style="margin-bottom:5px"><span class="cm-muted">fev:</span> <span class="cm-pill p-in">+AXIA3</span> <span class="cm-pill p-out">−EQTL3</span></div>
+              <div style="margin-bottom:5px"><span class="cm-muted">abr:</span> <span class="cm-pill p-in">+PETR4</span> <span class="cm-pill p-in">+EMBJ3</span> <span class="cm-pill p-out">−PRIO3</span> <span class="cm-pill p-out">−AURA33</span></div>
+              <div><span class="cm-muted">jun:</span> <span class="cm-pill p-in">+ITUB4</span> <span class="cm-pill p-in">+EQTL3</span> <span class="cm-pill p-out">−ROXO34</span> <span class="cm-pill p-out">−ALOS3</span></div>
+            </td>
+            <td><a class="cm-link" href="https://www.seudinheiro.com/2026/select/petrobras-petr4-e-embraer-embj3-de-volta-veja-as-10-acoes-para-ter-na-carteira-em-abril-segundo-btg-pactual-lbrdlo003/" target="_blank" rel="noopener">Seu Dinheiro →</a></td>
+          </tr>
+          <tr>
+            <td class="cm-casa">Itaú BBA<br>Top 5</td>
+            <td>
+              <div style="margin-bottom:5px"><span class="cm-muted">jan:</span> <span class="cm-pill p-in">+SUZB3</span> <span class="cm-pill p-out">−TEND3</span></div>
+              <div style="margin-bottom:5px"><span class="cm-muted">abr:</span> <span class="cm-mono">AURA33 · B3SA3 · ENEV3 · AXIA3 · PETR4</span></div>
+              <div><span class="cm-muted">jun:</span> <span class="cm-mono">AURA33 · SUZB3 · EQTL3 · BBDC4 · ROXO34</span></div>
+            </td>
+            <td><a class="cm-link" href="https://www.moneytimes.com.br/5-acoes-para-comecar-2026-com-bons-retornos-segundo-o-itau-bba-carteira-devolveu-565-no-ano-passado-pads/" target="_blank" rel="noopener">Money Times →</a></td>
+          </tr>
+          <tr>
+            <td class="cm-casa">XP<br>Top 10</td>
+            <td>
+              <div style="margin-bottom:5px"><span class="cm-muted">mar:</span> <span class="cm-pill p-in">+RADL3</span> <span class="cm-pill p-in">+LREN3</span> <span class="cm-pill p-out">−SMFT3</span> <span class="cm-pill p-out">−MOTV3</span> <span class="cm-pill p-out">−MELI34</span></div>
+              <div style="margin-bottom:5px"><span class="cm-muted">abr:</span> <span class="cm-pill p-in">+ROXO34</span> <span class="cm-pill p-out">−CYRE3</span> <span class="cm-muted">(↓ITUB4)</span></div>
+              <div><span class="cm-muted">jun:</span> <span class="cm-pill p-in">+ORVR3</span> <span class="cm-pill p-out">−RADL3</span> <span class="cm-muted">(↓PETR4)</span></div>
+            </td>
+            <td><a class="cm-link" href="https://conteudos.xpi.com.br/acoes/carteiras/top-acoes-xp-junho-2026/" target="_blank" rel="noopener">XP →</a></td>
+          </tr>
+          <tr>
+            <td class="cm-casa">Ágora<br>Top 10</td>
+            <td>
+              <div style="margin-bottom:5px"><span class="cm-muted">mai:</span> <span class="cm-pill p-in">+ISAE4</span> <span class="cm-pill p-out">−CYRE3</span></div>
+              <div><span class="cm-muted">jun:</span> <span class="cm-pill p-in">+GGBR4</span> <span class="cm-pill p-out">−SUZB3</span></div>
+            </td>
+            <td><a class="cm-link" href="https://br.advfn.com/jornal/2026/06/carteiras-recomendadas-de-acoes-para-junho-de-2026-e-ranking-2" target="_blank" rel="noopener">ADVFN →</a></td>
+          </tr>
+          <tr>
+            <td class="cm-casa">Bradesco<br>BBI</td>
+            <td class="cm-muted">Mantém viés defensivo (financeiro, utilities, telecom) com BPAC11 como top pick no setor financeiro. A casa divulga preferências e projeção (Ibov 192 mil), mas não uma carteira mensal de pesos como as demais.</td>
+            <td><a class="cm-link" href="https://www.infomoney.com.br/mercados/ibovespa-pode-chegar-a-192-mil-pontos-em-2026-projeta-bradesco-bbi-veja-acoes-preferidas/" target="_blank" rel="noopener">InfoMoney →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cm-note"><span>◎</span><div>Padrão revelado pelo fluxo: <b style="color:#fff">PETR4 e EMBJ3 voltaram ao BTG em abril</b> (saindo PRIO3 e AURA33), e a XP fez o caminho oposto em tech/varejo. As grandes casas divergem nos detalhes, mas convergem no movimento defensivo de junho &mdash; bancos e geração de caixa entrando, cíclicos saindo, à espera do Copom de 17/06.</div></div>
+
+    <!-- CONSENSO -->
+    <div class="cm-sectlabel">Bônus · consenso das grandes</div>
+    <div class="cm-secttitle">As ações que aparecem em mais carteiras</div>
+    <div class="cm-sectsub">Os nomes que mais se repetem entre BTG, Itaú, XP, Ágora e Bradesco ao longo de 2026.</div>
+    <div class="cm-tablewrap">
+      <table class="cm-table">
+        <thead><tr><th>Ativo</th><th>Presença</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td class="cm-casa">VALE3</td><td><span class="cm-pill p-hold">transversal</span></td><td class="cm-muted">favorita das grandes o ano todo</td></tr>
+          <tr><td class="cm-casa">ITUB4 · BBDC4</td><td><span class="cm-pill p-hold">recorrente</span></td><td class="cm-muted">bancos como base defensiva</td></tr>
+          <tr><td class="cm-casa">PETR4</td><td><span class="cm-pill p-hold">cíclico</span></td><td class="cm-muted">entra e sai conforme o Brent</td></tr>
+          <tr><td class="cm-casa">AXIA3 · EQTL3</td><td><span class="cm-pill p-hold">energia</span></td><td class="cm-muted">elétricas como carrego defensivo</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- LEITURA -->
     <div class="cm-sectlabel">Leitura do backtest</div>
-    <div class="cm-secttitle">O que três meses já revelam</div>
-    <p style="font-family:'Inter',sans-serif;font-size:16px;color:var(--gray-text);max-width:820px;line-height:1.7;margin-bottom:14px">Mesmo com apenas um trimestre, três padrões aparecem. <b style="color:#fff">Primeiro</b>: convicção e resultado nem sempre andam juntos — a Ágora segurou a mão, mas só o retorno dirá se acertou. <b style="color:#fff">Segundo</b>: bater o próprio benchmark é mais raro do que o marketing sugere — a carteira da Genial que promete superar o Ibovespa ficou quase 9 pontos atrás dele. <b style="color:#fff">Terceiro</b>: as casas com melhor histórico longo (Itaú Top 5, Safra Top 10) combinam baixo giro com seleção concentrada. O CallMap vai acompanhar se esses padrões se sustentam.</p>
-    <p style="font-family:'Inter',sans-serif;font-size:13.5px;color:var(--gray-muted);max-width:820px;line-height:1.6">Esta leitura reflete o conjunto público de carteiras de abr–jun/2026 e serve de contexto — não de recomendação. O CallMap registra; não aconselha.</p>
+    <div class="cm-secttitle">O que os dados das grandes já revelam</div>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:var(--gray-text);max-width:820px;line-height:1.7;margin-bottom:14px">Três padrões aparecem entre as casas que de fato movem o mercado. <b style="color:#fff">Primeiro</b>: as vencedoras de longo prazo (BTG, Itaú, Safra) combinam <b style="color:#fff">baixo giro com carteira concentrada</b> &mdash; o Itaú Top 5 tem só cinco nomes e troca pouco. <b style="color:#fff">Segundo</b>: bater o Ibovespa no acumulado de anos não impede ficar abaixo dele em meses específicos &mdash; as três grandes perderam do índice em fev/abr, e isso é normal. <b style="color:#fff">Terceiro</b>: em junho houve convergência defensiva das grandes &mdash; bancos e elétricas entrando, cíclicos saindo, todos posicionados para o Copom. O CallMap vai acompanhar se a convicção das casas se converte em retorno.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:13.5px;color:var(--gray-muted);max-width:820px;line-height:1.6">Esta leitura reflete o conjunto público de carteiras das grandes casas em 2026 e serve de contexto &mdash; não de recomendação. O CallMap registra; não aconselha.</p>
 
     <div class="cm-disc" style="margin-top:40px">
       Os dados refletem exclusivamente recomendações e retornos divulgados publicamente pelas instituições, com fonte datada por linha. Os retornos de carteira são os informados pelas próprias casas, contra os benchmarks que elas adotam; não recalculamos preços de ativos individualmente. Rentabilidade passada não implica rentabilidade futura, nem reflete necessariamente a qualidade do processo decisório de cada casa. Eventuais sinalizadores de relação declarada espelham apenas informações públicas exigidas pela regulação; o CallMap não afirma causalidade. Conteúdo informativo. Não constitui recomendação de investimento. Antes de qualquer decisão, consulte profissional certificado.
     </div>
     <div class="cm-log">
       <b>Log de atualizações</b><br>
-      10/06/2026 — Backtest inicial de 3 meses (abr–jun/2026) publicado: tempo de convicção, fluxo de entradas/saídas e performance divulgada por casa, com fonte datada por linha. Próxima rodada (julho): incorporar XP e Bradesco BBI ao backtest, estender a janela e, se houver base de cotações, recalcular o retorno ativo a ativo.
+      10/06/2026 — Backtest das grandes casas (BTG, Itaú BBA, XP, Bradesco BBI, Ágora) publicado: performance vs benchmark, tempo de convicção e fluxo de entradas/saídas em 2026, com fonte datada por linha. Próxima rodada: aprofundar a série mês a mês do Bradesco BBI e adicionar as internacionais (J.P. Morgan, Goldman). Se houver base de cotações, recálculo do retorno ativo a ativo.
     </div>
 
   </div>
