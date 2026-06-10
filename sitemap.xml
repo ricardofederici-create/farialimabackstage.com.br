@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://farialimabackstage.com.br/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://farialimabackstage.com.br/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://farialimabackstage.com.br/callmap/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://farialimabackstage.com.br/callmap/metodologia.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://farialimabackstage.com.br/analises/credito-rj-books-proprietarios.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://farialimabackstage.com.br/analises/spacex-ipo-engenharia-oferta.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://farialimabackstage.com.br/analises/saude-fiscal-estados-capag.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://farialimabackstage.com.br/analises/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://farialimabackstage.com.br/decoder/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://farialimabackstage.com.br/quem-e-quem/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://farialimabackstage.com.br/sobre/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

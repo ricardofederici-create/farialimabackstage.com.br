@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metodologia do CallMap — Faria Lima Backstage</title>
+<meta name="description" content="Como o CallMap mede o desempenho das casas: todos os calls já feitos, tempo de convicção, performance no período e benchmark no mesmo intervalo. Limites e premissas declarados.">
+<meta property="og:title" content="Metodologia do CallMap — Faria Lima Backstage">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+.mt-formula{font-family:'Inter',sans-serif;font-size:14px;background:var(--black-card);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:14px 0;color:var(--green);line-height:1.7}
+.mt-limit{border-left:3px solid var(--yellow);background:var(--black-card);padding:14px 18px;border-radius:0 6px 6px 0;margin:16px 0;font-family:'Inter',sans-serif;font-size:15px;color:var(--gray-text);line-height:1.6}
+.mt-limit b{color:var(--white);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="marquee" id="market-ticker"><div class="marquee-track" id="ticker-track"><span class="ticker ticker-loading">Carregando cotações…</span></div></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo"><span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span></a>
+    <nav class="main-nav">
+      <a href="/analises/">Análises</a>
+      <a href="/decoder/">Decoder</a>
+      <a href="/callmap/">CallMap</a>
+      <a href="/quem-e-quem/">Quem é Quem</a>
+      <a href="/#newsletter">Newsletter</a>
+      <a href="/sobre/">Sobre</a>
+    </nav>
+    <a href="/#newsletter" class="btn-assinar">Assinar</a>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/callmap/">CallMap</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Metodologia</span>
+    </nav>
+
+    <article>
+      <header class="article-hero">
+        <div class="tag tag-analise">Metodologia · CallMap</div>
+        <h1 class="article-hero-title">Como o CallMap mede</h1>
+        <p class="article-hero-lede">Um observatório de calls só vale o que vale sua metodologia. Esta página explica, sem letra miúda, como apuramos cada número — e onde estão os limites do que conseguimos afirmar.</p>
+      </header>
+
+      <div class="article-body">
+        <h2>O princípio: nada desaparece</h2>
+        <p>A maioria dos rankings de carteira recomendada mede apenas a composição vigente. O problema é estrutural: quando uma casa inclui um ativo, ele cai, e ela o remove, esse prejuízo some do ranking que olha só a foto atual. É o viés de sobrevivência — e ele faz toda casa parecer melhor do que foi.</p>
+        <p>O CallMap parte da premissa oposta. <strong>Todo ativo que em algum momento esteve na carteira entra na conta</strong>, pelo intervalo exato em que esteve lá, com o ganho ou a perda que entregou nesse período. A casa não consegue apagar o call que deu errado.</p>
+
+        <h2>Como o retorno de cada casa é apurado</h2>
+        <p>Para cada ativo, registramos a data em que entrou na carteira e a data em que saiu (ou o dia de hoje, se ainda permanece). O retorno daquele call é a variação do ativo nesse intervalo. O desempenho da casa é a média dos retornos de todos os seus calls.</p>
+        <div class="mt-formula">retorno do call = variação do ativo, da data de entrada à data de saída<br>retorno da casa = média( retorno de todos os calls )<br>desempenho relativo = retorno da casa − benchmark no mesmo intervalo</div>
+        <p>Quando a casa divulga o peso de cada ativo, a média é ponderada por esse peso. Quando não divulga, tratamos como pesos iguais e sinalizamos.</p>
+
+        <h2>Benchmark no mesmo intervalo</h2>
+        <p>Todo call é comparado contra o referencial adequado, medido exatamente no mesmo período: Ibovespa para carteiras de ações, IFIX para FIIs, CDI para renda fixa. Isso separa o que é mérito de seleção do que é apenas maré de mercado. Uma casa que subiu 10% num mês em que o Ibovespa subiu 12% entregou desempenho relativo negativo, ainda que o número absoluto pareça bom.</p>
+
+        <h2>Tempo de convicção</h2>
+        <p>Além do retorno, registramos quantos dias cada ativo permaneceu na carteira. Esse "tempo de convicção" é uma informação editorial por si só: uma casa que troca de posição a cada poucas semanas está, na prática, revelando baixa convicção nas próprias escolhas. O giro da carteira, cruzado com a taxa de acerto, é um dos sinais mais reveladores do mapa.</p>
+        <div class="mt-limit">A granularidade do tempo de convicção acompanha a frequência das nossas leituras. Com atualização mensal, sabemos que um ativo saiu "entre uma rodada e outra", não o dia exato — a menos que a própria casa date a mudança. Leituras mais frequentes refinam essa medida.</div>
+
+        <h2>Sinalizador de relação declarada</h2>
+        <p>Algumas linhas trazem um sinalizador de relação entre a casa e o emissor do ativo — por exemplo, atuação como banco de investimento ou participação em oferta recente. Esse sinalizador segue uma regra rígida: espelha <strong>apenas</strong> fatos que a própria instituição divulga publicamente, na seção de disclosure que a regulação já exige de cada relatório de análise; vem sempre acompanhado de link para o documento original; e <strong>nunca</strong> afirma que a relação influenciou a recomendação.</p>
+        <p>A diferença é deliberada. "A casa coordenou a oferta da empresa" é um fato verificável. "A casa recomendou porque coordenou a oferta" seria uma acusação sem prova — e o CallMap não faz isso. Registramos o fato; a interpretação é do leitor.</p>
+
+        <h2>Limites que assumimos</h2>
+        <div class="mt-limit"><b>O ranking nasce modesto.</b> Ele se constrói sobre o histórico de snapshots. Sem reconstrução retroativa, as primeiras leituras têm pouca amostra e ganham robustez a cada rodada mensal. Número pequeno de calls significa conclusão fraca, e dizemos quando é o caso.</div>
+        <div class="mt-limit"><b>Performance é de fechamento.</b> As cotações usadas são de fechamento, buscadas no momento de cada atualização — não dados em tempo real. Para um observatório editorial, é precisão suficiente; para decisão de trade intradiário, não é a ferramenta.</div>
+        <div class="mt-limit"><b>Cobrimos o que é público.</b> Carteiras atrás de login pago ou relatórios restritos não entram. O CallMap se limita ao que as casas divulgam abertamente — o que é, também, parte do ponto: comparar o que foi dito em público.</div>
+
+        <h2>Atualização</h2>
+        <p>O CallMap é atualizado mensalmente e sob demanda. A cada rodada, comparamos a composição vigente de cada casa contra o snapshot anterior, registramos entradas, saídas e mudanças de peso, recalculamos os retornos e atualizamos o ranking. O log ao pé da página principal documenta cada rodada.</p>
+      </div>
+
+      <div class="article-disclaimer">
+        Esta metodologia está em evolução e será ajustada com o tempo, sempre de forma documentada. Os dados refletem exclusivamente recomendações divulgadas publicamente. Rentabilidade passada não implica rentabilidade futura, nem reflete necessariamente a qualidade do processo decisório de cada instituição. Conteúdo informativo. Não constitui recomendação de investimento.
+      </div>
+
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span></div>
+        <p>Análise e contexto do mercado financeiro brasileiro. Conteúdo informativo — não constitui recomendação de investimento.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Editorial</h4>
+        <a href="/analises/">Análises</a>
+        <a href="/decoder/">Decoder</a>
+        <a href="/callmap/">CallMap</a>
+        <a href="/quem-e-quem/">Quem é Quem</a>
+      </div>
+      <div class="footer-col">
+        <h4>Backstage</h4>
+        <a href="/sobre/">Sobre</a>
+        <a href="/callmap/metodologia.html">Metodologia CallMap</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/sobre/privacidade.html">Privacidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Faria Lima Backstage.</span>
+      <span>Não constitui recomendação de investimento.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

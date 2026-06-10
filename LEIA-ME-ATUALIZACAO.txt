@@ -1,0 +1,74 @@
+FARIA LIMA BACKSTAGE — Atualização de 10/06/2026
+==================================================
+Rotina normal: descompacte este ZIP POR CIMA da sua pasta local do
+GitHub Desktop (substituir tudo) → Commit → Push. Netlify republica
+em ~30s.
+
+----------------------------------------------------------------------
+O QUE ESTE PACOTE JÁ FAZ SOZINHO (nada a fazer da sua parte):
+----------------------------------------------------------------------
+✓ index.html (HOME) reconstruída:
+    - Lead: "O risco que mudou de dono" (crédito/RJs)
+    - Card de destaque do CallMap
+    - Grid "Análises da semana": SpaceX, Estados, Patria, Holdings,
+      Kinea, Petros
+    - Grid "Mais do FLB": Raio-XP, UBS, LCI-decoder, Paraguai
+    - As 3 matérias que saem (Sêneca, private banker, FIIs) NÃO
+      aparecem mais em lugar nenhum da home.
+
+✓ 5 páginas novas, no template real (dark, Barlow Condensed):
+    /analises/credito-rj-books-proprietarios.html
+    /analises/spacex-ipo-engenharia-oferta.html
+    /analises/saude-fiscal-estados-capag.html
+    /callmap/index.html              (a aba nova)
+    /callmap/metodologia.html        (rodapé)
+
+✓ "CallMap" adicionado ao menu de navegação de TODAS as páginas
+  (as 17 existentes + as novas), entre "Decoder" e "Quem é Quem".
+
+✓ sitemap.xml atualizado com as URLs novas.
+
+✓ As 2 matérias antigas que existiam no seu último ZIP foram
+  removidas deste pacote (private-bankers-exodo-bancos.html e
+  fiis-11-por-cento-yield-risco.html).
+
+----------------------------------------------------------------------
+AS ÚNICAS 2 COISAS QUE O ZIP NÃO CONSEGUE FAZER (1 minuto seu):
+----------------------------------------------------------------------
+Como o deploy é "descompactar por cima", ele SUBSTITUI e ADICIONA
+arquivos, mas NÃO DELETA arquivos que já estão na sua pasta local.
+Então, para as 3 matérias que saem de circulação:
+
+1. DELETAR manualmente da sua pasta local (se existirem lá):
+     analises/seneca-investidor-brasileiro-duas-frases.html
+     analises/private-bankers-exodo-bancos.html
+     analises/fiis-11-por-cento-yield-risco.html
+   (Elas já não são linkadas em lugar nenhum, então mesmo que você
+    esqueça, ninguém chega nelas navegando — mas o ideal é apagar para
+    a URL direta também sair do ar. O GitHub Desktop mostra o delete
+    como mudança; é só commitar junto.)
+
+2. CONFERIR que estas 2, que estão no ar mas não vêm neste ZIP,
+   continuam intactas na sua pasta local (a home aponta para elas):
+     analises/patria-superfundos-fiis-consolidacao.html
+     analises/raio-xp-compra-brasil-fluxo-gringo.html
+     analises/ferramentas-sistema-financeiro-brasileiro-fapesp.html
+   Não precisa fazer nada — só não apague. O "descompactar por cima"
+   as preserva automaticamente.
+
+----------------------------------------------------------------------
+SOBRE OS SLUGS DAS 3 MATÉRIAS NOVAS
+----------------------------------------------------------------------
+São propostas e podem ser trocados livremente (ainda não foram
+compartilhados publicamente). Se trocar, lembre de ajustar os links
+na home e no sitemap.
+
+----------------------------------------------------------------------
+CALLMAP — estado atual
+----------------------------------------------------------------------
+Snapshot inicial (zero). Casas com dados preenchidos: BTG (10SIM,
+Dividendos, FII) e Itaú BBA (Top 5, Dividendos, Renda com Imóveis).
+XP, Bradesco BBI, J.P. Morgan e Goldman: marcadas "a coletar na 1ª
+rodada completa". A coluna de movimento e o ranking ganham vida da
+2ª rodada em diante. Premissa: toda atualização do site passa a
+incluir a checagem das carteiras (CallMap).
