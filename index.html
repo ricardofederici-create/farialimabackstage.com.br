@@ -3,306 +3,496 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faria Lima Backstage — Análise e contexto do mercado financeiro brasileiro</title>
-<meta name="description" content="Análises, contexto e decoder do mercado financeiro brasileiro. Leitura editorial com fontes públicas, sem condescendência.">
-<meta property="og:title" content="Faria Lima Backstage">
-<meta property="og:description" content="Análise e contexto do mercado financeiro brasileiro.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://farialimabackstage.com.br">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>CallMap · Faria Lima Backstage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --panel:#141417; --panel-2:#1a1a1f; --line:#2a2a31;
+    --ink:#f5f5f5; --ink-soft:#b6b6bd; --ink-mute:#7d7d86;
+    --amber:#FAC775; --coral:#F0997B; --green:#5DCAA5;
+    --display:'Barlow Condensed',sans-serif; --body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+       font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  a{color:var(--amber);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{border-bottom:1px solid var(--line);padding:30px 0 22px}
+  .brand{font-family:var(--display);font-weight:600;letter-spacing:.14em;
+         text-transform:uppercase;font-size:13px;color:var(--ink-mute)}
+  h1{font-family:var(--display);font-weight:700;font-size:54px;line-height:.96;
+     margin:6px 0 4px;letter-spacing:-.01em}
+  h1 .dot{color:var(--amber)}
+  .tag{font-size:14px;color:var(--ink-soft);max-width:680px}
+
+  .mz{margin:20px 0 4px;background:var(--panel);border:1px solid var(--line);
+      border-left:3px solid var(--amber);border-radius:8px;padding:14px 18px}
+  .mz b{color:var(--amber);font-weight:600}
+  .mz p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+  nav.tabs{position:sticky;top:0;z-index:5;background:rgba(10,10,10,.92);
+           backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+           margin-top:18px;display:flex;gap:4px;overflow-x:auto;padding:6px 0}
+  .tab{font-family:var(--display);font-weight:600;letter-spacing:.05em;
+       text-transform:uppercase;font-size:14px;color:var(--ink-mute);
+       background:none;border:none;padding:10px 14px;cursor:pointer;
+       border-radius:6px;white-space:nowrap}
+  .tab:hover{color:var(--ink)}
+  .tab.on{color:var(--bg);background:var(--amber)}
+
+  section.panel{display:none;padding:26px 0 10px}
+  section.panel.on{display:block}
+  .lead{color:var(--ink-soft);max-width:760px;margin:0 0 18px;font-size:14.5px}
+
+  h2{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.08em;
+     text-transform:uppercase;color:var(--coral);margin:26px 0 4px}
+  h2:first-child{margin-top:0}
+  .sub{font-size:12.5px;color:var(--ink-mute);margin:0 0 12px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+        overflow:hidden;margin:0 0 16px}
+  .card-h{display:flex;justify-content:space-between;align-items:baseline;
+          gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .card-h .name{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:.02em}
+  .card-h .kind{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+                color:var(--ink-mute);display:block;margin-top:2px}
+  .card-h .meta{font-size:12px;color:var(--ink-mute);text-align:right;line-height:1.5}
+  .bench{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;
+         text-transform:uppercase;color:var(--ink);background:var(--panel-2);
+         border:1px solid var(--line);border-radius:4px;padding:2px 7px}
+  .src{font-size:11px;color:var(--ink-mute)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{font-family:var(--display);font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+     font-size:12px;color:var(--ink-mute);text-align:left;padding:9px 16px;
+     border-bottom:1px solid var(--line)}
+  th.r,td.r{text-align:right}
+  td{padding:8px 16px;border-bottom:1px solid rgba(42,42,49,.55);color:var(--ink-soft)}
+  tr:last-child td{border-bottom:none}
+  td.tk{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  td.w{color:var(--ink);font-variant-numeric:tabular-nums}
+  td.num{font-variant-numeric:tabular-nums}
+  tfoot td{border-top:1px solid var(--line);font-weight:600;color:var(--ink);
+           background:rgba(255,255,255,.015)}
+
+  .foot-note{padding:10px 16px;font-size:12px;color:var(--ink-mute);border-top:1px solid var(--line)}
+  .pmid{color:var(--amber)}
+  .chip{display:inline-block;font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;
+        font-variant-numeric:tabular-nums}
+  .chip.up{color:var(--green);background:rgba(93,202,165,.1)}
+  .chip.dn{color:var(--coral);background:rgba(240,153,123,.1)}
+  .chip.in{color:var(--green);border:1px solid rgba(93,202,165,.35)}
+  .chip.ex{color:var(--coral);border:1px solid rgba(240,153,123,.35)}
+  .dot-st{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .st-ok{background:var(--green)} .st-mid{background:var(--amber)} .st-no{background:var(--ink-mute)}
+
+  .note{font-size:12.5px;color:var(--ink-mute);background:var(--panel);
+        border:1px solid var(--line);border-radius:8px;padding:12px 15px;margin:14px 0}
+  .note b{color:var(--ink-soft)}
+
+  .m-item{border-bottom:1px solid var(--line);padding:15px 0}
+  .m-item:last-child{border-bottom:none}
+  .m-item h3{font-family:var(--display);font-weight:600;font-size:17px;margin:0 0 5px;color:var(--ink)}
+  .m-item p{margin:0;color:var(--ink-soft);font-size:14px}
+  .star{color:var(--amber);font-weight:600}
+
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 50px;
+         font-size:12px;color:var(--ink-mute)}
+  footer p{margin:0 0 8px;max-width:880px}
+
+  @media(max-width:620px){
+    h1{font-size:40px}
+    th,td{padding:7px 10px}
+    .card-h{padding:11px 12px}
+  }
+</style>
 </head>
 <body>
 
-<div class="marquee" id="market-ticker">
-  <div class="marquee-track" id="ticker-track">
-    <span class="ticker ticker-loading">Carregando cotações em tempo real…</span>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo">
-      <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
-    </a>
-    <nav class="main-nav">
-      <a href="/analises/">Análises</a>
-      <a href="/decoder/">Decoder</a>
-      <a href="/callmap/">CallMap</a>
-      <a href="/quem-e-quem/">Quem é Quem</a>
-      <a href="#newsletter">Newsletter</a>
-      <a href="/sobre/">Sobre</a>
-    </nav>
-    <a href="#newsletter" class="btn-assinar">Assinar</a>
-    <button class="menu-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+<header>
+  <div class="wrap">
+    <div class="brand">Faria Lima Backstage · Observatório</div>
+    <h1>CallMap<span class="dot">.</span></h1>
+    <p class="tag">As carteiras recomendadas das casas, lado a lado e no mesmo padrão. Não a foto de hoje &mdash; o histórico de cada entrada e cada saída, e a performance medida através desses movimentos.</p>
+    <div class="mz">
+      <p><b>Marco zero · 10/06/2026.</b> O placar começa aqui. Preços-base travados nesta data; retorno medido daqui pra frente, todas as casas partindo do mesmo ponto e contra o mesmo benchmark. Sem retorno retroativo e sem número autorreportado. O histórico de convicção (entradas e saídas) é documentado; a performance se acumula a partir da largada.</p>
+    </div>
   </div>
 </header>
 
-<main>
+<nav class="tabs">
+  <div class="wrap" style="display:flex;gap:4px">
+    <button class="tab on" data-t="comp">Composições</button>
+    <button class="tab" data-t="mov">Movimentos</button>
+    <button class="tab" data-t="perf">Performance</button>
+    <button class="tab" data-t="conf">Potencial conflito</button>
+    <button class="tab" data-t="intl">Internacional</button>
+    <button class="tab" data-t="met">Metodologia</button>
+  </div>
+</nav>
 
-  <!-- Hero / Manchete principal -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <article class="hero-main">
-          <div class="tag tag-analise">Análise · Crédito</div>
-          <h1 class="hero-title"><a href="/analises/credito-rj-books-proprietarios.html" style="color:inherit">O risco que mudou de dono: recuperações judiciais em recorde enquanto o crédito privado vira produto de massa</a></h1>
-          <p class="hero-lede">As recuperações judiciais beiram 6 mil empresas e o agro — o setor mais resiliente do país — virou epicentro. No mesmo período, o crédito estruturado deixou de ser nicho e virou prateleira da pessoa física. A conta que quase ninguém faz: para onde foi parar o risco que saiu do balanço dos bancos.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">10 de junho de 2026</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-read">9 min de leitura</span>
-          </div>
-        </article>
+<!-- ============ COMPOSIÇÕES ============ -->
+<section class="panel on" id="comp">
+  <div class="wrap">
+    <p class="lead">Padrão único: cada casa entra com uma carteira recomendada de ações e uma de FIIs, normalizadas a 100%. Número de ativos diferente não atrapalha &mdash; é performance de carteira contra carteira. Tabela só com fato: papel e peso. Peso real onde a casa publica; senão, proporcional (ver Metodologia <span class="star">*</span>).</p>
 
-        <aside class="hero-side">
-          <div class="side-card">
-            <div class="side-label">Em destaque no mercado</div>
-            <ol class="side-list">
-              <li>
-                <span class="rank">01</span>
-                <a href="/analises/credito-rj-books-proprietarios.html">O risco que mudou de dono: RJs em recorde e o crédito como produto de massa</a>
-              </li>
-              <li>
-                <span class="rank">02</span>
-                <a href="/analises/spacex-ipo-engenharia-oferta.html">A SpaceX vende 4% e quer valer US$ 1,77 trilhão: a engenharia do maior IPO da história</a>
-              </li>
-              <li>
-                <span class="rank">03</span>
-                <a href="/callmap/">CallMap: o observatório de calls — quem recomendou o quê, por quanto tempo e com que resultado</a>
-              </li>
-              <li>
-                <span class="rank">04</span>
-                <a href="/analises/saude-fiscal-estados-capag.html">O mapa fiscal dos estados: quem paga as contas e quem está no socorro</a>
-              </li>
-              <li>
-                <span class="rank">05</span>
-                <a href="/analises/ipo-virou-palavrao-faria-lima.html">O IPO virou palavrão na Faria Lima: a janela não vai abrir tão cedo</a>
-              </li>
-            </ol>
-          </div>
-        </aside>
-      </div>
+    <h2>Carteiras recomendadas · Ações</h2>
+    <p class="sub">Benchmark: Ibovespa · um veículo por grupo econômico</p>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">BTG</span><span class="kind">Carteira recomendada · Ações</span></span><span class="meta">10 ativos · pesos da casa<br><span class="bench">Ibovespa</span><br><span class="src">fonte: 10SIM</span></span></div>
+      <table><thead><tr><th>Papel</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">ITUB4</td><td class="w r">15,0%</td></tr>
+        <tr><td class="tk">PETR4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">AXIA3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">EMBJ3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">ENEV3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">EQTL3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">RENT3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">MOTV3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">TOTS3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">CURY3</td><td class="w r">5,0%</td></tr>
+      </tbody><tfoot><tr><td>Total</td><td class="r">100%</td></tr></tfoot></table>
     </div>
-  </section>
 
-  <!-- Faixa de destaque do CallMap -->
-  <section class="grid-section" style="padding-top:0">
-    <div class="container">
-      <a href="/callmap/" style="display:block;border:1px solid var(--line);border-radius:10px;padding:26px 28px;background:var(--black-card)">
-        <div class="tag tag-exclusivo" style="margin-bottom:12px">Novo · Observatório</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.05;letter-spacing:-.5px;margin-bottom:10px;color:var(--white)">CallMap — o mapa de quem recomendou o quê, e o que aconteceu depois</h2>
-        <p style="font-family:'Inter',sans-serif;font-size:16px;color:var(--gray-text);max-width:760px;line-height:1.6">Não medimos a carteira de hoje. Medimos cada call pelo tempo em que a casa o sustentou, como o ativo performou e que relações declaradas existem por trás. Um observatório de accountability das casas — não mais um agregador. <span style="color:var(--yellow)">Conhecer o CallMap →</span></p>
-      </a>
+    <div class="card">
+      <div class="card-h"><span><span class="name">Itaú BBA</span><span class="kind">Carteira recomendada · Ações</span></span><span class="meta">5 ativos · 20% cada<br><span class="bench">Ibovespa</span><br><span class="src">fonte: Top 5 · carta 31/mai</span></span></div>
+      <table><thead><tr><th>Papel</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">AURA33</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">AXIA3</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">BPAC11</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">EQTL3</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">PETR4</td><td class="w r">20,0%</td></tr>
+      </tbody><tfoot><tr><td>Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Do grupo Itaú entra só a BBA (Itaú Asset, alocação por classe, fica à parte) <span class="star">*</span></div>
     </div>
-  </section>
 
-  <div class="section-divider">
-    <div class="container">
-      <span class="divider-line"></span>
-      <span class="divider-label">Análises da semana</span>
-      <span class="divider-line"></span>
+    <div class="card">
+      <div class="card-h"><span><span class="name">XP</span><span class="kind">Carteira recomendada · Ações</span></span><span class="meta">13 ativos · 7,69% cada <span class="star">*</span><br><span class="bench">Ibovespa</span><br><span class="src">fonte: Top Picks 2S26</span></span></div>
+      <table><thead><tr><th>Papel</th><th>Setor</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">TTEN3</td><td>Agro</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">ITUB4</td><td>Bancos</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">EMBJ3</td><td>Bens de capital</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">CURY3</td><td>Construção</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">EQTL3</td><td>Elétricas</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">AURA33</td><td>Mineração</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">PRIO3</td><td>Óleo &amp; gás</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">SUZB3</td><td>Papel &amp; celulose</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">IGTI11</td><td>Propriedades</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">SBSP3</td><td>Saneamento</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">TOTS3</td><td>Tec &amp; Telecom</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">RENT3</td><td>Transportes</td><td class="w r">7,69%</td></tr>
+        <tr><td class="tk">LREN3</td><td>Varejo</td><td class="w r">7,69%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">A Top Ações ponderada da XP fica atrás de login. Usados os Top Picks setoriais do guia "Onde Investir 2S26", peso igual <span class="star">*</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">Ágora</span><span class="kind">Carteira recomendada · Ações</span></span><span class="meta">10 ativos · 10% cada<br><span class="bench">Ibovespa</span><br><span class="src">fonte: Top 10</span></span></div>
+      <table><thead><tr><th>Papel</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">BPAC11</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">ISAE4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">AXIA3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">ITUB4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">ALOS3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">PETR4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">CSMG3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">VALE3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">VBBR3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">GGBR4</td><td class="w r">10,0%</td></tr>
+      </tbody><tfoot><tr><td>Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Único veículo do grupo Bradesco no mapa (BBI fora) <span class="star">*</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">Safra</span><span class="kind">Carteira recomendada · Ações</span></span><span class="meta">10 ativos · pesos da casa<br><span class="bench">Ibovespa</span><br><span class="src">fonte: Top 10</span></span></div>
+      <table><thead><tr><th>Papel</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">ITSA4</td><td class="w r">14,0%</td></tr>
+        <tr><td class="tk">VALE3</td><td class="w r">12,0%</td></tr>
+        <tr><td class="tk">PETR4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">BBDC4</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">MULT3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">EQTL3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">CPLE3</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">DIRR3</td><td class="w r">8,0%</td></tr>
+        <tr><td class="tk">MOTV3</td><td class="w r">8,0%</td></tr>
+        <tr><td class="tk">PSSA3</td><td class="w r">8,0%</td></tr>
+      </tbody><tfoot><tr><td>Total</td><td class="r">100%</td></tr></tfoot></table>
+    </div>
+
+    <h2>Carteiras recomendadas · FIIs</h2>
+    <p class="sub">Benchmark: IFIX (nota onde a casa usa outro) <span class="star">*</span></p>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">Safra</span><span class="kind">Carteira recomendada · FIIs</span></span><span class="meta">13 fundos · pesos da casa · DY 11,7%<br><span class="bench">IFIX</span><br><span class="src">fonte: Top FIIs</span></span></div>
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Peso</th></tr></thead><tbody>
+        <tr><td class="tk">JSRE11</td><td>Escritórios</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">TRXF11</td><td>Híbridos</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">JSAF11</td><td>Fundo de Fundos</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">KNUQ11</td><td>Ativos Financeiros</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">PCIP11</td><td>Ativos Financeiros</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">HGCR11</td><td>Ativos Financeiros</td><td class="w r">10,0%</td></tr>
+        <tr><td class="tk">HGLG11</td><td>Logística</td><td class="w r">7,5%</td></tr>
+        <tr><td class="tk">XPML11</td><td>Shoppings</td><td class="w r">7,5%</td></tr>
+        <tr><td class="tk">KNCR11</td><td>Ativos Financeiros</td><td class="w r">7,5%</td></tr>
+        <tr><td class="tk">GARE11</td><td>Híbridos</td><td class="w r">5,0%</td></tr>
+        <tr><td class="tk">BRCO11</td><td>Logística</td><td class="w r">5,0%</td></tr>
+        <tr><td class="tk">MCCI11</td><td>Ativos Financeiros</td><td class="w r">5,0%</td></tr>
+        <tr><td class="tk">RZTR11</td><td>Híbridos</td><td class="w r">2,5%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">BTG</span><span class="kind">Carteira recomendada · FIIs</span></span><span class="meta">proxy de destaques · 5 fundos<br><span class="bench">IFIX</span><br><span class="src">fonte: BTG FII</span></span></div>
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Peso *</th></tr></thead><tbody>
+        <tr><td class="tk">BTLG11</td><td>Logística</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">MCCI11</td><td>Recebíveis</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">RBRY11</td><td>Recebíveis</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">VILG11</td><td>Logística</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">HSML11</td><td>Shoppings</td><td class="w r">20,0%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Proxy de peso igual <span class="star">*</span>. BTG publica peso do top 5 (BTLG11 13% · MCCI11 8% · RBRY11 7% · VILG11 4,5% · HSML11 4%), mas os outros 11 fundos (63,5%) não têm peso público. Junho: <span class="chip ex">RBRY11</span>↓ <span class="chip up">HSML11</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">XP</span><span class="kind">Carteira recomendada · FIIs</span></span><span class="meta">proxy de destaques · 5 fundos<br><span class="bench">IFIX</span><br><span class="src">fonte: Fundamentalista FIIs</span></span></div>
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Peso *</th></tr></thead><tbody>
+        <tr><td class="tk">BTLG11</td><td>Logística</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">KNCR11</td><td>Recebíveis</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">PVBI11</td><td>Lajes corp.</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">XPML11</td><td>Shoppings</td><td class="w r">20,0%</td></tr>
+        <tr><td class="tk">VILG11</td><td>Logística</td><td class="w r">20,0%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Proxy de peso igual <span class="star">*</span> sobre os destaques. Carteira cheia tem 16 fundos (só BTLG11 com peso público, 4,5%). Setorial: Recebíveis 41% / Logística 19%</div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">Itaú BBA</span><span class="kind">Carteira recomendada · FIIs</span></span><span class="meta">proxy de destaques · 6 fundos<br><span class="bench">IFIX</span><br><span class="src">fonte: Itaú BBA FIIs</span></span></div>
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Peso *</th></tr></thead><tbody>
+        <tr><td class="tk">BTLG11</td><td>Logística</td><td class="w r">16,7%</td></tr>
+        <tr><td class="tk">BRCO11</td><td>Logística</td><td class="w r">16,7%</td></tr>
+        <tr><td class="tk">KNCR11</td><td>Recebíveis</td><td class="w r">16,7%</td></tr>
+        <tr><td class="tk">PVBI11</td><td>Lajes corp.</td><td class="w r">16,7%</td></tr>
+        <tr><td class="tk">TRXF11</td><td>Híbrido</td><td class="w r">16,7%</td></tr>
+        <tr><td class="tk">XPML11</td><td>Shoppings</td><td class="w r">16,6%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Proxy de peso igual <span class="star">*</span> sobre os top picks (só BTLG11 com peso público, 7,5%)</div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span><span class="name">Ágora</span><span class="kind">Carteira recomendada · FIIs</span></span><span class="meta">proxy de destaques · 3 fundos<br><span class="bench">IFIX</span><br><span class="src">fonte: Ágora FIIs</span></span></div>
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Peso *</th></tr></thead><tbody>
+        <tr><td class="tk">BTLG11</td><td>Logística</td><td class="w r">33,3%</td></tr>
+        <tr><td class="tk">BRCO11</td><td>Logística</td><td class="w r">33,3%</td></tr>
+        <tr><td class="tk">KNCR11</td><td>Recebíveis</td><td class="w r">33,4%</td></tr>
+      </tbody><tfoot><tr><td colspan="2">Total</td><td class="r">100%</td></tr></tfoot></table>
+      <div class="foot-note">Proxy de peso igual <span class="star">*</span> sobre os recomendados (sem peso público por fundo)</div>
+    </div>
+
+    <h2>Consenso de FIIs &mdash; junho/2026</h2>
+    <p class="sub">Fundos mais recorrentes nas carteiras das casas · fonte pública (agregador)</p>
+    <div class="card">
+      <table><thead><tr><th>Fundo</th><th>Segmento</th><th class="r">Nº de carteiras</th></tr></thead><tbody>
+        <tr><td class="tk">BTLG11</td><td>Logística</td><td class="w r">5</td></tr>
+        <tr><td class="tk">BRCO11</td><td>Logística</td><td class="w r">4</td></tr>
+        <tr><td class="tk">KNCR11</td><td>Recebíveis</td><td class="w r">4</td></tr>
+        <tr><td class="tk">PVBI11</td><td>Lajes corp.</td><td class="w r">4</td></tr>
+        <tr><td class="tk">TRXF11</td><td>Híbrido</td><td class="w r">4</td></tr>
+        <tr><td class="tk">VILG11</td><td>Logística</td><td class="w r">4</td></tr>
+        <tr><td class="tk">XPML11</td><td>Shoppings</td><td class="w r">4</td></tr>
+      </tbody></table>
+      <div class="foot-note">BTLG11 lidera o consenso e aparece com peso bem diferente por casa: BTG 13,0% · Itaú BBA 7,5% · XP 4,5%. Universo do agregador inclui casas fora do CallMap (Santander, Genial, BB, EQI) &mdash; aqui serve só de referência de consenso.</div>
+    </div>
+
+    <div class="note"><b>O que ainda falta para a performance de FIIs:</b> as composições agora estão preenchidas com os fundos recomendados de cada casa, mas só a <b>Safra</b> tem a carteira inteira com peso por fundo. A <b>BTG</b> tem peso só do top 5 (63,5% ficam em 11 fundos sem detalhe); <b>XP, Itaú BBA e Ágora</b> vieram como destaques/top picks, sem peso por fundo. Para rodar retorno de carteira nas cinco, faltam <b>ou</b> os pesos completos dos ~16 fundos de cada uma, <b>ou</b> a decisão de tratar os destaques como carteira de peso igual (rotulada na metodologia) <span class="star">*</span>.</div>
+  </div>
+</section>
+
+<!-- ============ MOVIMENTOS ============ -->
+<section class="panel" id="mov">
+  <div class="wrap">
+    <p class="lead">O coração do mapa. Cada rodada registra o que entrou, o que saiu e o que mudou de peso &mdash; verbo factual, sem adjetivo. É esse log que evita o ranking enganoso: um nome que a casa colocou, despencou e tirou continua contando. <span class="chip in">entrou</span> <span class="chip ex">saiu</span> <span class="chip up">↑ peso</span> <span class="chip dn">↓ peso</span></p>
+
+    <div class="card">
+      <div class="card-h"><span class="name">XP · Ações</span><span class="meta">dez/25 &rarr; jun/26 · páginas públicas</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">dez/25</td><td><span class="chip in">B3SA3</span> <span class="chip in">BPAC11</span> <span class="chip in">RENT3</span> <span class="chip in">AURA33</span> <span class="chip in">MELI34</span> <span class="chip ex">CXSE3</span> <span class="chip ex">SANB11</span> <span class="chip ex">PETR4</span> <span class="chip dn">SMFT3</span> <span class="chip dn">VALE3</span></td></tr>
+        <tr><td class="tk">jan/26</td><td><span class="chip in">SBSP3</span> <span class="chip up">MELI34</span> <span class="chip ex">AXIA3</span> <span class="chip dn">CYRE3</span></td></tr>
+        <tr><td class="tk">fev/26</td><td><span class="chip in">PETR4</span> <span class="chip ex">GGBR4</span></td></tr>
+        <tr><td class="tk">mar/26</td><td><span class="chip in">RADL3</span> <span class="chip in">LREN3</span> <span class="chip up">PETR4</span> <span class="chip ex">SMFT3</span> <span class="chip ex">MOTV3</span> <span class="chip ex">MELI34</span></td></tr>
+        <tr><td class="tk">abr/26</td><td><span class="chip in">ROXO34</span> <span class="chip up">B3SA3</span> <span class="chip up">RENT3</span> <span class="chip ex">CYRE3</span> <span class="chip dn">ITUB4</span></td></tr>
+        <tr><td class="tk">mai/26</td><td><span class="chip in">TOTS3</span> <span class="chip in">GGBR4</span> <span class="chip in">EMBJ3</span> <span class="chip dn">B3SA3</span> <span class="chip dn">LREN3</span> <span class="chip ex">AURA33</span></td></tr>
+        <tr><td class="tk">jun/26</td><td><span class="chip in">ORVR3</span> <span class="chip up">TOTS3</span> <span class="chip up">RENT3</span> <span class="chip up">B3SA3</span> <span class="chip dn">PETR4</span> <span class="chip ex">RADL3</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">BTG · Ações (10SIM)</span><span class="meta">movimentos datados de 2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">fev/26</td><td><span class="chip in">AXIA3</span> <span class="chip ex">EQTL3</span></td></tr>
+        <tr><td class="tk">abr/26</td><td><span class="chip in">PETR4</span> <span class="chip in">EMBJ3</span> <span class="chip ex">PRIO3</span> <span class="chip ex">AURA33</span></td></tr>
+        <tr><td class="tk">jun/26</td><td><span class="chip in">ITUB4</span> <span class="chip in">EQTL3</span> <span class="chip ex">ROXO34</span> <span class="chip ex">ALOS3</span> <span class="chip dn">PETR4</span> <span class="chip dn">RENT3</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">Ágora · Ações</span><span class="meta">movimentos datados de 2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">mai/26</td><td><span class="chip in">ISAE4</span> <span class="chip ex">CYRE3</span></td></tr>
+        <tr><td class="tk">jun/26</td><td><span class="chip in">GGBR4</span> <span class="chip ex">SUZB3</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">Safra · Ações</span><span class="meta">movimentos datados de 2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">jun/26</td><td><span class="chip in">PSSA3</span> <span class="chip ex">RADL3</span> <span class="chip dn">ITSA4</span> <span style="color:var(--ink-mute);font-size:12px">(16% &rarr; 14%)</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">Itaú BBA · Ações (Top 5)</span><span class="meta">movimentos datados de 2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">jan/26</td><td><span class="chip in">SUZB3</span> <span class="chip ex">TEND3</span></td></tr>
+      </tbody></table>
+      <div class="foot-note">Rodadas anteriores a reconstruir a partir das cartas oficiais <span class="star">*</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">Safra · FIIs</span><span class="meta">movimentos de jun/2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">jun/26</td><td><span class="chip ex">VISC</span> <span class="chip dn">HGLG11</span> <span class="chip up">KNUQ11</span> <span class="chip up">GARE11</span></td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><span class="name">BTG · FIIs</span><span class="meta">movimentos de jun/2026</span></div>
+      <table><thead><tr><th>Mês</th><th>Movimentos</th></tr></thead><tbody>
+        <tr><td class="tk">jun/26</td><td><span class="chip dn">RBRY11</span> <span class="chip up">HSML11</span></td></tr>
+      </tbody></table>
     </div>
   </div>
+</section>
 
-  <section class="grid-section">
-    <div class="container">
-      <div class="article-grid">
+<!-- ============ PERFORMANCE ============ -->
+<section class="panel" id="perf">
+  <div class="wrap">
+    <p class="lead">Retorno medido como preço atual sobre preço-base do marco zero, encadeando os movimentos: um papel comprado e depois vendido conta pelo período em que ficou na carteira, mesmo que já tenha saído. Todas as carteiras no mesmo frame, contra o benchmark da sua classe.</p>
 
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Mercado de capitais</div>
-          <h2><a href="/analises/spacex-ipo-engenharia-oferta.html">A SpaceX vende 4% e quer valer US$ 1,77 trilhão</a></h2>
-          <p>O maior IPO da história estreia na Nasdaq com preço fixo, float de apenas 4% e lock-ups escalonados. O número gigante é o que todo mundo vê. A engenharia da oferta é o que importa — e vira playbook.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Hoje</span>
-          </div>
-        </article>
+    <div class="note" style="border-left:3px solid var(--coral)"><b style="color:var(--coral)">Atenção:</b> números <b>parciais</b> &mdash; o pregão de 11/06 ainda está em curso, então é a variação intradiária desde o fechamento do marco zero (10/06). Ruído puro, não classifica ninguém. O que vale: as bases estão travadas e o relógio começou.</div>
 
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Federalismo fiscal</div>
-          <h2><a href="/analises/saude-fiscal-estados-capag.html">O mapa fiscal dos estados: quem paga as contas, quem está no socorro e por quê</a></h2>
-          <p>Estados e DF devem R$ 827 bilhões à União, e quatro deles concentram 56% da dívida em regime de socorro. A Capag, nota de A a D do Tesouro, é a régua. O que separa um estado nota A de um nota D.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Hoje</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Indústria de fundos</div>
-          <h2><a href="/analises/patria-superfundos-fiis-consolidacao.html">Os "superfundos" do Patria: o que muda quando uma gestora controla 30 FIIs</a></h2>
-          <p>O Patria comprou CSHG, VBI, Vectis, More, Bari, RBR e Genial, acumulou R$ 40 bilhões em ativos imobiliários e agora consolida tudo em superfundos por segmento. A estratégia tem mérito técnico, e consequências.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Esta semana</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Tributário</div>
-          <h2><a href="/analises/holdings-pos-taxacao-dividendos.html">A nova corrida pelas holdings: o efeito colateral da taxação dos dividendos</a></h2>
-          <p>Quando o legislador fecha uma porta, o tributarista abre uma janela. A taxação dos dividendos virou pipeline cheio para escritórios de planejamento. O detalhe que muitos contadores estão omitindo.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Esta semana</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Imobiliário</div>
-          <h2><a href="/analises/kinea-brookfield-fii-multifamily.html">Kinea e Brookfield armam um FII de R$ 2 bilhões em multifamily</a></h2>
-          <p>A parceria entre Kinea Investimentos e Brookfield para estruturar um fundo focado em locação residencial profissional sinaliza uma transformação estrutural. O aluguel virou ativo financeiro empacotado.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Esta semana</span>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Institucional</div>
-          <h2><a href="/analises/petros-recorde-deficit-historico.html">A Petros teve sua melhor rentabilidade em 2025. O déficit continua.</a></h2>
-          <p>Fundo de pensão da Petrobras administra R$ 153 bi e ganhou R$ 15 bi em 2025 — recorde da história. Mas o déficit dos planos antigos não some. A imunização via NTN-B resolve o futuro, não o passado.</p>
-          <div class="byline">
-            <span class="byline-author">Por Editor</span>
-            <span class="byline-sep">·</span>
-            <span class="byline-time">Esta semana</span>
-          </div>
-        </article>
-
-      </div>
+    <div class="card">
+      <div class="card-h"><span class="name">Placar · desde o marco zero (10/06/2026)</span><span class="meta">parcial (pregão em curso) · retorno encadeado vs benchmark</span></div>
+      <table><thead><tr><th>Carteira</th><th>Classe</th><th>Bench</th><th class="r">Retorno</th><th class="r">vs bench</th></tr></thead><tbody>
+        <tr><td class="tk">BTG</td><td>Ações</td><td>Ibov</td><td class="num r" style="color:var(--green)">+1,74%</td><td class="num r" style="color:var(--green)">+0,78</td></tr>
+        <tr><td class="tk">XP</td><td>Ações</td><td>Ibov</td><td class="num r" style="color:var(--green)">+1,49%</td><td class="num r" style="color:var(--green)">+0,53</td></tr>
+        <tr><td class="tk">Itaú BBA</td><td>Ações</td><td>Ibov</td><td class="num r" style="color:var(--green)">+1,26%</td><td class="num r" style="color:var(--green)">+0,30</td></tr>
+        <tr><td class="tk">Safra</td><td>Ações</td><td>Ibov</td><td class="num r" style="color:var(--green)">+1,07%</td><td class="num r" style="color:var(--green)">+0,11</td></tr>
+        <tr><td class="tk">Ágora</td><td>Ações</td><td>Ibov</td><td class="num r" style="color:var(--green)">+0,83%</td><td class="num r" style="color:var(--coral)">&minus;0,13</td></tr>
+        <tr><td colspan="3" style="color:var(--ink-mute)">Ibovespa (benchmark)</td><td class="num r" style="color:var(--ink-mute)">+0,96%</td><td class="r" style="color:var(--ink-mute)">&mdash;</td></tr>
+        <tr><td class="tk">Ágora</td><td>FIIs</td><td>IFIX</td><td class="num r" style="color:var(--green)">+0,71%</td><td class="num r" style="color:var(--green)">+0,29</td></tr>
+        <tr><td class="tk">XP</td><td>FIIs</td><td>IFIX</td><td class="num r" style="color:var(--green)">+0,65%</td><td class="num r" style="color:var(--green)">+0,23</td></tr>
+        <tr><td class="tk">Itaú BBA</td><td>FIIs</td><td>IFIX</td><td class="num r" style="color:var(--green)">+0,55%</td><td class="num r" style="color:var(--green)">+0,13</td></tr>
+        <tr><td class="tk">Safra</td><td>FIIs</td><td>IFIX</td><td class="num r" style="color:var(--green)">+0,40%</td><td class="num r" style="color:var(--coral)">&minus;0,02</td></tr>
+        <tr><td class="tk">BTG</td><td>FIIs</td><td>IFIX</td><td class="num r" style="color:var(--green)">+0,38%</td><td class="num r" style="color:var(--coral)">&minus;0,04</td></tr>
+        <tr><td colspan="3" style="color:var(--ink-mute)">IFIX (benchmark)</td><td class="num r" style="color:var(--ink-mute)">+0,42%</td><td class="r" style="color:var(--ink-mute)">&mdash;</td></tr>
+      </tbody></table>
+      <div class="foot-note">Bases do marco zero (fechamento 10/06): Ibovespa 168.619 · IFIX 3.777,30 · todos os papéis e fundos. IFIX vem da B3 via fiis.com.br / FundsExplorer (Yahoo não tem o índice e o brapi grátis exige token). Os valores de 11/06 são intradiários (pregão em curso). FIIs em proxy de destaques, peso igual <span class="star">*</span>.</div>
     </div>
-  </section>
 
-  <section class="newsletter-section" id="newsletter">
-    <div class="container">
-      <div class="newsletter-card">
-        <div class="newsletter-content">
-          <div class="newsletter-label">Newsletter</div>
-          <h2 class="newsletter-title">A leitura editorial <em>antes</em> de o mercado abrir.</h2>
-          <p class="newsletter-desc">Três edições por semana com análise, contexto e decoder do mercado financeiro brasileiro. Sem spam, com clareza.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Em breve! Cadastro será conectado ao Beehiiv nos próximos dias.');">
-            <input type="email" placeholder="seu.email@empresa.com.br" required>
-            <button type="submit">Quero entrar →</button>
-          </form>
-          <p class="newsletter-foot">Cadastre-se para ser um dos primeiros leitores no lançamento.</p>
-        </div>
-        <div class="newsletter-visual">
-          <div class="visual-grid">
-            <span>SEG</span><span>QUA</span><span>SEX</span>
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-        </div>
-      </div>
+    <div class="note"><b>Como o placar evolui:</b> a cada rodada, a cotação de fechamento atualiza o retorno acumulado de cada carteira desde 10/06, encadeando entradas e saídas &mdash; um papel que entrou e saiu conta pelo período em que ficou. Nunca tempo real, nunca número autorreportado.</div>
+  </div>
+</section>
+
+<!-- ============ POTENCIAL CONFLITO ============ -->
+<section class="panel" id="conf">
+  <div class="wrap">
+    <p class="lead">Sinaliza quando uma casa recomenda um ativo gerido por empresa do <b>mesmo grupo econômico</b>. Espelha só o fato da afiliação declarada, com link ao documento. <b>Não</b> afirma que a relação motivou a recomendação &mdash; é transparência, não acusação. O leitor forma o juízo.</p>
+
+    <div class="card">
+      <div class="card-h"><span class="name">Relações de grupo econômico</span><span class="meta">só fato público · sem causalidade</span></div>
+      <table><thead><tr><th>Casa</th><th>Carteira</th><th>Ativo</th><th>Relação</th></tr></thead><tbody>
+        <tr><td class="tk">Safra</td><td>FIIs</td><td class="tk">JSRE11</td><td><span class="pmid">gestão JS &mdash; grupo Safra</span></td></tr>
+        <tr><td class="tk">Safra</td><td>FIIs</td><td class="tk">JSAF11</td><td><span class="pmid">gestão JS &mdash; grupo Safra</span></td></tr>
+      </tbody></table>
+      <div class="foot-note">Só relações de grupo <b>confirmadas</b> entram aqui &mdash; "a verificar" fica de fora até ter o documento. Cada linha leva ao regulamento/RI do fundo, onde a gestora é declarada. Recomendar fundo de <i>outro</i> grupo (ex.: XP indicando BTLG11/KNIP11) é cross-group e não entra como sinal. O sinal só cobre as carteiras do mapa (ações + FIIs das 5 casas).</div>
     </div>
-  </section>
 
-  <div class="section-divider">
-    <div class="container">
-      <span class="divider-line"></span>
-      <span class="divider-label">Mais do Faria Lima Backstage</span>
-      <span class="divider-line"></span>
+    <div class="note">O sinalizador antigo cruzava BBI &harr; Ágora (par fixo do grupo Bradesco). Com o BBI fora, a régua de "grupo econômico" substitui o par fixo e já cobre estes casos &mdash; o cruzamento BBI/Ágora pode ser aposentado.</div>
+  </div>
+</section>
+
+<!-- ============ INTERNACIONAL ============ -->
+<section class="panel" id="intl">
+  <div class="wrap">
+    <p class="lead">Casas internacionais entram por rating e preço-alvo &mdash; sempre datados, porque divergem muito de uma leitura para outra. Após a saída do Goldman (sem carteira recomendada), fica só o J.P. Morgan.</p>
+
+    <div class="card">
+      <div class="card-h"><span class="name">J.P. Morgan</span><span class="meta">rating · preço-alvo · data</span></div>
+      <table><thead><tr><th>Ativo / tese</th><th>Call</th><th class="r">Data</th></tr></thead><tbody>
+        <tr><td class="tk">Brasil (alocação)</td><td>Overweight &mdash; único OW da LatAm</td><td class="r num">dez/25</td></tr>
+        <tr><td class="tk">PETR4 / PETR3</td><td>Compra · alvo R$ 64</td><td class="r num">mai/26</td></tr>
+        <tr><td class="tk">PRIO3</td><td>Preferida · alvo R$ 70 <span class="chip dn">↓ de 73</span></td><td class="r num">jun/26</td></tr>
+      </tbody></table>
     </div>
   </div>
+</section>
 
-  <section class="grid-section">
-    <div class="container">
-      <div class="article-grid">
+<!-- ============ METODOLOGIA ============ -->
+<section class="panel" id="met">
+  <div class="wrap">
+    <p class="lead">Tudo que é explicação mora aqui. As tabelas do mapa carregam só fato &mdash; os asteriscos <span class="star">*</span> remetem a esta página.</p>
 
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Estratégia de ações</div>
-          <h2><a href="/analises/raio-xp-compra-brasil-fluxo-gringo.html">O Raio-XP disse para comprar Brasil. Mas 61% da B3 é gringo e está saindo</a></h2>
-          <p>A equipe de estratégia da XP recomendou compra do Ibovespa com base em "pessimismo extremo". O documento tem mérito técnico, mas 61,2% do volume da bolsa é estrangeiro e está saindo há seis semanas.</p>
-        </article>
+    <div class="m-item"><h3>Padrão das carteiras</h3><p>Cada casa entra com uma carteira recomendada de ações e uma de FIIs, normalizadas a 100%. O número de ativos varia entre casas e não interfere na comparação &mdash; é performance de carteira contra carteira. A coluna "nº de ativos" mostra quem concentra e quem pulveriza.</p></div>
 
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Mercado</div>
-          <h2><a href="/analises/ubs-contra-ubs-bb.html">O UBS contra o UBS BB: a contradição sobre o Brasil em três semanas</a></h2>
-          <p>Quem precisa decifrar o quebra-cabeça do mercado atual está olhando para um banco que, em poucas semanas, recomendou e desrecomendou o mesmo país.</p>
-        </article>
+    <div class="m-item"><h3>Marco zero e frame único</h3><p>O placar parte de 10/06/2026. Preços-base congelados nessa data; retorno medido daqui pra frente. Todas as carteiras no mesmo período e contra o benchmark da sua classe (Ibovespa para ações; IFIX para FIIs). Sem janela misturada e sem retorno autorreportado. A largada é sempre o 1º pregão real do período.</p></div>
 
-        <article class="article-card">
-          <div class="tag tag-decoder">Decoder · Renda fixa</div>
-          <h2><a href="/decoder/lci-lca-cdb-aritmetica.html">LCI, LCA ou CDB: a aritmética do líquido que ninguém faz</a></h2>
-          <p>Com Selic em 14,5% e CDI no patamar, três produtos isentos voltaram a brilhar. Mas a vantagem fiscal vira armadilha se a conta não for feita até o fim.</p>
-        </article>
+    <div class="m-item"><h3>Por que não há histórico retroativo de performance</h3><p>Os preços históricos de 6 meses não eram reconstruíveis de forma confiável e homogênea (fontes atrás de login, retornos autorreportados em janelas distintas). O valor vem do acompanhamento longitudinal a partir de uma largada comum. O histórico de <i>convicção</i> (entradas e saídas) é documentado; a <i>performance</i> se acumula a partir do marco zero.</p></div>
 
-        <article class="article-card">
-          <div class="tag tag-analise">Análise · Custo Brasil</div>
-          <h2><a href="/analises/paraguai-evasao-empresas.html">O Brasil exporta empresas. Paraguai exporta vergonha alheia.</a></h2>
-          <p>Mais de 232 empresas brasileiras já produzem no Paraguai sob a Lei de Maquila. A migração silenciosa do mapa industrial do Mercosul.</p>
-        </article>
+    <div class="m-item"><h3>Regra de peso (proporcionalidade)</h3><p>Peso real onde a casa publica (Safra ações e FIIs, BTG ações). Onde a casa não publica peso, distribui-se 100% pelo número de ativos: 10 nomes = 10% cada, 5 = 20% cada.</p></div>
 
-      </div>
-    </div>
-  </section>
+    <div class="m-item"><h3>XP &mdash; base de composição <span class="star">*</span></h3><p>A Carteira Top Ações ponderada da XP fica atrás de login (só os movimentos mensais saem em página pública). Para a régua de ações usamos os Top Picks setoriais do guia "Onde Investir 2S26" (13 nomes), peso igual de 7,69%. O log de movimentos da XP reflete a Top Ações, única série de fluxo pública.</p></div>
 
-  <section class="quem-section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Quem é Quem</h2>
-        <p class="section-sub">Os tomadores de decisão que importam, em contexto</p>
-      </div>
-      <div class="quem-grid">
-        <a href="/quem-e-quem/gabriel-galipolo-bacen.html" class="quem-card">
-          <div class="quem-tag">Banco Central</div>
-          <h3>Gabriel Galípolo, presidente do Bacen</h3>
-          <p>Conduziu a transição da gestão Campos Neto e preside o ciclo de afrouxamento iniciado em março de 2026. Ex-Fazenda, carrega o desafio de provar autonomia operacional do BC em ano eleitoral.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+    <div class="m-item"><h3>FIIs &mdash; pesos e proxy <span class="star">*</span></h3><p>As cinco casas recomendam FIIs (Ágora incluída). Os fundos recomendados estão nas tabelas, mas só a Safra publica peso por fundo na carteira inteira; a BTG publica peso do top 5 (os outros 11 ficam agregados em 63,5%); XP, Itaú BBA e Ágora publicam destaques/top picks sem peso por fundo. Onde não há peso completo, a opção é tratar os destaques como carteira de peso igual &mdash; rotulada como destaques, não a carteira cheia &mdash; ou aguardar os pesos completos. Benchmark IFIX para todas.</p></div>
 
-</main>
+    <div class="m-item"><h3>Um veículo por grupo econômico <span class="star">*</span></h3><p>Cada grupo entra com uma carteira por classe, para não dobrar peso. Grupo Bradesco: fica a Ágora (BBI fora). Grupo Itaú: fica a Itaú BBA (Itaú Asset, alocação por classe, à parte). BTG, XP e Safra entram isolados.</p></div>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span>
-        </div>
-        <p>Análise e contexto do mercado financeiro brasileiro. Conteúdo informativo — não constitui recomendação de investimento.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Editorial</h4>
-        <a href="/analises/">Análises</a>
-        <a href="/decoder/">Decoder</a>
-        <a href="/callmap/">CallMap</a>
-        <a href="/quem-e-quem/">Quem é Quem</a>
-        <a href="#newsletter">Newsletter</a>
-      </div>
-      <div class="footer-col">
-        <h4>Backstage</h4>
-        <a href="/sobre/">Sobre</a>
-        <a href="/sobre/#contato">Contato</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="/sobre/privacidade.html">Privacidade</a>
-        <a href="/sobre/termos.html">Termos</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Faria Lima Backstage. Todos os direitos reservados.</span>
-      <span>Conteúdo informativo. Não constitui recomendação de investimento.</span>
-    </div>
+    <div class="m-item"><h3>Benchmark por classe <span class="star">*</span></h3><p>Ações contra Ibovespa; FIIs contra IFIX. Onde uma casa adota outro índice de referência, a divergência é anotada na linha. Carteiras mistas (ações + FIIs) usam benchmark misto e ficam sinalizadas.</p></div>
+
+    <div class="m-item"><h3>Cálculo do retorno</h3><p>Retorno = preço atual / preço-base, com cotação de fechamento buscada na rodada (não tempo real). O retorno da carteira encadeia os movimentos: cada call conta pelo período em que o ativo esteve presente, capturando também os que entraram e saíram &mdash; é o que diferencia o placar honesto do que olha só a foto atual.</p></div>
+
+    <div class="m-item"><h3>Tempo de convicção</h3><p>Dias entre a entrada e a saída de um ativo na carteira. A granularidade depende da frequência das rodadas. Mede há quanto tempo a casa sustenta cada call.</p></div>
+
+    <div class="m-item"><h3>Potencial conflito <span class="star">*</span></h3><p>Espelha apenas o fato público/declarado &mdash; a relação de grupo econômico entre a casa que recomenda e a gestora do ativo, conforme disclosure (Res. CVM 20, regulamento/RI do fundo), com link ao documento. Nunca afirma causalidade entre a relação e o call. É transparência, não acusação. Recomendar fundo de outro grupo é cross-group e não entra.</p></div>
+
+    <div class="m-item"><h3>Manual de tom</h3><p>Verbos puramente factuais (incluiu, retirou, elevou, reduziu, encerrou cobertura). Performance descrita de forma neutra (acumula alta/queda de X%, superou/ficou abaixo do benchmark). Opinião fica confinada a uma seção "Veredito editorial" rotulada, com link à análise &mdash; nunca no corpo das tabelas.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--ink-soft)">Disclaimer.</b> O CallMap reflete apenas recomendações divulgadas publicamente pelas instituições e tem caráter informativo e editorial. Não é recomendação de investimento. Desempenho passado não implica desempenho futuro nem reflete necessariamente a qualidade do processo de decisão de cada casa. Marco zero 10/06/2026.</p>
+    <p>Faria Lima Backstage · CallMap</p>
   </div>
 </footer>
 
-<script src="/script.js"></script>
+<script>
+  var tabs=document.querySelectorAll('.tab');
+  var panels=document.querySelectorAll('.panel');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      var id=t.getAttribute('data-t');
+      tabs.forEach(function(x){x.classList.remove('on')});
+      panels.forEach(function(p){p.classList.remove('on')});
+      t.classList.add('on');
+      document.getElementById(id).classList.add('on');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+</script>
 </body>
 </html>
