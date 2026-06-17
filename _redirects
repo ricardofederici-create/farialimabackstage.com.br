@@ -1,0 +1,15 @@
+# Faria Lima Backstage — roteamento
+# A home (/) é servida por /index.html (a página com as matérias).
+# O CallMap vive em /callmap/ — NUNCA na raiz.
+# As linhas abaixo garantem que URLs sem .html resolvam para o arquivo certo,
+# independentemente da configuração de "Pretty URLs" do painel Netlify.
+
+# Análises — links sem extensão → arquivo .html
+/analises/galapagos-seis-etfs-corrida-industria   /analises/galapagos-seis-etfs-corrida-industria.html   200
+/analises/bitcoin-correcao-ciclo-2028             /analises/bitcoin-correcao-ciclo-2028.html             200
+/analises/kevin-warsh-super-quarta-fed            /analises/kevin-warsh-super-quarta-fed.html            200
+
+# Acervo (matérias já publicadas — mantém os links existentes funcionando)
+/analises/spacex-ipo-engenharia-oferta            /analises/spacex-ipo-engenharia-oferta.html            200
+/analises/saude-fiscal-estados-capag              /analises/saude-fiscal-estados-capag.html              200
+/analises/credito-rj-books-proprietarios          /analises/credito-rj-books-proprietarios.html          200

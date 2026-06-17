@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seis ETFs em oito meses: a ofensiva da Galapagos — Faria Lima Backstage</title>
+<meta name="description" content="A indústria de ETFs quase dobrou em um ano. A Galapagos estreou tarde, mas já cobriu cinco classes de ativos com seis produtos. A estratégia de cada um e o cenário que o favorece.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f3ef;--muted:#9a958c;--line:#241f1a;--amber:#FAC775;--coral:#F0997B;--green:#5DCAA5;--card:#121110}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.marquee{border-bottom:1px solid var(--line);background:#0c0b0a;overflow:hidden;white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
+.ticker-track{display:inline-block;padding:8px 0;animation:scroll 60s linear infinite}
+.ticker-track span{padding:0 18px;border-right:1px solid var(--line)}
+.ticker-track .up{color:var(--green)}.ticker-track .down{color:var(--coral)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.site-header{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:22px 24px;border-bottom:1px solid var(--line)}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:20px;line-height:.95;letter-spacing:-.01em}
+.logo small{display:block;font-size:20px;font-weight:400;font-style:italic;color:var(--amber)}
+.nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500}
+.nav a:hover{color:var(--amber)}
+.nav .assinar{border:1px solid var(--amber);color:var(--amber);padding:7px 16px;border-radius:2px;font-weight:600}
+.nav .assinar:hover{background:var(--amber);color:#0a0a0a}
+.article{max-width:720px;margin:0 auto;padding:0 24px}
+.breadcrumb{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);padding:30px 0 0;letter-spacing:.04em}
+.breadcrumb a:hover{color:var(--amber)}
+.article-hero{padding:26px 0 30px;border-bottom:1px solid var(--line)}
+.article-hero .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:500}
+.article-hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 16px}
+.article-hero .dek{font-size:19px;color:#cfc9bf;font-style:italic;font-family:'Fraunces',serif;line-height:1.5}
+.byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-top:22px;letter-spacing:.04em}
+.body{padding:36px 0 10px;font-size:17.5px;color:#e6e2da}
+.body h2{font-family:'Fraunces',serif;font-weight:600;font-size:27px;letter-spacing:-.01em;margin:38px 0 14px;color:var(--ink)}
+.body h3{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;margin:26px 0 8px;color:var(--amber)}
+.body p{margin:0 0 18px}
+.body strong{color:var(--ink);font-weight:600}
+.body ul{margin:0 0 18px;padding-left:22px}
+.body li{margin-bottom:9px}
+.body .scenario{display:block;border-left:2px solid var(--green);padding:4px 0 4px 16px;margin:6px 0 20px;color:#cfc9bf;font-size:16px}
+.body .scenario b{color:var(--green);font-weight:600}
+.callout{border:1px solid var(--coral);border-radius:3px;background:#130f0e;padding:18px 22px;margin:26px 0;font-size:16px;color:#e6e2da}
+.callout b{color:var(--coral)}
+.verdict{border-top:2px solid var(--amber);margin:40px 0 10px;padding-top:22px}
+.verdict .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.verdict h2{margin-top:0}
+.etf-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14.5px}
+.etf-table th,.etf-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+.etf-table th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.etf-table td:first-child{font-family:'JetBrains Mono',monospace;color:var(--amber);font-weight:500;white-space:nowrap}
+.read-also{border-top:1px solid var(--line);margin-top:46px;padding:30px 0}
+.read-also h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.read-also .ra-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.read-also article h5{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.16;letter-spacing:-.01em}
+.read-also article h5 a:hover{color:var(--amber)}
+.read-also article .m{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;margin-top:7px}
+.site-footer{border-top:1px solid var(--line);background:#0c0b0a;margin-top:20px}
+.footer-base{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;padding:24px;letter-spacing:.04em}
+@media(max-width:760px){.nav{display:none}.read-also .ra-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="marquee" aria-label="Cotações">
+  <div class="ticker-track"><span>Carregando cotações…</span><span class="up">IBOV 170.792 ▲</span><span class="down">BTC US$ 65.320 ▼</span><span>USD/BRL 5,055</span><span>Carregando cotações…</span><span class="up">IBOV 170.792 ▲</span><span class="down">BTC US$ 65.320 ▼</span><span>USD/BRL 5,055</span></div>
+</div>
+
+<header class="site-header">
+  <a href="/" class="logo">FARIA LIMA<small>Backstage</small></a>
+  <nav class="nav">
+    <a href="/analises/">Análises</a>
+    <a href="/decoder/">Decoder</a>
+    <a href="/callmap/">CallMap</a>
+    <a href="/quem-e-quem/">Quem é Quem</a>
+    <a href="/#newsletter">Newsletter</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/#newsletter" class="assinar">Assinar</a>
+  </nav>
+</header>
+
+<article class="article">
+  <div class="breadcrumb"><a href="/">Início</a> / <a href="/analises/">Análises</a> / ETFs</div>
+
+  <header class="article-hero">
+    <span class="tag">Análise</span>
+    <h1>Seis ETFs em oito meses: como a Galapagos virou a história mais agressiva da nova indústria de fundos</h1>
+    <p class="dek">O mercado de ETFs quase dobrou em um ano e virou campo de batalha. A Galapagos estreou tarde, em outubro, mas já cobriu renda fixa curta, renda fixa média, ações globais, Bitcoin e — na semana passada — ouro e prata. Por dentro da estratégia de cada produto e do cenário que faz cada um andar.</p>
+    <div class="byline">FARIA LIMA BACKSTAGE · 17 DE JUNHO DE 2026 · 9 MIN DE LEITURA</div>
+  </header>
+
+  <div class="body">
+    <h2>O número que explica a corrida</h2>
+    <p>A indústria brasileira de ETFs saiu de R$ 54 bilhões em patrimônio no fim de 2024 para cerca de R$ 91 bilhões em dezembro de 2025 — alta de aproximadamente 70% em doze meses. O número de investidores passou de cerca de 713 mil para 919 mil. Foram mais de 50 lançamentos em 2025, praticamente um ETF novo por semana, e hoje há quase 500 produtos disponíveis ao investidor brasileiro entre os listados na B3 e os que replicam fundos do exterior.</p>
+    <p>E ainda assim: tudo isso representa menos de 1% do patrimônio total de fundos do país (algo como 0,6% de uma indústria de mais de R$ 10 trilhões). É essa distância entre o tamanho de hoje e o tamanho possível que explica por que tanta gestora entrou ao mesmo tempo — e por que a briga ficou tão intensa.</p>
+
+    <h2>Por que renda fixa, e por que agora</h2>
+    <p>O ETF de ações é o produto antigo — o BOVA11, que replica o Ibovespa, segue como o mais negociado da bolsa. Mas o crescimento recente veio dos ETFs de renda fixa. Com a Selic alta, o investidor passou a querer Tesouro Selic, prefixados e IPCA+ embalados em formato de bolsa.</p>
+    <p>A vantagem que atrai o dinheiro não é a rentabilidade — é tributária. Ao contrário dos fundos tradicionais, os ETFs de renda fixa <strong>não têm come-cotas nem IOF</strong>, e a maioria já nasce com alíquota fixa de 15% de IR, cobrada só no resgate, em vez da tabela regressiva que começa em 22,5%. Numa reserva de médio prazo, isso é dinheiro de verdade — e é o que vinha puxando até R$ 100 milhões por dia para a indústria de ETFs de renda fixa.</p>
+
+    <h2>A ofensiva da Galapagos: seis produtos, seis problemas a resolver</h2>
+    <p>A Galapagos Capital — gestora com mais de R$ 32 bilhões sob gestão — entrou no mercado de ETFs em outubro de 2025, contratando Bruno Stein (ex-BlackRock e Global X) para liderar a área. Em cerca de oito meses, colocou seis ETFs na B3, cobrindo cinco classes de ativos. É, hoje, a casa mais agressiva da nova indústria. Veja a estratégia de cada um e o cenário que o favorece:</p>
+
+    <table class="etf-table">
+      <thead><tr><th>Ticker</th><th>Estreia</th><th>Classe</th><th>Taxa</th></tr></thead>
+      <tbody>
+        <tr><td>GLFT11</td><td>out/25</td><td>RF — Tesouro Selic (LFT)</td><td>0,19%</td></tr>
+        <tr><td>GXUS11</td><td>nov/25</td><td>Ações internacionais ex-EUA</td><td>0,30%</td></tr>
+        <tr><td>GBIT11</td><td>dez/25</td><td>Bitcoin (via IBIT/BlackRock)</td><td>0,45%</td></tr>
+        <tr><td>POSB11</td><td>fev/26</td><td>RF — Selic + IPCA+</td><td>0,15%*</td></tr>
+        <tr><td>OROF11</td><td>9/jun/26</td><td>Ouro físico (via SGOL)</td><td>0,37%</td></tr>
+        <tr><td>PRAF11</td><td>9/jun/26</td><td>Prata física (via SVIR)</td><td>0,50%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6f6a62;margin-top:-8px">* POSB11: taxa zerada até dezembro de 2026; depois, 0,15% a.a.</p>
+
+    <h3>1. GLFT11 — o caixa (8 de outubro de 2025)</h3>
+    <p>Renda fixa em Tesouro Selic (LFTs), seguindo índice da Teva. Taxa de 0,19% ao ano. Ferramenta de gestão de liquidez de curtíssimo prazo — onde o gestor estaciona caixa esperando alocar.</p>
+    <span class="scenario"><b>Cenário favorável:</b> Selic alta e indefinição de rumo. Com o juro no teto, o pós-fixado rende bem com risco baixíssimo.</span>
+
+    <h3>2. GXUS11 — a diversificação sem os EUA (novembro de 2025)</h3>
+    <p>Ações internacionais replicando o índice FTSE Global All Cap ex US, via o ETF Vanguard VXUS — cerca de 8.700 empresas em 43 países, maior peso na Europa (37,9%). Taxa de 0,30%. A sacada: exposição global removendo os Estados Unidos, para quem já tem S&P 500 e não quer dobrar o mesmo risco.</p>
+    <span class="scenario"><b>Cenário favorável:</b> dólar fraco e rotação para fora dos EUA. Se a tese é que a bolsa americana está cara e Europa/Japão/emergentes vão fechar o desconto, é este o veículo.</span>
+
+    <h3>3. GBIT11 — o Bitcoin regulado (dezembro de 2025)</h3>
+    <p>Exposição direta ao IBIT, o ETF de Bitcoin da BlackRock — o maior e mais líquido do mundo. Permite comprar Bitcoin em reais, pela B3, sem custódia de cripto. Taxa total de 0,45% (0,20% local + 0,25% do IBIT), mínimo de R$ 100.</p>
+    <span class="scenario"><b>Cenário favorável:</b> apetite a risco e queda de juros nos EUA. O Bitcoin é ativo de risco e anda melhor com liquidez global farta — o oposto do momento atual de correção (tema da nossa matéria de BTC nesta edição).</span>
+
+    <h3>4. POSB11 — o "pacotinho Faria Lima" (fevereiro de 2026)</h3>
+    <p>Cerca de 92% em Tesouro Selic e 8% em Tesouro IPCA+ longo, seguindo o índice Teva ITBR Tesouro Selic IPCA+. Foi aqui que Stein cravou a frase que define o público: é o "pacotinho Faria Lima" — "todo mundo que é bem informado em termos de investimento no Brasil hoje compra alguma versão disso". Captação agressiva: taxa zerada até dezembro de 2026 (depois 0,15% ao ano, abaixo dos 0,19% de rivais como LFTB11, da Investo, e AUPO11, do BTG). Captou cerca de R$ 5 milhões por dia e juntou R$ 40 milhões em cinco pregões, com investimento inicial do próprio BTG.</p>
+    <span class="scenario"><b>Cenário favorável:</b> o meio-termo. A Selic alta segura a maior parte (pós-fixado), enquanto a fatia em IPCA+ longo dá prêmio extra se a inflação surpreender ou se a curva longa fechar num eventual ciclo de corte.</span>
+
+    <h3>5. OROF11 — o ouro físico (9 de junho de 2026)</h3>
+    <p>Um dos dois lançamentos mais recentes. Acompanha o ouro físico — barras guardadas em cofres em Londres — investindo no ETF internacional SGOL. Importante: é <strong>sem proteção cambial</strong>, ou seja, acompanha o ouro em dólar e embute a variação da moeda. Taxa total de 0,37% (0,20% local + 0,17%).</p>
+    <span class="scenario"><b>Cenário favorável:</b> aversão a risco, inflação alta e dólar forte. O ouro é o porto seguro clássico das crises e historicamente protege contra inflação; sem hedge, ganha uma camada extra de exposição ao dólar — bom para quem quer dolarizar parte da carteira.</span>
+
+    <h3>6. PRAF11 — a prata física (9 de junho de 2026)</h3>
+    <p>O irmão mais volátil. Acompanha a prata física (barras em Londres) via o ETF internacional SVIR, também sem hedge cambial. Taxa total de 0,50% (0,20% local + 0,30%). A prata tem natureza dupla: é metal precioso e, ao mesmo tempo, metal industrial (cerca de metade da demanda vem de painéis solares, eletrônicos e veículos elétricos).</p>
+    <span class="scenario"><b>Cenário favorável:</b> ciclos de alta de commodities e crescimento global. Em altas de matérias-primas, a prata tende a superar o ouro; em crises de aversão a risco, cai mais. É a aposta mais "alavancada" da dupla de metais.</span>
+
+    <div class="callout"><b>Um recado da própria gestora vale destaque:</b> ouro e prata não são para reserva de emergência. São indicados para quem já tem carteira de longo prazo montada e busca diversificação e proteção contra dólar e inflação — não para o dinheiro que pode ser preciso amanhã.</div>
+
+    <p>E não para por aí: Stein já avisou que há "dezenas de ideias na esteira". O pipeline declarado da casa mira cripto, temáticos, commodities e produtos de renda — e, como se vê, parte dele já saiu do papel.</p>
+
+    <h2>O pano de fundo regulatório (o bastidor que importa)</h2>
+    <p>Dois movimentos da CVM explicam por que esse mercado deve seguir fervendo:</p>
+    <ul>
+      <li>A <strong>Resolução CVM 179</strong>, que muda a remuneração de assessores de investimento, tende a favorecer produtos transparentes e baratos como os ETFs — terreno em que a Galapagos se posiciona com seu modelo <em>fee based</em>.</li>
+      <li>A CVM <strong>estuda regular os ETFs ativos em 2026</strong>, hoje proibidos no país. Se sair, abre uma categoria inteiramente nova de produtos — e a J.P. Morgan já se movimenta para expandir ETFs ativos no Brasil.</li>
+    </ul>
+    <p>Não é coincidência que praticamente toda gestora relevante — Itaú Asset (com 26 produtos), XP Asset, BlackRock, Bradesco, Nu Asset, Investo, Empiricus, Hedge e agora Galapagos — esteja lançando produto.</p>
+
+    <div class="verdict">
+      <div class="label">Veredito editorial</div>
+      <h2>O que pensamos</h2>
+      <p>A guerra de taxa zero é ótima para o investidor agora, mas é insustentável como modelo. Depois do período promocional, o jogo volta a ser de escala e distribuição — e a diferença entre produtos quase idênticos se resume à taxa cheia e ao provedor do índice. Parte da indústria já fala em "paradoxo da escolha": com quase 500 produtos, nem todo lançamento sobrevive. A estratégia da Galapagos é claramente de quem chegou atrasado e decidiu compensar com volume e preço agressivo — inteligente para ganhar <em>mindshare</em> rápido, mas o teste vem em 2027, quando as taxas voltarem. Para o investidor, a régua continua simples: olhe a taxa cheia (não a promocional), a liquidez e a aderência ao índice. O resto é marketing.</p>
+    </div>
+  </div>
+
+  <div class="read-also">
+    <h4>Leia também</h4>
+    <div class="ra-grid">
+      <article>
+        <h5><a href="/analises/bitcoin-correcao-ciclo-2028">Bitcoin a US$ 65 mil: "estável" é a leitura errada — e a pergunta certa é sobre 2028</a></h5>
+        <div class="m">17 JUN · 8 MIN</div>
+      </article>
+      <article>
+        <h5><a href="/analises/kevin-warsh-super-quarta-fed">O homem da super quarta: quem é Kevin Warsh, o primeiro presidente pró-cripto do Fed</a></h5>
+        <div class="m">17 JUN · 7 MIN</div>
+      </article>
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-base">© 2026 Faria Lima Backstage · Conteúdo editorial, não constitui recomendação de investimento</div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

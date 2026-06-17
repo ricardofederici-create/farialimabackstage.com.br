@@ -4,168 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Análises — Faria Lima Backstage</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Todas as análises do Faria Lima Backstage: ETFs, Bitcoin, Fed, carteiras recomendadas e os bastidores do mercado de capitais brasileiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f3ef;--muted:#9a958c;--line:#241f1a;--amber:#FAC775;--coral:#F0997B;--green:#5DCAA5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.marquee{border-bottom:1px solid var(--line);background:#0c0b0a;overflow:hidden;white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
+.ticker-track{display:inline-block;padding:8px 0;animation:scroll 60s linear infinite}
+.ticker-track span{padding:0 18px;border-right:1px solid var(--line)}
+.ticker-track .up{color:var(--green)}.ticker-track .down{color:var(--coral)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.site-header{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:22px 24px;border-bottom:1px solid var(--line)}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:20px;line-height:.95;letter-spacing:-.01em}
+.logo small{display:block;font-size:20px;font-weight:400;font-style:italic;color:var(--amber)}
+.nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500}
+.nav a:hover{color:var(--amber)}
+.nav .assinar{border:1px solid var(--amber);color:var(--amber);padding:7px 16px;border-radius:2px;font-weight:600}
+.nav .assinar:hover{background:var(--amber);color:#0a0a0a}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.page-head{padding:48px 0 10px;border-bottom:1px solid var(--line)}
+.page-head .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.page-head h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,5vw,52px);letter-spacing:-.02em}
+.page-head p{color:var(--muted);margin-top:12px;max-width:60ch}
+.section-list{list-style:none;padding:10px 0 40px}
+.section-list-item{display:grid;grid-template-columns:160px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--line)}
+.section-list-meta .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:8px}
+.tag-analise{color:var(--green)}.tag-bastidores{color:var(--coral)}.tag-exclusivo{color:var(--amber)}
+.section-list-meta .dt{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;letter-spacing:.04em}
+.section-list-content h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;line-height:1.12;letter-spacing:-.01em;margin-bottom:8px}
+.section-list-content h2 a:hover{color:var(--amber)}
+.section-list-content p{font-size:15px;color:var(--muted)}
+.new-flag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;color:#0a0a0a;background:var(--amber);padding:1px 7px;border-radius:2px;letter-spacing:.08em;margin-left:8px;vertical-align:middle}
+.site-footer{border-top:1px solid var(--line);background:#0c0b0a}
+.footer-base{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;padding:24px;letter-spacing:.04em}
+@media(max-width:680px){.nav{display:none}.section-list-item{grid-template-columns:1fr;gap:10px}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+</style>
 </head>
 <body>
-<div class="marquee" id="market-ticker"><div class="marquee-track" id="ticker-track"><span class="ticker ticker-loading">Carregando cotações…</span></div></div>
+
+<div class="marquee" aria-label="Cotações">
+  <div class="ticker-track"><span>Carregando cotações…</span><span class="up">IBOV 170.792 ▲</span><span class="down">BTC US$ 65.320 ▼</span><span>USD/BRL 5,055</span><span>Carregando cotações…</span><span class="up">IBOV 170.792 ▲</span><span class="down">BTC US$ 65.320 ▼</span><span>USD/BRL 5,055</span></div>
+</div>
+
 <header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo"><span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span></a>
-    <nav class="main-nav">
-      <a href="/analises/">Análises</a>
-      <a href="/decoder/">Decoder</a>
-      <a href="/callmap/">CallMap</a>
-      <a href="/quem-e-quem/">Quem é Quem</a>
-      <a href="/#newsletter">Newsletter</a>
-      <a href="/sobre/">Sobre</a>
-    </nav>
-    <a href="/#newsletter" class="btn-assinar">Assinar</a>
-  </div>
+  <a href="/" class="logo">FARIA LIMA<small>Backstage</small></a>
+  <nav class="nav">
+    <a href="/analises/">Análises</a>
+    <a href="/decoder/">Decoder</a>
+    <a href="/callmap/">CallMap</a>
+    <a href="/quem-e-quem/">Quem é Quem</a>
+    <a href="/#newsletter">Newsletter</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/#newsletter" class="assinar">Assinar</a>
+  </nav>
 </header>
-<main>
-  <div class="container">
-    <nav class="breadcrumb">
-      <a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Análises</span>
-    </nav>
-    <header class="section-header">
-      <div class="label">Categoria editorial</div>
-      <h1>Análises</h1>
-      <p>Leitura editorial sobre as movimentações que definem o mercado financeiro brasileiro. Política monetária, câmbio, bolsa, fluxos e regulação — com posicionamento claro e fontes públicas.</p>
-    </header>
-    <section class="section-list">
 
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Crédito</div><div>10 jun 2026 · 9 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/credito-rj-books-proprietarios.html">O risco que mudou de dono: recuperações judiciais em recorde enquanto o crédito privado vira produto de massa</a></h2>
-          <p>As recuperações judiciais beiram 6 mil empresas e o agro virou epicentro. No mesmo período, o crédito estruturado virou prateleira da pessoa física. A conta que ninguém faz: para onde foi o risco que saiu do balanço dos bancos.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Mercado de capitais</div><div>10 jun 2026 · 8 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/spacex-ipo-engenharia-oferta.html">A SpaceX vende 4% e quer valer US$ 1,77 trilhão: a engenharia do maior IPO da história</a></h2>
-          <p>A SpaceX estreia na Nasdaq a US$ 135 com preço fixo, float de apenas 4% e lock-ups escalonados. O número gigante é o que todos veem. A engenharia da oferta é o que importa — e vira playbook.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Federalismo fiscal</div><div>10 jun 2026 · 8 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/saude-fiscal-estados-capag.html">O mapa fiscal dos estados: quem paga as contas, quem está no socorro e por quê</a></h2>
-          <p>Estados e DF devem R$ 827 bilhões à União, e quatro deles concentram 56% da dívida em regime de socorro. A Capag, nota de A a D do Tesouro, é a régua. O que separa um estado nota A de um nota D.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-exclusivo">Observatório</div><div>Novo · CallMap</div></div>
-        <div class="section-list-content">
-          <h2><a href="/callmap/">CallMap: o observatório de calls — quem recomendou o quê, por quanto tempo e com que resultado</a></h2>
-          <p>O mapa de accountability das casas. Não medimos a carteira de hoje — medimos cada call pelo tempo em que a casa o sustentou, como performou e que relações declaradas existem por trás.</p>
-        </div>
-      </article>
-
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Teoria monetária</div><div>03 jun 2026 · 13 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/cdi-livre-de-risco-tese-xp-atlantiqis.html">O CDI é livre de risco? O que economistas renomados já disseram sobre o tema e quais são os argumentos que validam ou não a tese recente, apresentada pela XP</a></h2>
-          <p>Um estudo da XP em parceria com a Atlantiqis questiona o dogma do CDI como ativo livre de risco. Tese ancorada em Campbell e Viceira (Harvard), com contestação técnica do Federal Reserve. Abre debate paralelo com Arida, Lara Resende e Bacha sobre os juros reais brasileiros.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Mercado de capitais</div><div>03 jun 2026 · 9 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/ipo-virou-palavrao-faria-lima.html">O IPO virou palavrão na Faria Lima: por que a janela não vai abrir tão cedo</a></h2>
-          <p>A B3 tem 54 empresas registradas e prontas para abrir capital. Não abrem porque o cap rate de saída exigido pelo investidor e o valuation esperado pelo controlador estão em mundos diferentes — e a culpa é da curva de juros longa.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Bastidores</div><div>03 jun 2026 · 8 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/selo-independente-assessorias.html">A indústria do "selo independente": quem é realmente independente nas assessorias?</a></h2>
-          <p>Toda assessoria se vende como independente do banco. Mas a maioria está vinculada a uma plataforma — e é remunerada por ela. A CVM tentou organizar com a Resolução 178. Resolveu?</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Tributário</div><div>03 jun 2026 · 9 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/holdings-pos-taxacao-dividendos.html">A nova corrida pelas holdings: o efeito colateral da taxação dos dividendos</a></h2>
-          <p>Quando o legislador fecha uma porta, o tributarista abre uma janela. A taxação dos dividendos virou pipeline cheio para escritórios de planejamento. O detalhe que muitos contadores estão omitindo.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Imobiliário</div><div>03 jun 2026 · 7 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/kinea-brookfield-fii-multifamily.html">Kinea e Brookfield armam um FII de R$ 2 bilhões em multifamily: o aluguel virou ativo financeiro</a></h2>
-          <p>A parceria entre Kinea e Brookfield para estruturar um fundo focado em locação residencial profissional sinaliza uma transformação estrutural.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Institucional</div><div>03 jun 2026 · 8 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/petros-recorde-deficit-historico.html">A Petros teve sua melhor rentabilidade em 2025. O déficit histórico continua.</a></h2>
-          <p>O fundo de pensão da Petrobras administra R$ 153 bi e ganhou R$ 15 bi em 2025 — recorde da história. Mas o déficit dos planos antigos não some. Quem paga a conta?</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Mercado de capitais</div><div>02 jun 2026 · 5 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/ubs-contra-ubs-bb.html">O UBS contra o UBS BB: a contradição sobre o Brasil em três semanas</a></h2>
-          <p>Poucas semanas atrás, um relatório do UBS apontava resiliência dos emergentes. Em seguida, o próprio UBS BB cortou a recomendação da B3 para "neutra". O que isso revela do momento.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Custo Brasil</div><div>31 mai 2026 · 6 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/paraguai-evasao-empresas.html">O Brasil exporta empresas. Paraguai exporta vergonha alheia.</a></h2>
-          <p>Mais de 232 empresas brasileiras já produzem no Paraguai sob a Lei de Maquila. Cerca de 25 mil empregos foram transferidos. A migração silenciosa do mapa industrial do Mercosul.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Mercado de trabalho</div><div>29 mai 2026 · 6 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/demissoes-faria-lima-ia.html">A temporada de cortes na Faria Lima: quando "uso de IA" entra no PowerPoint</a></h2>
-          <p>Stone demitiu cerca de 370 pessoas em março, com foco em tecnologia. A justificativa oficial citou IA. O cenário se repete em outras companhias.</p>
-        </div>
-      </article>
-
-      <article class="section-list-item">
-        <div class="section-list-meta"><div class="tag tag-analise">Política monetária</div><div>27 mai 2026 · 7 min</div></div>
-        <div class="section-list-content">
-          <h2><a href="/analises/ciclo-selic-cortes-2026.html">Copom corta Selic para 14,5%: o ciclo que o BC chama de "calibração"</a></h2>
-          <p>A segunda redução consecutiva no ciclo de afrouxamento aconteceu em abril, por unanimidade. O Focus precifica 12,25% até dezembro. Mas a palavra "calibração" carrega mais peso do que parece.</p>
-        </div>
-      </article>
-
-    </section>
+<main class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Arquivo editorial</div>
+    <h1>Análises</h1>
+    <p>Os bastidores do mercado de capitais brasileiro — as casas, as carteiras e as movimentações que ninguém conta.</p>
   </div>
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo"><span class="logo-main">FARIA LIMA</span><span class="logo-accent">/BACKSTAGE</span></div>
-        <p>Análise e contexto do mercado financeiro brasileiro.</p>
+
+  <ul class="section-list">
+    <!-- 3 novas no topo -->
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">17 JUN 2026 · 9 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/galapagos-seis-etfs-corrida-industria">Seis ETFs em oito meses: como a Galapagos virou a história mais agressiva da nova indústria de fundos<span class="new-flag">NOVO</span></a></h2>
+        <p>A indústria de ETFs quase dobrou em um ano. A Galapagos cobriu cinco classes de ativos em oito meses — a estratégia de cada produto e o cenário que o favorece.</p>
       </div>
-      <div class="footer-col"><h4>Editorial</h4><a href="/analises/">Análises</a><a href="/decoder/">Decoder</a><a href="/quem-e-quem/">Quem é Quem</a></div>
-      <div class="footer-col"><h4>Backstage</h4><a href="/sobre/">Sobre</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="/sobre/privacidade.html">Privacidade</a></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Faria Lima Backstage.</span><span>Não constitui recomendação de investimento.</span></div>
-  </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">17 JUN 2026 · 8 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/bitcoin-correcao-ciclo-2028">Bitcoin a US$ 65 mil: "estável" é a leitura errada — e a pergunta certa é sobre 2028<span class="new-flag">NOVO</span></a></h2>
+        <p>O gráfico de médio prazo desmente a manchete. E, para quem pensa em anos, a questão é o ciclo do halving de 2028.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-bastidores">Bastidores</span><span class="dt">17 JUN 2026 · 7 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/kevin-warsh-super-quarta-fed">O homem da super quarta: quem é Kevin Warsh, o primeiro presidente pró-cripto do Fed<span class="new-flag">NOVO</span></a></h2>
+        <p>Carreira, mentalidade sobre o Fed e o paradoxo da coerência do banqueiro central mais observado do mundo.</p>
+      </div>
+    </li>
+
+    <!-- Acervo -->
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-bastidores">Bastidores</span><span class="dt">10 JUN 2026 · 8 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/spacex-ipo-engenharia-oferta">A SpaceX vende 4% e quer valer US$ 1,77 trilhão: a engenharia do maior IPO da história</a></h2>
+        <p>Como se monta a maior abertura de capital já vista — e por que "IPO" virou palavrão na Faria Lima.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">9 JUN 2026 · 7 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/saude-fiscal-estados-capag">A saúde fiscal dos estados: o que a Capag revela sobre quem quebrou</a></h2>
+        <p>Quatro estados no RRF concentram 56,6% da dívida. O mapa do risco subnacional.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-bastidores">Bastidores</span><span class="dt">8 JUN 2026 · 6 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/credito-rj-books-proprietarios">Crédito em recuperação judicial: o que os books proprietários não mostram</a></h2>
+        <p>Como FIDCs e mesas proprietárias precificam o risco que o varejo não vê.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">6 JUN 2026 · 7 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/patria-superfundos-fiis">Patria e os "superfundos": a consolidação de 30 FIIs e o que ela significa</a></h2>
+        <p>A maior reorganização de fundos imobiliários do ano e a lógica por trás dela.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">5 JUN 2026 · 6 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/raio-xp-fluxo-estrangeiro">O Raio-XP e o fluxo estrangeiro: comprar Brasil enquanto o capital sai</a></h2>
+        <p>61,2% do volume da B3 é estrangeiro — e vem saindo há seis semanas. A leitura da recomendação.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">4 JUN 2026 · 8 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/fapesp-drex-open-finance">FAPESP, Drex e Open Finance: as ferramentas que estão reescrevendo o sistema financeiro</a></h2>
+        <p>IA, criptografia quântica e o futuro da infraestrutura financeira brasileira.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-bastidores">Bastidores</span><span class="dt">3 JUN 2026 · 4 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/pensamento-da-semana-seneca">Pensamento da semana: o que Sêneca diria ao investidor brasileiro</a></h2>
+        <p>Duas máximas estoicas aplicadas ao comportamento de quem investe na bolsa.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">2 JUN 2026 · 6 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/private-bankers-alocacao">Como os private bankers estão alocando em 2026</a></h2>
+        <p>O que os escritórios de grandes fortunas recomendam — e o que evitam.</p>
+      </div>
+    </li>
+    <li class="section-list-item">
+      <div class="section-list-meta"><span class="tag tag-analise">Análise</span><span class="dt">1 JUN 2026 · 6 MIN</span></div>
+      <div class="section-list-content">
+        <h2><a href="/analises/fiis-papel-vs-tijolo">FIIs de papel x tijolo: para onde vai a preferência em 2S26</a></h2>
+        <p>Com a Selic alta, os fundos de recebíveis ganham terreno sobre os de imóveis.</p>
+      </div>
+    </li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-base">© 2026 Faria Lima Backstage · Conteúdo editorial, não constitui recomendação de investimento</div>
 </footer>
+
 <script src="/script.js"></script>
 </body>
 </html>

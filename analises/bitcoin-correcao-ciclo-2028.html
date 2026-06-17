@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin a US$ 65 mil: a correção que a manchete não conta — Faria Lima Backstage</title>
+<meta name="description" content="A imprensa cripto chama o momento de lateralização tranquila. O gráfico de médio prazo conta outra história. E, para quem pensa em anos, a pergunta é sobre 2028.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f3ef;--muted:#9a958c;--line:#241f1a;--amber:#FAC775;--coral:#F0997B;--green:#5DCAA5;--card:#121110}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.marquee{border-bottom:1px solid var(--line);background:#0c0b0a;overflow:hidden;white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
+.ticker-track{display:inline-block;padding:8px 0;animation:scroll 60s linear infinite}
+.ticker-track span{padding:0 18px;border-right:1px solid var(--line)}
+.ticker-track .up{color:var(--green)}.ticker-track .down{color:var(--coral)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.site-header{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:22px 24px;border-bottom:1px solid var(--line)}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:20px;line-height:.95;letter-spacing:-.01em}
+.logo small{display:block;font-size:20px;font-weight:400;font-style:italic;color:var(--amber)}
+.nav{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500}
+.nav a:hover{color:var(--amber)}
+.nav .assinar{border:1px solid var(--amber);color:var(--amber);padding:7px 16px;border-radius:2px;font-weight:600}
+.nav .assinar:hover{background:var(--amber);color:#0a0a0a}
+.article{max-width:720px;margin:0 auto;padding:0 24px}
+.breadcrumb{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);padding:30px 0 0;letter-spacing:.04em}
+.breadcrumb a:hover{color:var(--amber)}
+.article-hero{padding:26px 0 30px;border-bottom:1px solid var(--line)}
+.article-hero .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:500}
+.article-hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 16px}
+.article-hero .dek{font-size:19px;color:#cfc9bf;font-style:italic;font-family:'Fraunces',serif;line-height:1.5}
+.byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-top:22px;letter-spacing:.04em}
+.body{padding:36px 0 10px;font-size:17.5px;color:#e6e2da}
+.body h2{font-family:'Fraunces',serif;font-weight:600;font-size:27px;letter-spacing:-.01em;margin:38px 0 14px;color:var(--ink)}
+.body p{margin:0 0 18px}
+.body strong{color:var(--ink);font-weight:600}
+.body ul{margin:0 0 18px;padding-left:22px}
+.body li{margin-bottom:11px}
+.body em{color:#cfc9bf}
+.statline{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:24px 0;font-family:'JetBrains Mono',monospace}
+.statline .stat{flex:1;min-width:120px}
+.statline .stat .n{font-size:22px;color:var(--ink);font-weight:700}
+.statline .stat .l{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.statline .stat .n.dn{color:var(--coral)}
+.callout{border:1px solid var(--coral);border-radius:3px;background:#130f0e;padding:18px 22px;margin:26px 0;font-size:16px;color:#e6e2da}
+.callout b{color:var(--coral)}
+.verdict{border-top:2px solid var(--amber);margin:40px 0 10px;padding-top:22px}
+.verdict .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.verdict h2{margin-top:0}
+.read-also{border-top:1px solid var(--line);margin-top:46px;padding:30px 0}
+.read-also h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.read-also .ra-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.read-also article h5{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.16;letter-spacing:-.01em}
+.read-also article h5 a:hover{color:var(--amber)}
+.read-also article .m{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;margin-top:7px}
+.site-footer{border-top:1px solid var(--line);background:#0c0b0a;margin-top:20px}
+.footer-base{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6f6a62;padding:24px;letter-spacing:.04em}
+@media(max-width:760px){.nav{display:none}.read-also .ra-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="marquee" aria-label="Cotações">
+  <div class="ticker-track"><span>Carregando cotações…</span><span class="down">BTC US$ 65.320 ▼</span><span class="up">IBOV 170.792 ▲</span><span>USD/BRL 5,055</span><span>Carregando cotações…</span><span class="down">BTC US$ 65.320 ▼</span><span class="up">IBOV 170.792 ▲</span><span>USD/BRL 5,055</span></div>
+</div>
+
+<header class="site-header">
+  <a href="/" class="logo">FARIA LIMA<small>Backstage</small></a>
+  <nav class="nav">
+    <a href="/analises/">Análises</a>
+    <a href="/decoder/">Decoder</a>
+    <a href="/callmap/">CallMap</a>
+    <a href="/quem-e-quem/">Quem é Quem</a>
+    <a href="/#newsletter">Newsletter</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/#newsletter" class="assinar">Assinar</a>
+  </nav>
+</header>
+
+<article class="article">
+  <div class="breadcrumb"><a href="/">Início</a> / <a href="/analises/">Análises</a> / Cripto</div>
+
+  <header class="article-hero">
+    <span class="tag">Análise</span>
+    <h1>Bitcoin a US$ 65 mil: "estável" é a leitura errada — e a pergunta certa é sobre 2028</h1>
+    <p class="dek">A imprensa cripto chama o momento de lateralização tranquila. O gráfico de médio prazo conta outra história. Mas, para quem pensa em anos, não em dias, a pergunta que importa é outra: estamos perto de um bom ponto para acumular antes do próximo ciclo?</p>
+    <div class="byline">FARIA LIMA BACKSTAGE · 17 DE JUNHO DE 2026 · 8 MIN DE LEITURA</div>
+  </header>
+
+  <div class="body">
+    <h2>O preço, em contexto</h2>
+    <p>O Bitcoin é negociado nesta quarta-feira (17/06) ao redor de US$ 64,8 mil — cerca de R$ 329 mil ao câmbio de R$ 5,08. Boa parte da cobertura cripto trata o momento como "estável" ou "neutro", apoiada em indicadores de curtíssimo prazo: o RSI gira em torno de 53 (zona neutra) e o preço oscila numa faixa estreita entre US$ 65 mil e US$ 66 mil.</p>
+    <p>Essa é a foto de perto. Quando se abre o gráfico, o quadro muda.</p>
+
+    <div class="statline">
+      <div class="stat"><div class="n dn">US$ 64,8k</div><div class="l">Preço atual</div></div>
+      <div class="stat"><div class="n">US$ 73,2k</div><div class="l">Média 50 dias</div></div>
+      <div class="stat"><div class="n">US$ 77,3k</div><div class="l">Média 200 dias</div></div>
+      <div class="stat"><div class="n dn">−37%</div><div class="l">12 meses (US$)</div></div>
+    </div>
+
+    <h2>O que o gráfico de médio prazo mostra</h2>
+    <ul>
+      <li>O preço atual está <strong>abaixo da média móvel de 50 dias</strong> (~US$ 73,2 mil) e da <strong>de 200 dias</strong> (~US$ 77,3 mil). Preço negociando abaixo das duas médias é o desenho clássico de viés de baixa de médio prazo — não de estabilidade.</li>
+      <li>O topo das últimas 52 semanas foi de cerca de <strong>US$ 124,8 mil</strong> (atingido em outubro de 2025). Do pico até aqui, é uma correção da ordem de 48%.</li>
+      <li>O fundo recente, em torno de <strong>US$ 60,9 mil</strong>, virou o suporte que o mercado observa — a linha na areia que separa "pausa" de "algo maior".</li>
+    </ul>
+    <p>Em reais, o investidor brasileiro sente menos por causa do câmbio, mas a correção em dólar é inegável: o ativo perdeu cerca de 37% em relação a um ano atrás.</p>
+
+    <h2>O gatilho de curto prazo: o Fed, hoje</h2>
+    <p>O mercado está parado à espera da decisão do FOMC nesta quarta-feira — a "super quarta". A expectativa é de manutenção dos juros, com o foco real nas projeções atualizadas, o "dot plot". Se o Fed, agora sob o comando de <strong>Kevin Warsh</strong> (perfilado nesta mesma edição), sinalizar cortes à frente, é combustível para ativos de risco; se mantiver o tom duro diante de uma inflação acima de 3%, a pressão continua. Há um sinal de alento: depois de semanas de saída, os ETFs de Bitcoin voltaram a captar — entrada líquida de US$ 85,8 milhões em 15/06.</p>
+
+    <h2>A provocação que interessa a quem pensa em anos: estamos perto de um bom ponto de acumulação?</h2>
+    <p>Aqui vale separar dois investidores. Para quem opera o médio prazo, o gráfico ainda não deu sinal de compra: enquanto o preço estiver abaixo das duas médias, o vento técnico é contrário. Para quem pensa em ciclos de anos, a conversa é outra — e historicamente, as melhores janelas de acumulação ajustadas a risco aconteceram justamente em momentos de meio de ciclo e pessimismo, não na euforia.</p>
+    <p>O calendário ajuda a enquadrar. O próximo <strong>halving está previsto para abril de 2028</strong>, quando a emissão de novos bitcoins cai pela metade (de 3,125 para 1,5625 BTC por bloco). Todo halving anterior precedeu uma alta relevante. Mas há um porém honesto: este será o primeiro halving com cerca de <strong>97% de todas as moedas já em circulação</strong> — ou seja, o choque de oferta é estruturalmente menor do que nos ciclos antigos. Soma-se a isso o fato de que, no ciclo atual, o Bitcoin bateu topo antes do halving de 2024, quebrando o roteiro mecânico de "halving → alta → euforia → crash" que valia até então. A tese de que "o ciclo de quatro anos morreu" — ou ao menos mudou — ganhou corpo, porque a entrada dos ETFs à vista e do capital institucional alterou o ritmo.</p>
+
+    <h2>Que patamar o BTC poderia alcançar em 2028/29?</h2>
+    <p>Não existe número confiável — existe um leque, e ele é largo. Vale tratar tudo abaixo como <em>cenário, não previsão</em>:</p>
+    <ul>
+      <li><strong>Conservador:</strong> modelos quantitativos e leituras mais cautelosas colocam o BTC entre US$ 75 mil e US$ 150 mil no pós-halving de 2028 — no piso, o ativo quase não anda; no teto, dobra e faz nova máxima.</li>
+      <li><strong>Mediano-otimista:</strong> projeções de cinco anos na casa de US$ 150 mil a US$ 250 mil.</li>
+      <li><strong>Agressivo:</strong> o Standard Chartered já cravou US$ 500 mil para 2028; a Pantera Capital, de Dan Morehead, mantém US$ 740 mil para 2029; e nomes como Cathie Wood e Michael Saylor falam em US$ 1 milhão até 2030.</li>
+      <li><strong>O modelo da moda, com ressalva:</strong> o Stock-to-Flow (S2F), do analista PlanB, projeta cerca de US$ 500 mil de média de ciclo — mas o próprio modelo perdeu aderência: o Bitcoin negocia abaixo das suas projeções desde 2022, e ele é alvo de críticas técnicas pesadas, inclusive de Vitalik Buterin. Serve como um dado entre vários, não como bola de cristal.</li>
+    </ul>
+
+    <h2>O bastidor que liga tudo: a IPO da SpaceX</h2>
+    <p>Aqui está a peça que conecta o cripto ao resto do mercado — e que é, no fundo, uma história de movimentação de bastidores. Em 12 de junho, a SpaceX fez a maior IPO da história: levantou cerca de US$ 75 bilhões a um valuation de aproximadamente US$ 1,77 trilhão. O detalhe que interessa ao mercado cripto: a empresa revelou em seu prospecto que carrega <strong>18.712 bitcoins em tesouraria</strong> — a maior posição de Bitcoin já atrelada a uma abertura de capital, avaliada em cerca de US$ 1,29 bilhão no fim do 1º trimestre. A tese que circula entre gestores é a de uma <em>rotação de liquidez</em>: parte do capital teria saído de Bitcoin e de outros ativos de risco para entrar na oferta. O estrategista Jeff Park chegou a apontar que a venda de Bitcoin pode estar ligada à rotação de capital para investimentos privados de IA, citando justamente SpaceX e Anthropic. <a href="/analises/spacex-ipo-engenharia-oferta" style="color:var(--amber)">Detalhamos a engenharia dessa oferta aqui.</a></p>
+
+    <div class="verdict">
+      <div class="label">Veredito editorial</div>
+      <h2>O que pensamos</h2>
+      <p>Chamar o momento de "estável" é confortável, mas impreciso: o Bitcoin está em correção de médio prazo, abaixo das duas principais médias, e o curtíssimo prazo é uma trégua à espera do Fed — não uma reversão confirmada. Sobre a pergunta de acumulação: para quem tem horizonte de anos e estômago para a volatilidade, comprar perto de fundos de ciclo e abaixo das médias historicamente foi melhor do que comprar na euforia — mas o "desta vez é diferente" tem fundamento real aqui, porque o halving de 2028 entrega menos choque de oferta e o ciclo já não obedece ao velho relógio. O nível de US$ 60,9 mil é a linha que separa as duas narrativas: enquanto segurar, a tese de acumulação de longo prazo segue de pé. Os alvos de US$ 500 mil ou US$ 1 milhão são possíveis, mas exigem premissas heroicas de adoção institucional e juros em queda — trate-os como o topo otimista de um leque, não como meta. E, como sempre: isto é leitura de cenário, não recomendação de compra ou venda.</p>
+    </div>
+  </div>
+
+  <div class="read-also">
+    <h4>Leia também</h4>
+    <div class="ra-grid">
+      <article>
+        <h5><a href="/analises/galapagos-seis-etfs-corrida-industria">Seis ETFs em oito meses: a ofensiva da Galapagos (inclui o GBIT11, de Bitcoin)</a></h5>
+        <div class="m">17 JUN · 9 MIN</div>
+      </article>
+      <article>
+        <h5><a href="/analises/spacex-ipo-engenharia-oferta">A SpaceX vende 4% e quer valer US$ 1,77 trilhão: a engenharia do maior IPO da história</a></h5>
+        <div class="m">10 JUN · 8 MIN</div>
+      </article>
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-base">© 2026 Faria Lima Backstage · Conteúdo editorial, não constitui recomendação de investimento</div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
